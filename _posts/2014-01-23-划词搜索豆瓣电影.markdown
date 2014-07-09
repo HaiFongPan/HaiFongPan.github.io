@@ -1,0 +1,83 @@
+---
+author: LeoPan
+comments: true
+date: 2014-01-23 15:15:10+00:00
+layout: post
+slug: '划词搜索豆瓣电影'
+title: 划词搜索豆瓣电影
+wordpress_id: 766
+categories:
+- Life
+---
+
+马年将至，厂里的重活儿也渐少了，每天在厂里的时间里总有个把小时时间身体处于空闲期，总不能让身体馊掉吧？总要学学好的榜样，攒点新知识吧？脑子里又正好蹦达出搞个插件「划词搜索豆瓣电影」玩玩的想法，于是就说搞就搞了，虽说在厂里做与车间无关的东西似是不太厚道，但是总也算是「积攒知识」吧，日后也好推动车间发展。
+\n\n
+
+
+
+
+
+### 说干就干
+
+
+
+
+
+  
+
+第一步当然是找找chrome插件的入门教程，通俗易懂的中文教程遍地都是，虽然说比不上官方的全面，可对付吾等屁民也算绰绰有余，快速的看了几篇，知道了主要的文件结构插件，于是在搜索中发现了「[划词搜书](http://www.cnblogs.com/linchao/archive/2012/12/15/2819812.html)」，这下好了节省了很多事情。
+
+
+
+
+
+第二步当然是开搞，对css一窍不通个和对js不太熟悉的我在样式上和基本逻辑上一开始直接照搬了划词搜书的，当然本身这个插件的需求就非常的简单：
+
+
+
+
+
+
+
+  * 首先选中词语
+
+
+  * 其次是取得光标位置，开始请求豆瓣的api
+
+
+  * 然后将api返回的json内容填充到div块中
+
+
+  * 最后将div块加入当钱页面就好了
+
+
+
+
+
+之后暴露出的问题比如代码很乱，翻页问题，内容过多等等，于是自己写了很多东西，几乎全部重写了css，div内容加载用了[JQuery.loadJSON](https://code.google.com/p/jquery-load-json/)，简介内容过多采用了豆瓣手机的方式隐藏起来再加上了一个扩展按钮。
+
+
+
+
+
+最后的结果：
+  
+
+![如图](https://github.com/HaiFongPan/searchMoviedb/blob/master/pic/example.png?raw=true)
+
+
+
+
+
+
+
+  * github：[searchMoviedb](https://github.com/HaiFongPan/searchMoviedb)
+
+
+
+
+
+最后，由于没给google $5，所以本插件还只能开发者模式搞搞= =
+
+
+

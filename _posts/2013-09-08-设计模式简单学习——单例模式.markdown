@@ -1,0 +1,128 @@
+---
+author: LeoPan
+comments: true
+date: 2013-09-08 13:52:26+00:00
+layout: post
+slug: '设计模式简单学习——单例模式'
+title: 设计模式简单学习——单例模式
+wordpress_id: 733
+categories:
+- Design Pattern
+tags:
+- 单例
+- 设计模式
+---
+
+### 单例模式
+
+
+
+
+
+  
+
+
+
+
+
+
+<blockquote>
+  
+> 
+> 定义:确保一个类只有一个实例,并提供一个全局访问点
+> 
+> 
+</blockquote>
+
+
+
+
+
+
+
+  * 为什么不适用一个全局变量?
+
+
+
+    * 全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象
+\n\n
+单例模式经典模式:
+[csharp]
+namespace SINGLETON{
+public class singleton {
+private static singleton instance;
+private singleton(){
+    //...
+}
+public static singleton getInstace(){
+    if (instance == null){
+        instance = new singleton();
+    }
+    return instance;
+}
+}
+}
+[/csharp]
+
+
+
+
+
+
+
+单例模式多线程双重锁模式:
+[csharp]
+namespace SINGLETONSYNC{
+    public class singleton {
+        private static singleton instance;
+        private static Object _lock = new Object() 
+        private singleton(){
+            //...
+        }
+        public static singleton getInstace(){
+            if (instance == null){
+                lock(_lock){
+                    if(instace == null){
+                        instance = new singleton();
+                    }
+                }
+            }
+            return instance;
+        }
+    }
+}
+[/csharp]
+
+
+
+
+
+单例模式急切饥饿模式:
+[csharp]
+// 这种模式不适合与消耗资源且利用次数少的对象
+namespace SINGLETONEAGERLY{
+    public class singleton {
+        private static readonly singleton instance = new sinlgeton();
+        private singleton(){
+            //...
+        }
+        public static singleton getInstace(){
+            return instance;
+        }
+    }
+}
+[/csharp]
+
+
+
+
+
+
+
+  * 单例模式有经典的单例,适用于多线程的单例等
+
+
+  * 应用实例,计算机的打印池
+
+
+

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A* 八数码问题JAVA版本 &middot; LeoPan
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>小屋如舟衾似沙<br>灵芝劫尽枕芦花<br>杜宇声声归何处<br>群玉山头第一家<br></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archives/">Archives</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about-me/">About me</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+<!--     <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v</span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2014. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">LeoPan</a>
+            <small>人生就是不断的做选择题</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">A* 八数码问题JAVA版本</h1>
+  <span class="post-date">06 Dec 2011</span>
+  <p>作业拖欠了好久了，暂时搞个java的应付下作业先，参考了下网上的资料写的，bug还是有的吧。
+\n\n
+[code lang="java"]
+import java.util.*;
+//Extension points扩展节点
+class ExtenPoint// 扩展节点类
+{
+    private int f;// f为估价函数的值
+    private int g;// g为扩展节点的深度
+    private int h;// 不在位数
+    private String currentState;// 当前状态
+    private String endState;// 目的状态
+    private ExtenPoint parent;// 当前状态的父亲
+    public int getF() {return f;}
+    public void setF(int f){this.f = f;}
+    public int getG(){return g;}
+    public void setG(int g) {this.g = g;}
+    public int getH() {return h;}
+    public void setH(int h) {this.h = h;}
+    public String getCurrentState() {return currentState;}
+    public void setCurrentState(String currentState) {this.currentState = currentState;}
+    public String getEndState() {return endState;}
+    public void setEndState(String endState) {this.endState = endState;}
+    public ExtenPoint getParent() {return parent;}
+    public void setParent(ExtenPoint parent) {this.parent = parent;}
+    public ExtenPoint(String currentState, String endState, int g) {
+        this.currentState = currentState;// 当前状态初始化
+        this.endState = endState;// 目的状态初始化
+        this.g = g;// 深度赋值
+        parent = this;// 父节点初始化
+        this.h =calcH2(currentState, endState);
+        //System.out.println(this.h);
+        f = g + h;// 估价函数
+    }</p>
+
+<pre><code>public int calcH(String state, String end) {// 计算h
+    int result = 0;
+    char[] startState = state.toCharArray();// 转为数组
+    char[] endState = end.toCharArray();// 转为数组
+    for (int i = 0; i &lt; state.length()&amp;&amp;i&lt;end.length(); i++) {// 循环到状态末
+        if (startState[i] != endState[i])// 如果不在位
+        {
+            result++;// 计算不在位的数码作为启发信息的度量
+        }
+    }
+    return result;// 返回不在位信息
+}
+public int calcH2(String state, String end) {// 计算h,h为从该位置到目标位置的距离
+    int result = 0;
+    char[] startState = state.toCharArray();// 转为数组
+    char[] endState = end.toCharArray();// 转为数组
+    for (int i = 0; i &lt; state.length()&amp;&amp;i&lt;end.length(); i++) {// 循环到状态末
+        for(int j=0;j&lt;end.length();j++)
+        {
+            if(i!=j&amp;&amp;startState[i]==endState[j])
+            {
+                //System.out.println("i: "+i+" j: "+j);
+                result+=Math.abs((i/3-j/3)+(i%3-j%3));
+                //System.out.println("result:"+Math.abs((i/3-j/3)+(i%3-j%3)));
+            }
+        }
+    }
+    return result;// 返回不在位信息
+}
+</code></pre>
+
+<p>}</p>
+
+<p>class cmp implements Comparator<ExtenPoint> {// 比较函数
+    public int compare(ExtenPoint x, ExtenPoint y) {// 重写比较方法
+        return x.getF() - y.getF();// 根据估价函数大小排序
+    }
+}</p>
+
+<p>public class MyTable {
+    private String start;// 初始状态
+    private String end;// 目的状态
+    private long time =System.currentTimeMillis();// 运行时间
+    private int ExtenPointNum;// 扩展节点数
+    private PriorityQueue<ExtenPoint> open;// open表,采用优先队列
+    private HashMap&lt;String, ExtenPoint> closed;// closed表
+    private HashMap&lt;String, ExtenPoint> Record;// 记录结果的节点
+    private int[] turn = { 0, 1, 0, -1,1,0,-1,0};// 移动</p>
+
+<pre><code>public MyTable(String start, String end) {// 构造函数
+    this.start = start;// 初始化初始状态
+    this.end = end;// 初始化目的状态
+}
+
+private int getRev(String str) {// 逆序数 根据C++原版逆序数写的
+    int result = 0;// 定义结果
+    char[] s = str.toCharArray();// string转为char的数组
+    for (int i = 0; i &lt; 9; i++) {
+        for (int j = 0; j &lt; i; j++) {
+            if ((s[j] &gt;s[i]) &amp;&amp;s[i]!='0' )
+                result++;
+        }
+    }
+    return result;
+}
+
+private boolean hasWay() {// 通过逆序数判断是否有解.
+    /*System.out.println("getReverseNum(start):"+getRev(start));
+    System.out.println("getReverseNum(end):"+getRev(end));*/
+    return getRev(start) % 2 == getRev(end) % 2;
+}
+
+public boolean solve()// 搜索算法
+{
+    if (hasWay()) {
+        // 如果有解
+        open = new PriorityQueue&lt;ExtenPoint&gt;(100000, new cmp());// 初始化open表
+        closed = new HashMap&lt;String, ExtenPoint&gt;();// 初始化closed表
+        open.add(new ExtenPoint(start, end, 0));// 将第初始状态点放入open表中
+        Record = new HashMap&lt;String, ExtenPoint&gt;();// 初始化Record
+        Record.put(start, new ExtenPoint(start, end, 0));// 记录结果节点的表 加入第一个状态
+        ExtenPointNum = 0;// 扩展节点数为0
+        while (!open.isEmpty())// open表不为空
+        {
+            ExtenPoint current = open.poll();// 获得优先队列中首个元素
+            closed.put(current.getCurrentState(), current);// 放入closed表
+            if (current.getCurrentState().equals(end))// 如果该节点的状态与目的状态相同
+            {
+                time = (long)System.currentTimeMillis()-time;;
+
+                return true;// 返回true表示找到了
+            }
+            int xofSpace;// 3*3的表格，除得到在第几行
+            int yofSpace;// 取模得到列数
+            int indexOfChange;// 需要跟空格交换的数
+            String nextState = current.getCurrentState();// 初始化下个状态
+</code></pre>
+
+<p>//              System.out.println("current:"+current.getCurrentState());
+                ExtenPoint nextPoint;// 下一个扩展节点
+                for (int i = 0; i &lt; 4; i++) {
+                    // 移动空格所在位子
+                    xofSpace = current.getCurrentState().indexOf("0") / 3;// 3*3的表格，除得到在第几行
+                    yofSpace = current.getCurrentState().indexOf("0") % 3;// 取模得到列数
+                    xofSpace += turn[i];// 左右移动
+                    yofSpace += turn[i+4];// 上下移动
+                    if (xofSpace >= 0 &amp;&amp; xofSpace &lt;= 2 &amp;&amp; yofSpace >= 0
+                            &amp;&amp; yofSpace &lt;= 2)// 判断移动之后是否还在表格中
+                    {
+                        nextState = current.getCurrentState();// 初始化下个状态
+//                      System.out.println("nextStatePre:"+nextState);
+                        indexOfChange = xofSpace * 3 + yofSpace;// 得到与空格交换的数字的下标
+//                      System.out.println("indexOfChange:"+indexOfChange);
+                        char next[] = nextState.toCharArray();// 转换成字符串
+                        next[current.getCurrentState().indexOf("0")]=next[indexOfChange];// 移动空格
+                        next[indexOfChange] = '0';// 移动交换的数字</p>
+
+<pre><code>                    nextState =String.valueOf(next);
+                        //getNextState(nextState,indexOfChange,current.getCurrentState().indexOf("0"));// 获得新的状态
+</code></pre>
+
+<p>//                      System.out.println("nextState:"+nextState);</p>
+
+<pre><code>                    nextPoint = new ExtenPoint(nextState, end,current.getG() + 1);// 初始化下一个扩展节点
+
+                    if (Record.containsKey(nextState)) {
+                        // 如果已经在Record表中出现过，相当于书本163页伪码的存在于open或者closed
+</code></pre>
+
+<p>//                          System.out.println("nextState:"+nextState);
+                            if (closed.containsKey(nextState))// 如果在closed表中出现过
+                            {
+                                // 如果过该子状态沿着一条比在closed表中已有的更短路径到达,则将该状态移到open中
+                                ExtenPoint temp = closed.get(nextState);//得到closed表中的节点
+                                if(temp.getF()>nextPoint.getF())//如果nextPoint的估价函数小于closed表中点
+                                {
+                                    closed.remove(nextState);//将该状态移入open
+                                    open.add(nextPoint);
+                                }
+                            } else {</p>
+
+<pre><code>                            ExtenPoint temp =Record.get(nextState);
+                            if(temp.getF()&gt;nextPoint.getF())//如果表中的估价函数函数大于这个节点
+                            {
+                                Record.remove(nextState);
+                                Record.put(nextState, nextPoint);//替换
+                            }
+                        }
+                    }
+                    else {// 如果没有出现过
+                        nextPoint.setParent(current);// 设置该节点的父节点
+                        Record.put(nextState, nextPoint);//放入记录中
+                        open.add(nextPoint);//放入open表等到扩展
+                        ExtenPointNum++;// 扩展节点数增加
+                    }
+                }
+</code></pre>
+
+<p>//                  System.out.println();
+                }
+            }
+        } else {// 无解返回false</p>
+
+<pre><code>        return false;
+    }
+    time = (long)System.currentTimeMillis()-time;//(new Date().getTime()-starttime.getTime());
+    return true;// 无解返回false
+}
+public void print(){//打印结果
+    System.out.println("步骤数：" + Record.get(end).getG());//打印步骤数
+    System.out.println("扩展节点数：" + closed.size());//打印步骤数
+    ExtenPoint point = Record.get(end);//获得目标状态
+    ExtenPoint []answer = new ExtenPoint[Record.get(end).getG()];//初始化实例对象
+    for (int i=0;!point.getParent().equals(point);i++) {//获得结果
+        answer[i]=point;
+        point = point.getParent();//寻找它的父节点
+    }
+    for(int j=Record.get(end).getG()-1;j&gt;=0;j--){//循环打印出结果
+        for(int i=0;i&lt;9;i+=3)
+            System.out.println(answer[j].getCurrentState().substring(i,i+3));
+        System.out.println();
+    }
+}
+
+public long getTime()// 获得运行时间
+{
+    return this.time;
+}
+
+public int getExtenPointNum()// 获得扩展节点数
+{
+    return this.ExtenPointNum;
+}
+public static void main(String args[])
+{
+
+    String startstate="283164705";//定义初始状态
+    String endstate ="123804765";//定义目标状态
+    MyTable mytable = new MyTable(startstate,endstate);//初始化mytable的实例对象
+    System.out.println("初始状态==&gt;目的状态");//在屏幕输出初始状态和目的状态
+    for(int i=0;i&lt;9;i+=3)
+    {
+        System.out.print(startstate.substring(i,i+3));
+        if(i==3)System.out.print("====&gt;");
+        else System.out.print("     ");
+        System.out.print(endstate.substring(i,i+3));
+        System.out.println();
+    }
+    System.out.println();
+    if(mytable.solve())//如果有解
+    {
+        //有解
+        mytable.print();//打印结果
+        System.out.println("生成节点数：" + mytable.getExtenPointNum());//打印扩展节点数
+        System.out.println("运行时间数：" + mytable.getTime());//打印时间
+    }else{
+        System.out.println("该转换无解");//如果无解
+    }
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+</div>
+ <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/life/2014/01/23/%E5%88%92%E8%AF%8D%E6%90%9C%E7%B4%A2%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1/">
+            划词搜索豆瓣电影
+            <small>23 Jan 2014</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F,%E5%A4%96%E8%A7%82%E5%B1%82%E6%A8%A1%E5%BC%8F,%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+            设计模式简单学习——适配器模式,外观层模式,代理模式
+            <small>08 Sep 2013</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+            设计模式简单学习——单例模式
+            <small>08 Sep 2013</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+      </div>
+    </div>
+
+  </body>
+</html>

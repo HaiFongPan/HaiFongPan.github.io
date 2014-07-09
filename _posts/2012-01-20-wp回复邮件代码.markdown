@@ -1,0 +1,84 @@
+---
+author: leopure
+comments: true
+date: 2012-01-20 08:26:19+00:00
+layout: post
+slug: wp回复邮件代码
+title: wp回复邮件代码
+wordpress_id: 334
+categories:
+- Life
+---
+
+很久没有折腾wordpress了
+昨天在读[《什么是墙为什么要翻墙以及怎么翻墙》](http://xavierskip.sinaapp.com/?p=303)这篇文章的时候，发现他的主题挺好看的，于是找到了一个不错的UI设计师的站点：[xu Design](http://xuui.net)，一个不错的站点，当然好看的东西总是要收费的，很多时候拿钱去换一些别人付出辛劳汗水的作品是无可厚非的。当然这个主题是免费的，我又无耻的做了一回伸手党。  
+\n\n
+好像在上次升级之后之前用的回复评论邮件的插件失效了，虽然本博没有什么留言，但是人要追求的总是更好的，于是决定用另外一种方法去实现回复邮件的代码，代码网上搜了一箩筐，但是部分博客中的文章总是把别人的代码复制过来，上面还写着只需将代码复制进主题中即可，但是亲身试过之后才知道，直接复制根本无法实现功能，反而导致了访问博客时网页中什么都无法显示，当然代码基本上是对的，唯一出现的问题是，复制下来的代码中往往该是英文的单引号的地方是中文的单引号，在我人品还不算差的时候，只能说明这些是博主们的错误，当然很多时候一些站点无非是为了赚取访问量+广告点击率。  
+
+
+废话不说了，代码加在function.php代码中：
+[code lang="php"]add_action('comment_post', 'comment_mail_notify');
+function comment_mail_notify($comment_id) {
+	$admin_notify = '0'; 
+        // admin 要不要收回覆通知 ( '1'=要 ; '0'=不要 )，显然这里是最好为0，要不然自己别人在回复自己评论时会出现2封邮件
+	$admin_email = get_bloginfo ('admin_email'); 
+        // $admin_email 可改為你指定的 e-mail.
+	$comment = get_comment($comment_id);
+	$comment_author_email = trim($comment->comment_author_email);
+	$parent_id = $comment->comment_parent ? $comment->comment_parent :”;
+	global $wpdb;
+	if ($wpdb->query("Describe {$wpdb->comments} comment_mail_notify") == ”)
+		$wpdb->query("ALTER TABLE {$wpdb->comments} ADD COLUMN comment_mail_notify TINYINT NOT NULL DEFAULT 0;");
+	if (($comment_author_email != $admin_email && isset($_POST['comment_mail_notify'])) 
+                || ($comment_author_email== $admin_email && $admin_notify == '1'))
+		$wpdb->query("UPDATE {$wpdb->comments} SET comment_mail_notify='1' WHERE comment_ID='$comment_id'");
+		$notify = $parent_id ? get_comment($parent_id)->comment_mail_notify : '0';
+		$spam_confirmed = $comment->comment_approved;
+	if ($parent_id != ” && $spam_confirmed != 'spam' && $notify == '1') {
+		$wp_email = 'Leo' . preg_replace('#^www\.#', ”, strtolower($_SERVER['SERVER_NAME']));
+                // LEO改为你的即可
+		$to = trim(get_comment($parent_id)->comment_author_email);
+		$subject = '您在 [' . get_option("blogname") . '] 的回复有了回应';
+		$message = '
+			<div style="background-color:#eef2fa; border:1px solid #d8e3e8; color:#111; padding:0 15px; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px;">
+			<p>' . trim(get_comment($parent_id)->comment_author) . ', 您好!</p>
+			<p>您曾在《' . get_the_title($comment->comment_post_ID) . '》的留言:<br />
+			' . trim(get_comment($parent_id)->comment_content) . '</p>
+			<p>' . trim($comment->comment_author) . ' 給您的回应:<br />
+			' . trim($comment->comment_content) . '<br /></p>
+			<p>您可以点击 <a href="' . htmlspecialchars(get_comment_link($parent_id)) . '">查看回应完整內容</a></p>
+			<p>欢迎再度光临本博客 <a href="' . get_option('home') . '">' . get_option('blogname') . '</a></p>
+			<p>(此邮件为系统自动发送，请勿回复.)</p>
+			</div>';
+			$from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
+			$headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
+			wp_mail( $to, $subject, $message, $headers );
+//echo 'mail to ', $to, '<br/> ' , $subject, $message; // for testing
+}
+}
+
+/* 自动加勾选栏 */
+function add_checkbox() {
+
+    echo '<input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked" style="margin-left:20px;" /><label for="comment_mail_notify">有人回复是邮件通知我</label>';
+
+}
+add_action('comment_form', 'add_checkbox');	[/code]
+PS:代码源自网络
+  
+
+这边有个小问题是在自己回复别人评论的时候，页面上也会出现“有人回复是邮件通知我”这个勾选栏，看着比较烦就自己把它改掉了：
+[code lang="php"]
+function add_checkbox() {
+$current_user = wp_get_current_user();
+if ( 0 == $current_user->ID||'leopure110@gmail.com'!=$current_user->user_email ) {//没有登录
+    echo '<input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked" style="margin-left:20px;" />
+   <label for="comment_mail_notify">有人回复是邮件通知我</label>';
+}
+
+}
+
+[/code]
+
+
+<全文完>

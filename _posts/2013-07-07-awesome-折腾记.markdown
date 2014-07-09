@@ -1,0 +1,160 @@
+---
+author: LeoPan
+comments: true
+date: 2013-07-07 13:28:29+00:00
+layout: post
+slug: awesome-折腾记
+title: awesome 折腾记
+wordpress_id: 642
+categories:
+- Life
+tags:
+- awesome
+---
+
+在G+的archlinux Communities中总是能看到有人Po 桌面的，很多码农都是用的平铺式的wm，就像awesome，同学中也不乏有使用xmonad这样的wm，所以对平铺还是有点心动的，毕竟那样的界面写代码似乎非常的舒服，关键是看起来也很geek很装13，在一次又一次的犹豫后，总算是开始了awesome折腾之旅（虽然我的渣14寸笔记本用2个窗口就差不多了，有米还是得入一个显示器啊！）
+
+
+
+
+
+
+    
+  * 安装
+
+
+
+
+
+[code lang="bash"]
+$ pacman -S awesome # 安装awesome
+$ mkdir ~/.config/awesome # 创建配置文件目录
+$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
+[/code]
+
+
+
+
+
+
+    
+  * 配置
+
+
+
+
+
+\n\n
+配置文件主要是lua脚本rc.lua的配置，基本上来说配置的example已经够用，在折腾的时候犹豫不想深入去学习lua所以基本参考了前辈们的例子。如：
+
+
+
+
+
+<blockquote>依云仙子的[例子](https://github.com/lilydjwg/myawesomerc)</blockquote>
+
+
+
+
+
+基本上参考了他写的音量和电池的两个function，其中修改了一下电池信息的function：
+
+
+
+
+
+[code lang="js"]
+function update_batwidget()
+    local bat_dir = "/sys/class/power_supply/BAT0/"
+    local f = io.open(bat_dir..'status','r')
+    if not f then
+        batwidget:set_markup('<span color="red">ERR</span>')
+        return
+    end
+    local state = f:read('<em>l')
+    f:close()
+    state = battery_state[state] or battery_state.unknown
+    f = io.open(bat_dir .. 'present')
+    now = io.open(bat_dir .. 'energy_now')
+    full = io.open(bat_dir .. 'energy_full')
+    if not f then
+        batwidget:set_markup('<span color="red">ERR</span>')
+        return
+    end
+    --local percent = tonumber(f:read('</em>l'))
+    local now_n = tonumber(now:read('<em>l'))
+    local full_n = tonumber(full:read('</em>l'))
+    local percent = math.ceil((now_n/full_n)*100)
+    f:close()
+    if percent <= 35 then
+        percent = '<span color="red">' .. percent .. '</span>' .. ' | '
+    end
+    batwidget:set_markup(state .. percent .. '%</span>' .. ' | ')
+end
+[/code]
+
+
+
+
+
+`应用菜单`主要是用 archlinux-xdg-menu 这个包
+执行如下语句即可生成menu文件，配置到rc.lua中即可：
+[code lang="bash"]
+xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu > ~/.config/awesome/menu.lua
+[/code]
+
+
+
+
+
+关于休眠
+偷懒了一下直接在sudoer中设置了pm-suspend 不需要输入密码，然后rc.lua配置一下即可，
+[code lang="bash"]
+leo ALL = (ALL) NOPASSWD: /usr/bin/pm-hibernate
+leo ALL = (ALL) NOPASSWD: /usr/bin/pm-suspend
+[/code]
+
+
+
+
+
+
+
+  * 效果图
+
+
+
+
+
+[![2013-07-07-201818_1366x768_scrot](http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot-1024x575.png)](http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot.png)
+
+
+
+
+
+
+
+  * 其他
+
+
+
+
+
+    * 其实我觉得除了装X以外，awesome给我的感觉却是不错，当然前提要对基础的一下快捷键有一些了解，否则的话,对于小白来说简直是灾难
+
+
+    * 应该少花时间在无意义的配置上,比如美化
+
+
+    * awesome 确实 awesome 还得用时间来适应,还需要大屏幕
+
+
+    * [syntaxhighlighter](http://wordpress.org/plugins/syntaxhighlighter/)是一个不错的wordpress高亮插件,甩colorcode几条街. 
+
+
+    * [无耻的贴一下自己的awesome备份地址](https://github.com/HaiFongPan/awesome.conf)
+
+
+
+
+

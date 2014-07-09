@@ -1,0 +1,25 @@
+# Dependencies
+# markdown:         redcarpet
+markdown:         rdiscount
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            LeoPan
+tagline:          '人生就是不断的做选择题'
+description:      '小屋如舟衾似沙<br>灵芝劫尽枕芦花<br>杜宇声声归何处<br>群玉山头第一家<br>'
+url:              http://www.leopan.me
+
+author:
+  name:           'Leo Pan'
+  url:            http://www.leopan.me
+
+paginate:         5
+
+# Custom vars
+# version:          2.0.0
+excerpt_separator:  \n\n
+# github:
+#   repo:           https://github.com/poole/lanyon

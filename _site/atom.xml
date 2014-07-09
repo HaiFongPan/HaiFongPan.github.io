@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>LeoPan</title>
+ <link href="http://www.leopan.me/atom.xml" rel="self"/>
+ <link href="http://www.leopan.me/"/>
+ <updated>2014-07-09T19:09:02+08:00</updated>
+ <id>http://www.leopan.me</id>
+ <author>
+   <name>Leo Pan</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>划词搜索豆瓣电影</title>
+   <link href="http://www.leopan.me/life/2014/01/23/%E5%88%92%E8%AF%8D%E6%90%9C%E7%B4%A2%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1/"/>
+   <updated>2014-01-23T23:15:10+08:00</updated>
+   <id>http://www.leopan.me/life/2014/01/23/划词搜索豆瓣电影</id>
+   <content type="html">&lt;p&gt;马年将至，厂里的重活儿也渐少了，每天在厂里的时间里总有个把小时时间身体处于空闲期，总不能让身体馊掉吧？总要学学好的榜样，攒点新知识吧？脑子里又正好蹦达出搞个插件「划词搜索豆瓣电影」玩玩的想法，于是就说搞就搞了，虽说在厂里做与车间无关的东西似是不太厚道，但是总也算是「积攒知识」吧，日后也好推动车间发展。
+\n\n&lt;/p&gt;
+
+&lt;h3&gt;说干就干&lt;/h3&gt;
+
+&lt;p&gt;第一步当然是找找chrome插件的入门教程，通俗易懂的中文教程遍地都是，虽然说比不上官方的全面，可对付吾等屁民也算绰绰有余，快速的看了几篇，知道了主要的文件结构插件，于是在搜索中发现了「&lt;a href=&quot;http://www.cnblogs.com/linchao/archive/2012/12/15/2819812.html&quot;&gt;划词搜书&lt;/a&gt;」，这下好了节省了很多事情。&lt;/p&gt;
+
+&lt;p&gt;第二步当然是开搞，对css一窍不通个和对js不太熟悉的我在样式上和基本逻辑上一开始直接照搬了划词搜书的，当然本身这个插件的需求就非常的简单：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首先选中词语&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;其次是取得光标位置，开始请求豆瓣的api&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;然后将api返回的json内容填充到div块中&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;最后将div块加入当钱页面就好了&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;之后暴露出的问题比如代码很乱，翻页问题，内容过多等等，于是自己写了很多东西，几乎全部重写了css，div内容加载用了&lt;a href=&quot;https://code.google.com/p/jquery-load-json/&quot;&gt;JQuery.loadJSON&lt;/a&gt;，简介内容过多采用了豆瓣手机的方式隐藏起来再加上了一个扩展按钮。&lt;/p&gt;
+
+&lt;p&gt;最后的结果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HaiFongPan/searchMoviedb/blob/master/pic/example.png?raw=true&quot; alt=&quot;如图&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;github：&lt;a href=&quot;https://github.com/HaiFongPan/searchMoviedb&quot;&gt;searchMoviedb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;最后，由于没给google $5，所以本插件还只能开发者模式搞搞= =&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>设计模式简单学习——适配器模式,外观层模式,代理模式</title>
+   <link href="http://www.leopan.me/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F,%E5%A4%96%E8%A7%82%E5%B1%82%E6%A8%A1%E5%BC%8F,%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+   <updated>2013-09-08T22:25:03+08:00</updated>
+   <id>http://www.leopan.me/design%20pattern/2013/09/08/设计模式简单学习——适配器模式,外观层模式,代理模式</id>
+   <content type="html">&lt;h3&gt;适配器模式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 定义:将一个类的接口,转换成客户期望的另一个接口,适配器让原本接口不兼容的类可以合作无间
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;首先,什么是适配器?如下图,适配器就像一个中间件,能使调用者理解被适配者&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot; alt=&quot;Adapter2&quot; /&gt;&lt;/a&gt;
+\n\n
+适配器模式简单实例:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ADAPTER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//用户调用的目标&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//被适配者&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adaptee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;specificRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I have specific request&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//适配器:继承了被适配者,实现了目标&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adaptee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;specificRequest&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//测试&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainClass&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;适配器模式类图:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/adapter.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/adapter.png&quot; alt=&quot;adapter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;该模式通过创建适配器进行接口转换,让不兼容的接口变成兼容,这可以让客户从实现的接口解耦.如果在一段时间后,我们想要改变接口,适配器可以将改变的部分封装起来,客户就不必为了应对不同的接口而每次跟着修改了.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;适配器又分为类适配器(多重继承)和对象适配器(直接调用对象)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;适配器模式将目标类和适配者类解耦,增强了扩展性灵活性,且符合&lt;a href=&quot;http://zh.wikipedia.org/zh/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99&quot;&gt;开闭原则&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;外观模式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 定义:提供一个统一的接口,用来访问子系统中的一群接口,外观定义了一个高层接口,让子系统更容易使用
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;外观层类图:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/facade.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/facade.png&quot; alt=&quot;facade&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;类图明显反应了调用者完全不需要知道各个子系统分担了什么功能&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;外观层的意图是要提供一个简单的接口,好让一个子系统更易于使用,从这个模式的类图可以感受到&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用Facade层作为若干子系统的统一简单入口,可以降低系统的复杂性,降低客户类与子系统之间的耦合度&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用Facade层在有新增子系统的情况,除了怎家子系统还需要修改Facade层或者客户端的源代码&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;代理模式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 定义:给某一个对象提供一个代理，并由代理对象控制对原对象的引用
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;代理模式简单实例:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PROXY&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//目标接口&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//真实目标&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RealSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//利用代理了,控制了用户对真实目标的访问&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Proxy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subject&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RealSubject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;realSubject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RealSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;preRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;preRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;realSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;postRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;postRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;代理模式类图:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/proxy.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/proxy.png&quot; alt=&quot;proxy&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;代理模式中,代理类控制了客户对真实对象的访问,客户在调用时不需要关心真实对象本身&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;代理模式能够协调调用者和被调用者，在一定程度上降低了系统的耦合度。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;远程代理使得客户端可以访问在远程机器上的对象，远程机器可能具有更好的计算性能与处理速度，可以快速响应并处理客户端请求。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;虚拟代理通过使用一个小对象来代表一个大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保护代理可以控制对真实对象的使用权限。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;实现代理模式需要额外的工作，有些代理模式的实现非常复杂。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;实例:远程代理,如RMI&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用于翻墙.用于FUCK GFW!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>设计模式简单学习——单例模式</title>
+   <link href="http://www.leopan.me/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+   <updated>2013-09-08T21:52:26+08:00</updated>
+   <id>http://www.leopan.me/design%20pattern/2013/09/08/设计模式简单学习——单例模式</id>
+   <content type="html">&lt;h3&gt;单例模式&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 定义:确保一个类只有一个实例,并提供一个全局访问点
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;为什么不适用一个全局变量?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象
+\n\n
+单例模式经典模式:
+[csharp]
+namespace SINGLETON{
+public class singleton {
+private static singleton instance;
+private singleton(){
+//...
+}
+public static singleton getInstace(){
+if (instance == null){
+  instance = new singleton();
+}
+return instance;
+}
+}
+}
+[/csharp]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;单例模式多线程双重锁模式:
+[csharp]
+namespace SINGLETONSYNC{
+    public class singleton {
+        private static singleton instance;
+        private static Object &lt;em&gt;lock = new Object()
+        private singleton(){
+            //...
+        }
+        public static singleton getInstace(){
+            if (instance == null){
+                lock(&lt;/em&gt;lock){
+                    if(instace == null){
+                        instance = new singleton();
+                    }
+                }
+            }
+            return instance;
+        }
+    }
+}
+[/csharp]&lt;/p&gt;
+
+&lt;p&gt;单例模式急切饥饿模式:
+[csharp]
+// 这种模式不适合与消耗资源且利用次数少的对象
+namespace SINGLETONEAGERLY{
+    public class singleton {
+        private static readonly singleton instance = new sinlgeton();
+        private singleton(){
+            //...
+        }
+        public static singleton getInstace(){
+            return instance;
+        }
+    }
+}
+[/csharp]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;单例模式有经典的单例,适用于多线程的单例等&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;应用实例,计算机的打印池&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>设计模式简单学习——工厂模式</title>
+   <link href="http://www.leopan.me/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+   <updated>2013-09-08T21:37:39+08:00</updated>
+   <id>http://www.leopan.me/design%20pattern/2013/09/08/设计模式简单学习——工厂模式</id>
+   <content type="html">&lt;h3&gt;什么是设计模式?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;90年代由建筑引入计算机行业&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用于解决程序存在各式各样问题而提出的一系列解决方案&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;致力于代码可重用,更容易被理解,保证代码可靠性,程序的正确性,可维护性强等&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用于解决由针对上下文的特定问题的解决方案
+\n\n&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;设计模式的三大类型&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt; 创建型模式:单例,工厂等(用于创建对象)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; 结构型模式:适配器,装饰,外观,代理等(用于处理类或对象之间的组合)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; 行为型模式:命令,迭代,中介者,策略模式等(用于处理类或对象之间的交互与职责分配)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; tip: 根据范围又可分为类模式和对象模式
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;h3&gt;工厂模式&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;工厂模式是属于创建型(类)模式,主要用处理类和子类的关系&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 简单工厂模式
+  简单例子
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;[csharp]
+namespace SimpleFactory{
+    public interface coat{
+        //...
+    }
+    public class CoatA:coat{
+        ///...
+    }
+    public class CoatB:coat{
+        ///...
+    }
+    public class CoatStore{
+        SimpleCoatFactory factory;
+        public CoatStore(SimpleCoatFactory factory){
+            this.factory = factory;
+        }
+        public Coat createCoat(string type){
+            Coat coat;
+            /&lt;em&gt;
+                如果不使用工厂,直接在createCoat中创建实例,不仅使代码耦合度增高,而且扩展性灵敏性较低
+                switch(type.Trim().ToLower()){
+                case &quot;A&quot;:
+                    coat = new CoatA();
+                case &quot;B&quot;:
+                    coat = new CoatB();
+                }
+            &lt;/em&gt;/
+            coat = factory.createCoat(type);
+            /&lt;em&gt;
+                create coat method
+                不经常修改,固定代码
+            &lt;/em&gt;/
+            return coat;
+        }
+    }
+    public class SimpleCoatFactory {
+        //将对象实例化于对象使用进行分离,能降低代码耦合度,扩展性亦较好
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+                case &quot;A&quot;:
+                    return new CoatA();
+                case &quot;B&quot;:
+                    return new CoatB();
+                default :
+                    throw new Exception(&quot;没有您需要的外套&quot;);
+            }
+        }
+    }
+}
+[/csharp]&lt;/p&gt;
+
+&lt;p&gt;简单工厂的类图如下:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png&quot; alt=&quot;simplefactory&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;简单工厂模式更像是一个编程的习惯,而不是一种设计模式&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;似乎更像是把问题抛给了另外一个对象,但是实际上这样做的好处是factory会有很多不同的用户,我们想改变的代码的时候改变factory即可,我们要把具体实例化的过程从客户代码中删除掉&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 真正的工厂模式 简单例子
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;[csharp]
+/&lt;em&gt;
+ 假设有其他不同制衣店加盟
+&lt;/em&gt;/
+namespace FactoryMethod{
+    public abstract class CoatFactory{
+        public Coat makeCoat(string type){
+           Coat coat;
+           coat = createCoat(type);
+            /&lt;em&gt;
+                coat method
+                不经常修改,固定代码
+            &lt;/em&gt;/
+            return coat;
+        }
+        //将得到coat实例的方法抽象,由子类去决定
+        abstract Coat createCoat(string type);
+    }
+    public class HangzhouCoatFactory : CoatFactory{
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+            case &quot;A&quot;:
+                return new HangzhouStyleCoatA();
+            case &quot;B&quot;:
+                return new HangzhouStyleCoatB();
+            }
+        }
+    }
+    public class GangNamCoatFactory : CoatFactory{
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+                case &quot;A&quot;:
+                    return new GangNamStyleCoatA();
+                case &quot;B&quot;:
+                    return new GangNamStyleCoatB();
+            }
+        }
+    }
+    public class HangzhouStyleCoatA:coat{
+        ///...
+    }
+    public class HangzhouStyleCoatB:coat{
+        ///...
+    }
+    public class GangNamStyleCoatA:coat{
+        ///...
+    }
+    public class GangNamStyleCoatB:coat{
+        ///...
+    }
+}
+[/csharp]&lt;/p&gt;
+
+&lt;p&gt;工厂方法的类图:
+&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png&quot; alt=&quot;FactoryMethod&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在工厂方法中我们定义一个创建对象的接口,但由子类决定要实例化的类是哪一个,工厂方法让类把实例化推迟到子类(非运行时)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;父类负责定义创建对象的公共接口，而子类则负责生成具体的对象&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果只有一个具体的创建者,工厂模式依然有用:将对&quot;产品&quot;的&quot;实现&quot;和从&quot;使用&quot;中解耦出来&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;工厂方法的扩展性强,当需要新的工厂时候,只需要重新继承工厂基类显示,而不需要改动原本的工厂&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;简单工厂和工厂模式的区别,从表面上看,仅仅只是在工厂方法中返回对象的子类,但是实际上简单工厂像是把所有的工作都做了,而工厂方法仅仅是提供了一个框架,让子类决定如何去实现.简单工厂方法只有一个具体工厂类来创建基于基类的派生类,而工厂方法有多个基于工厂基类的具体工厂类来创建基于基类的派生类.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;未完... 抽象工厂&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>awesome 折腾记</title>
+   <link href="http://www.leopan.me/life/2013/07/07/awesome-%E6%8A%98%E8%85%BE%E8%AE%B0/"/>
+   <updated>2013-07-07T21:28:29+08:00</updated>
+   <id>http://www.leopan.me/life/2013/07/07/awesome-折腾记</id>
+   <content type="html">&lt;p&gt;在G+的archlinux Communities中总是能看到有人Po 桌面的，很多码农都是用的平铺式的wm，就像awesome，同学中也不乏有使用xmonad这样的wm，所以对平铺还是有点心动的，毕竟那样的界面写代码似乎非常的舒服，关键是看起来也很geek很装13，在一次又一次的犹豫后，总算是开始了awesome折腾之旅（虽然我的渣14寸笔记本用2个窗口就差不多了，有米还是得入一个显示器啊！）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;安装&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;[code lang=&quot;bash&quot;]
+$ pacman -S awesome # 安装awesome
+$ mkdir ~/.config/awesome # 创建配置文件目录
+$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
+[/code]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配置&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;\n\n
+配置文件主要是lua脚本rc.lua的配置，基本上来说配置的example已经够用，在折腾的时候犹豫不想深入去学习lua所以基本参考了前辈们的例子。如：&lt;/p&gt;
+
+&lt;blockquote&gt;依云仙子的[例子](https://github.com/lilydjwg/myawesomerc)&lt;/blockquote&gt;
+
+
+&lt;p&gt;基本上参考了他写的音量和电池的两个function，其中修改了一下电池信息的function：&lt;/p&gt;
+
+&lt;p&gt;[code lang=&quot;js&quot;]
+function update_batwidget()
+    local bat_dir = &quot;/sys/class/power_supply/BAT0/&quot;
+    local f = io.open(bat_dir..&#39;status&#39;,&#39;r&#39;)
+    if not f then
+        batwidget:set_markup(&#39;&lt;span color=&quot;red&quot;&gt;ERR&lt;/span&gt;&#39;)
+        return
+    end
+    local state = f:read(&#39;&lt;em&gt;l&#39;)
+    f:close()
+    state = battery_state[state] or battery_state.unknown
+    f = io.open(bat_dir .. &#39;present&#39;)
+    now = io.open(bat_dir .. &#39;energy_now&#39;)
+    full = io.open(bat_dir .. &#39;energy_full&#39;)
+    if not f then
+        batwidget:set_markup(&#39;&lt;span color=&quot;red&quot;&gt;ERR&lt;/span&gt;&#39;)
+        return
+    end
+    --local percent = tonumber(f:read(&#39;&lt;/em&gt;l&#39;))
+    local now_n = tonumber(now:read(&#39;&lt;em&gt;l&#39;))
+    local full_n = tonumber(full:read(&#39;&lt;/em&gt;l&#39;))
+    local percent = math.ceil((now_n/full_n)*100)
+    f:close()
+    if percent &amp;lt;= 35 then
+        percent = &#39;&lt;span color=&quot;red&quot;&gt;&#39; .. percent .. &#39;&lt;/span&gt;&#39; .. &#39; | &#39;
+    end
+    batwidget:set_markup(state .. percent .. &#39;%&lt;/span&gt;&#39; .. &#39; | &#39;)
+end
+[/code]&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;应用菜单&lt;/code&gt;主要是用 archlinux-xdg-menu 这个包
+执行如下语句即可生成menu文件，配置到rc.lua中即可：
+[code lang=&quot;bash&quot;]
+xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu &gt; ~/.config/awesome/menu.lua
+[/code]&lt;/p&gt;
+
+&lt;p&gt;关于休眠
+偷懒了一下直接在sudoer中设置了pm-suspend 不需要输入密码，然后rc.lua配置一下即可，
+[code lang=&quot;bash&quot;]
+leo ALL = (ALL) NOPASSWD: /usr/bin/pm-hibernate
+leo ALL = (ALL) NOPASSWD: /usr/bin/pm-suspend
+[/code]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;效果图&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot-1024x575.png&quot; alt=&quot;2013-07-07-201818_1366x768_scrot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;其他&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;其实我觉得除了装X以外，awesome给我的感觉却是不错，当然前提要对基础的一下快捷键有一些了解，否则的话,对于小白来说简直是灾难&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;应该少花时间在无意义的配置上,比如美化&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;awesome 确实 awesome 还得用时间来适应,还需要大屏幕&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://wordpress.org/plugins/syntaxhighlighter/&quot;&gt;syntaxhighlighter&lt;/a&gt;是一个不错的wordpress高亮插件,甩colorcode几条街.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/HaiFongPan/awesome.conf&quot;&gt;无耻的贴一下自己的awesome备份地址&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Arch休眠/挂起直接死掉,原来是我傻逼</title>
+   <link href="http://www.leopan.me/linux/2013/05/18/arche4bc91e79ca0e68c82e8b5b7e79bb4e68ea5e6adbbe68e89e58e9fe69da5e698afe68891e582bbe980bc/"/>
+   <updated>2013-05-18T16:35:53+08:00</updated>
+   <id>http://www.leopan.me/linux/2013/05/18/arche4bc91e79ca0e68c82e8b5b7e79bb4e68ea5e6adbbe68e89e58e9fe69da5e698afe68891e582bbe980bc</id>
+   <content type="html">&lt;h2&gt;问题简述&lt;/h2&gt;
+
+&lt;p&gt;之前安装Arch的时候基本都是&lt;a href=&quot;https://wiki.archlinux.org/index.php/Beginners%27_Guide&quot;&gt;wiki&lt;/a&gt;来的,毕竟wiki是那么的全面,arch新手的福音.后来发现一旦挂起或者休眠就再也无法唤醒了,一直不知道如何解决,未果.&lt;/p&gt;
+
+&lt;p&gt;后来在G+的linux Communities无意间发现说休眠必须要用到Swap,作为一个Linux GUI使用者,表示对linux的文件系统所知甚少.再加之之前不知道哪里看到说一般来说内存有4G可以不需要Swap,所以安装arch的时候没有去给Swap分区&lt;/p&gt;
+
+&lt;h2&gt;解决&lt;/h2&gt;
+
+&lt;p&gt;\n\n
+解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如下:[cc lang=&quot;bash&quot;]
+$ su #root 权限,或者sudo
+$ fallocate -l 512M /swapfile #创建大小为512M的交换文件
+$ dd if=/dev/zero of=/swapfile bs=1M count=512
+$ chmod 600 /swapfile
+$ mkswap /swapfile
+$ swapon /swapfile
+$ vim /etc/fstab #添加
+$ /swapfile none swap defaults 0 0[/cc]&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;然后就Ok,所以说,还得多学学linux的知识...&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Monodevelop开发asp.net mvc2 json序列化出错的问题</title>
+   <link href="http://www.leopan.me/2013/05/10/monodevelop%E5%BC%80%E5%8F%91asp.net%20mvc2%20json%E5%BA%8F%E5%88%97%E5%8C%96%E5%87%BA%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+   <updated>2013-05-10T00:00:00+08:00</updated>
+   <id>http://www.leopan.me/2013/05/10/monodevelop开发asp.net mvc2 json序列化出错的问题</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;author: LeoPan
+comments: true
+date: 2013-05-10 16:18:10+00:00
+layout: post
+slug: monodevelop开发asp.net-mvc2-json序列化出错的问题
+title: MonoDevelop开发ASP.NET MVC2 JSON序列化出错的问题
+wordpress_id: 590
+categories:
+- ASP.NET
+- MONO
+- Study Note
+tags:
+- ASP.NET&lt;/p&gt;
+
+&lt;h2&gt;- MONO&lt;/h2&gt;
+
+&lt;h3&gt;PS:我知道在Linux上写C# ASP.NET是很反人类的事&lt;/h3&gt;
+
+&lt;p&gt;Mono 版本 2.10.9-1&lt;/p&gt;
+
+&lt;p&gt;简单的ASP.NET MVC2的程序
+前台框架:Extjs&lt;/p&gt;
+
+&lt;p&gt;关键代码&lt;/p&gt;
+
+&lt;p&gt;\n\n
+&lt;code&gt;
+//UserController简单代码
+public ActionResult getUser(){
+    User user = new User (a,b,c);
+    JavaScriptSerializer serializer = new JavaScriptSerializer();
+    String strJson = serializer.Serialize(user);
+    return Json(strJson,JsonRequestBehavior.AllowGet);
+}
+&lt;/code&gt;
+[cc lang=&quot;javascript&quot;]
+//Extjs Model中简单代码
+Ext.define(&#39;leo.model.User&#39;,{
+    extend: &#39;Ext.data.Model&#39;,
+    fields: [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;code&amp;gt;proxy: {
+    type: &#39;ajax&#39;,
+    api:{
+        read:&#39;/User/getUser&#39;
+    } , 
+    reader: {
+        type: &#39;json&#39;
+    },  
+}
+&amp;lt;/code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;})
+[/cc]&lt;/p&gt;
+
+&lt;p&gt;当请求发送至后台,后台返回json数据的时候出现错误(###在vs2010下正常)
+&lt;code&gt;(Cannot cast from source type to destination type)
+at System.Web.Script.Serialization.JavaScriptSerializer..ctor (System.Web.Script.Serialization.JavaScriptTypeResolver resolver, Boolean registerConverters) [0x0000d] in /build/mono/src/mono-2.10.9/mcs/class/System.Web.Extensions/System.Web.Script.Serialization/JavaScriptSerializer.cs:66
+at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &amp;lt;filename unknown&amp;gt;:0&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;分析:
+在程序启动后,MonoDevelop应用程序输出中发现System.Web.Extensions 4.0.0.0已经加载了
+&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/05/2013-05-11-000530_1091x668_scrot.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/05/2013-05-11-000530_1091x668_scrot.png&quot; alt=&quot;2013-05-11-000530_1091x668_scrot&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;code&gt;Loaded assembly: ..../System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;可是当请求Controller时,程序又加载了一遍System.Web.Extensions,不过这次是3.5.0.0
+&lt;code&gt;Loaded assembly: ..../System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;于是就知道基本上是冲突了吧.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;解决方法
+在web.config中配置下绑定System.Web.Extensions不指向3.5.0.0即可&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;[cc lang =&quot;xml&quot;]&lt;/p&gt;
+
+&lt;p&gt;[/cc]&lt;/p&gt;
+
+&lt;h3&gt;PPS: 此处web.config 不是Views视图中的web.config 而是整个解决方案中的Web.config.&lt;/h3&gt;
+
+&lt;p&gt;最后,发现我根本就可以不需要用JavaScriptSerializer,不过解决问题总是好的.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>MapReduce 入门笔记</title>
+   <link href="http://www.leopan.me/mapreduce/study%20note/2012/08/07/mapreduce-%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/"/>
+   <updated>2012-08-07T08:49:29+08:00</updated>
+   <id>http://www.leopan.me/mapreduce/study%20note/2012/08/07/mapreduce-入门笔记</id>
+   <content type="html">&lt;p&gt;7月,严格意义上实习的“First blood”，每天早8晚8，感觉自己都还没学到什么，还没做出点东西来的时候，时间已经不经意间流走，甚至甩都不甩我一下，如今已经是8月头了，再不记录点东西，这个月恐怕一篇博文都写不出了。&lt;/p&gt;
+
+&lt;p&gt;MapReduce是实习第一周公司带我的导师要我去了解的一个东西，估计是想看看我的学习能力，理解能力如何，结果我发现自己不是一般的弱，想要变强，只能多看多学多实践。下面记录一些学习到的东西，大部分东西都是摘自论文或者一些博客，还真没什么原创的，不过语言还是自己组织下，加深下印象。（这语气怎么好像跟写技术博一样！明明博客从写流水账\日志就没什么访问量了！）&lt;/p&gt;
+
+&lt;p&gt;\n\n&lt;/p&gt;
+
+&lt;h2&gt;1.什么是MapReduce？&lt;/h2&gt;
+
+&lt;p&gt;《&lt;a href=&quot;http://static.usenix.org/event/osdi04/tech/full_papers/dean/dean.pdf&quot;&gt;MapReduce Simplified Data Processing on Large Clusters&lt;/a&gt;》这是Google大牛Jeffrey Dean的文章，貌似这抽象模型就是他提出来了。《&lt;a href=&quot;http://blog.jobbole.com/1321/&quot;&gt;我是如何向老婆解释MapReduce的&lt;/a&gt;》，这篇文章非常简单易懂的把MapReduce的表达了出来，非技术人员也能很快理解MapReduce到底是做什么。MapReduce在我看来，无非就是问题拆分成独立的子问题（Map），然后各个击破、解决，最后把结果（Reduce）（咦！这不就是分治么？）&lt;/p&gt;
+
+&lt;h2&gt;2.MapReduce抽象模型的工作流程\执行方式:&lt;/h2&gt;
+
+&lt;p&gt;按照网上所有认识MapReduce博文千篇一律的尿性，我要放上一张原理图：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-680x398.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;简言之：在输入数据的记录上进行Map操作，得到中间集&amp;lt;key,value&gt;对集，再对具有相同key的&amp;lt;key,value&gt;对上进行Reduce操作，生成结果输出&lt;/p&gt;
+
+&lt;p&gt;稍微复杂点，可以根据图中的分布:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt; 用户程序将任务分成N片&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; Master主机想空闲的worker工作机器分配任务Map或者Reduce&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; 负责Map的机器读取相关的split数据，分析出key\value对缓存到内存中&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; 将缓存在内存中的key\value对写入本地磁盘，并将数据的相对位置通知master&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; Master负责告知执行reduce的worker数据的位置，由worker读取数据进行排序操作，将相同key的value合并到一个集合中&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; 将不同的key和对应的value添加到reduce函数，reduce函数把结果最终写入输出文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt; 当所有Map、Reduce任务完成后，通知Master，给用户输出结果&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 更详细版本：直接看Jeffrey Dean的论文吧  
+
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;h2&gt;3.MapReduce可应用的场景:&lt;/h2&gt;
+
+&lt;p&gt;其实在网上搜索MapReduce基本都是关于云计算啊，并行计算等等，看上去很可怕，毕竟云这个东西是新鲜玩意儿，大家都想从这块蛋糕中获取点利益，于是你争我抢的时代开始了，扯远了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; MR主要可用在  
+
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;分布grep、分布排序、计算URL访问频率、倒转网络连接图、每个主机的术语向量、倒排索引、web访问日志分析、反响索引构建、文档聚类、机器学习，基于统计的机器翻译，生成整个搜索的索引等大规模数据处理；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;也能用于数据挖掘、信息提取等&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;mapReduce 适合从事数据密集型、结构化大数据的处理和分析&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;虽然上面很多技术闻所未闻见所未见，不过记录下来总是好的。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;4.MapReduce优缺点:&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; MapReduce的优点：  
+
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;1.处理大规模数据&lt;/p&gt;
+
+&lt;p&gt;2.隐藏了繁琐的细节：自动并行化、负载均衡、数据分布和灾备管理等&lt;/p&gt;
+
+&lt;p&gt;3.伸缩性好：增加一台服务器，就能将差不多的计算能力接入集群中&lt;/p&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; MapReduce的缺点：  
+
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;1.不适合实时应用的需求&lt;/p&gt;
+
+&lt;p&gt;2.不适合单一的请求&lt;/p&gt;
+
+&lt;p&gt;3.没有索引，只能靠计算能力来处理&lt;/p&gt;
+
+&lt;blockquote&gt;
+  
+&gt; 
+&gt; 这些都是那会儿接触的时候网上各个博文论文摘录过来的
+&gt; 
+&gt; 
+&lt;/blockquote&gt;
+
+
+&lt;h2&gt;5. MapReduce的task分配机制，出错和冗余机制&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对于处理map的task，最优的分配是处理本地的数据，因为不必要的网络通信容易带来一定的复杂性，如果本地worker处于运行状态，则应当就近原则选择一个worker执行该map；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对于处理reduce任务，选择空闲的worker执行下一条任务列表里面的reduce任务。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;出错和冗余机制：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt; 如果是对于Worker机产生错误，则在失效的机器上产生的map任务将被重新执行，因为其输出时本地磁盘，所以无法访问，如果是完成的reduce任务，则不会再被执行，因为它的输出在全局文件系统中&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对于master机产生的错误，则终止计算，检查状态后可重新执行。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Master如果重复接收到已完成的map任务信息时则会屏蔽掉这类冗余信息以确保结果正确&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reduce完成后产生的冗余信息，可以通过最后的冗余处理来保证下一次运行的质量。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;6.《数学之美》中的一个简单MapReduce例子:&lt;/h2&gt;
+
+&lt;p&gt;最近在拜读吴军大牛的《数学之美》，如果仅仅作为一个想对现有技术算法做一个了解的人来说，书中部分章节极大的满足了这个需求；如果想要对这些技术做一个深度的了解，那在看此书前最好是好好复习复习线性代数、概率论等等。（很明显我还读不懂其中一些比较高深的东西）&lt;/p&gt;
+
+&lt;p&gt;书中的例子非常简单：有两个矩阵A(N_N)、B(N_N)，求矩阵C = A*B（A,B过大，一台服务器无法存下），这个时候用MapReduce的原理来解决就非常简单了（其实就是分而治之），首先将矩阵A拆分10个小矩阵，每一个小矩阵有N/10行&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;将矩阵B拆分为10个小矩阵，每一个小矩阵有N/10列&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;很明显这个时候如果一个服务器处理一个Ai*Bj则能计算出Cij，得到子问题的解，最后将Cij的结果合并起来便是所求矩阵C了，一台服务器搞不定的问题，多台服务器搞定了&lt;/p&gt;
+
+&lt;p&gt;有人肯定会说这个问题简直是太水了，图森破，但是正是这个简单的例子体现MapReduce的根本原理，往往我们解决大问题的灵感都来自于这些最常见，最简单的问题。&lt;/p&gt;
+
+&lt;h2&gt;7.总结：&lt;/h2&gt;
+
+&lt;p&gt;文章水到这里也水得差不多了，东平西凑，没什么自己的见解，权当留作学习回顾之用，想要更多的了解MR还可以去了解Hadoop这类怪兽级框架。PS:真正想要学好一样东西，关键还是看兴趣。&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;全文完&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>流水账</title>
+   <link href="http://www.leopan.me/life/2012/07/08/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+   <updated>2012-07-08T20:23:53+08:00</updated>
+   <id>http://www.leopan.me/life/2012/07/08/流水账</id>
+   <content type="html">&lt;p&gt;也许是因为我昨天的手贱升级了wordpress到最新版，今天起床发现blog崩溃了，具体的说应该是数据库崩掉了，好在一直有用插件自动备份数据库，虽然blog里面没有特别重要的东西，不过作为一种回忆的载体，承载的是一份美好，也可能是遗憾、收获等等。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;\n\n&lt;/p&gt;
+
+&lt;p&gt;这几天的日头很毒辣，5点多外面的天已经很亮了，伴随着大一军训“1,2,3,4”的口号声醒来，然后看看躺在身边的手机，6到没到，也就是说还能在眯一会儿，对于嗜睡的我来说，是幸福也是折磨，毕竟起床的点摆在那里，丝毫没有谦让我的意思。迷迷糊糊的躺到6点半的闹钟响起，然后起床，连一点赖床的机会都不给自己，事实证明，就算是睡了2年懒觉的自己也一样能在6点30起床，雷打不动。&lt;/p&gt;
+
+&lt;p&gt;洗刷完毕，7点不到，这时候日头其实已经升的很高了，阳光的力道很猛，往往能晒出我一身鸡皮疙瘩，这会儿的公交总是最挤的时候，可是能怎样，一样得上。顶着厚重的眼皮，撑着随时可能咕噜叫的肚子，狠一下心也就上了。以前在海宁的时候也没有公交车晕车，不过自从到了杭州，那种推背感，每一下令人作呕。其实这并不是最艰难的，最艰难的是有狐臭。每个人都有自己的难言之隐，狐臭也不是你故意要散发的，这点我可以理解，只不过如果能动个小手术解决掉难道不好嘛？一车子的人，那味儿真心想吐。PS：我有时候我会特地闻闻自己有没有这样的味儿，一个人走在外面，并不一定要穿的多好，但是形象很重要，至少得得体，这也是对别人尊重的一种形式，至少，我是这么觉得。&lt;/p&gt;
+
+&lt;p&gt;8点半，几乎每天我都能赶上这个点到，除了个别和陈布斯挤公交的日子，似乎次次都迟到，这真的是一个迷。6点半到8点半，这算得上是我每天上班最痛苦的时间段之一，这段时间的体验好坏，直接决定了上午的工作效率，确切点说应当是学习效率。实习开始2个礼拜，对公司来说我似乎尚未作出任何实际的贡献，第一个礼拜一直在了解MapReduce、分布式计算方面的一些东西，第二个礼拜涉及到的是多线程编程，那个时候其实稍有信心了，但是一下子又懵了，大学这3年来学到的有关多线程的东西似乎都非常的基础，根本用不到大一点的应用程序中，也就是说，我还得再重新学。两个礼拜几乎都对着一堆的论文、技术博、书本等，猛然发现这3年来脑子的运转速度越来越慢，简而言之是智商降低了，脑子转的不够快，加深急于求进，后果可想而知。很多时候学校本身只是我们踏入社会前的一个跳板，如何利用全看自己。而我便是那个利用差了的人，基础不扎实，更谈不上技术进阶了。所以说，实习的重要重要性在于：一方面检验自己所学成果，另一方面增强自己在实际应用方面的技能。现在的努力无非是为将来的实际应用打基础。每天看似很安逸的学习，其实压力还是挺大的，毕竟会有那么一天我得真刀真枪的干，下场也就两个，要么留下，要么走人。所以为了翻过三座大山，除了严于律己之外还能怎么办？&lt;/p&gt;
+
+&lt;p&gt;不过就算只是短短两个礼拜的实习，除了发现自己在知识方面的欠缺外我也发现了自己身上的很多缺点，可能是平常懒惯了，加上前一段时间无止尽的Dota导致自己无法跟上现在的节奏，因为公司肯定不能玩游戏，所以常常看着看着电脑便不自觉的打开微博、人人、豆瓣等等，这算是患上了社交综合症吗？不停得刷新内容，时刻关注着关注人的动态，再加上有了微博之后，事情传播速度非常快，往往是谣言真相满天飞，这些内容又往往很吸引我，一下子工作时间又耗费了不少，这其实是该自己的反思的事儿，工作归工作，娱乐归娱乐，这两码子事儿搅合在一块儿，哪个都做不好。第二点，发觉自己对电子材料的阅读、接受能力很弱，其实这也应该算在耐心不够的头上，往往对电脑上的东西一目十行，可又记不住，耗时还不得力。再一点，当我对一个东西搞不懂的时候，容易在这个问题上死磕，时间就这么磕走了，雄赳赳气昂昂，头也不回，显然我很应该把握一个度，但是至少在前两周，我还没有做到。最后，我终于意识到了自己有病入膏肓的拖延症，所以明天还是得迎接6点30分的太阳，因为，至今还没把住房落实好。X！&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>写在实习前</title>
+   <link href="http://www.leopan.me/life/2012/04/16/%E5%86%99%E5%9C%A8%E5%AE%9E%E4%B9%A0%E5%89%8D/"/>
+   <updated>2012-04-16T12:18:16+08:00</updated>
+   <id>http://www.leopan.me/life/2012/04/16/写在实习前</id>
+   <content type="html">&lt;p&gt;竟然已经是4月16日了，还记得学期刚开始的时候兴致勃勃的想着考研的事，想着如何认真复习看书，我还真以为我能做的到。事实还是高估了自己，最后的放弃不止是因为不想天天看书，更多的是研究生可能真的不适合我，毕竟我不是学术派，我只想赚点钱养家糊口罢了。&lt;/p&gt;
+
+&lt;p&gt;既然放弃了考研，那就得为工作这条路做好一些准备，比如将近的实习。记得某个早晨收到学校一条短信，提到就业形势不佳，顿时有点紧张，想想5月份的招聘会也很快就要到了，虽然这不是唯一的机会，不过能把握的尽量把握住，毕竟如果能到相对较好的公司实习对将来也是莫大的帮助，毕竟学校教给的东西太少，更多的经验只有实际工作中才能领悟到。想着这些竟然发现简历没有写，头疼的是我发现除了一些基本信息外我的简历竟然是如此的单调，单调到让我有那么些后悔没去把握那些流逝的机会。&lt;/p&gt;
+
+&lt;p&gt;不过接下来的实习希望自己能好好把握，也希望自已有一篇丰厚的实习总结。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>读《围城》</title>
+   <link href="http://www.leopan.me/life/reading/2012/04/10/%E8%AF%BB%E3%80%8A%E5%9B%B4%E5%9F%8E%E3%80%8B/"/>
+   <updated>2012-04-10T16:31:51+08:00</updated>
+   <id>http://www.leopan.me/life/reading/2012/04/10/读《围城》</id>
+   <content type="html">&lt;p&gt;/*&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;断断续续终究还是读完了《围城》，一开始总说没时间看，常常带着这本书穿梭在各种&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不想听的课堂上，但是往往又禁不住手机上网的诱惑，所以读书便是一拖再拖，总算是找&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;了两个安静的下午看完了，我不是一个好读者，读过的书撇开教科书不算，可算真是寥寥&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;无几，当然更不会写什么书评，但是有些想法，还是可以记录下来的，这是第一遍读《&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;城》，我相信我会读第二遍第三遍，好的书从来不会褪色，尤其是这般令人回味无穷的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;*/&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;\n\n&lt;/p&gt;
+
+&lt;p&gt;小时候不爱看书，所以家里也很少买书，但是偶尔买的一些书，像《朝花夕拾》、《钢铁是怎样炼成的》、《三国演义》等等，虽然记不太清　楚，但是我相信这类书应当是语文老师们推荐给我买的，而且都是高中以前买的，只是至今我都没看过这几本书，更别说其他一些名著了。从小便是才疏学浅，一直喜欢理科的东西，不爱文字不爱文学，也总是耐不下心来看书。可总算还是在这个年纪拾起了书本，跟风也好，文艺也罢，书中得到的道理，悟到的想法总是自己的，以后不仅得读，还得多写。写，不是为了给人看，更多的能记录一些想法，观点，还能成熟自己的书面表达能力。第一次听到钱钟书应该是中学语文课本上杨绛先生的《老王》下面的注释吧，其实自己也记不太清楚是不是这篇文章的注释了，毕竟那已经是很久以前的事。&lt;/p&gt;
+
+&lt;p&gt;《围城》中，钱钟书的语言幽默、又常常带着讽刺，情节连贯，故事性强，人物的性格也非常的鲜明。书中的一些细节也常常包含着嘲笑、讽刺，言语的幽默又常常使人发笑，情节令人回味，妙趣横生。主角方鸿渐，读过书，留过洋，算是知识分子，他虽善良正直，可终究是软弱，常常无主见，可却又是一个虚荣的家伙，昧着自己的良心买了国外的文凭。看完全文可谓是“哀其不幸，怒其不争”。不同时间段碰到的不同女人，就像是方鸿渐的情感围城，身在一个围城中想极力的冲出，之后又极力冲进另一个围城。情感是如此，他的工作也是如此。&lt;/p&gt;
+
+&lt;p&gt;从我们出生开始，我们便闯进了人生这座围城，生活中我们总是充满了烦恼，但又充满了幻想，我们试图依靠知识，依靠人脉等来改变自己的命运，书中方鸿渐是如此，我们中的大部分也是如此。这座城中我们看不清未来，也回不到过去，或有胆小不敢向前者，当然也有抱着对未知的向往、好奇，将成功与失败置之度外的勇者，当然部分是愚者，勇敢的向前冲着。城中尔虞我诈，勾心斗角总是少不了的。争来争去不过是为了几个名、几个利，只不过能争到到彩头的大部分是有背景者，看看现下中（蟹）国的官（蟹）员家庭背景就明白的很了。只是更多人愿意去争，哪怕被打的头破血流，甚至永世不得翻身。人生是座大围城，在这里成功者是那些有名有利的人，也是那些隐于市的人。&lt;/p&gt;
+
+&lt;p&gt;书中作者对唐晓芙偏爱有加，没有那些讽刺，只不过最终没有与方鸿渐在一起。我相信很多人心中都有一个唐晓芙，得不到，也忘不了。方鸿渐对唐晓芙是爱，对孙柔嘉也是爱，只不过不懂如何经营自己的爱，不懂经营婚姻。孙小姐在尚未与方鸿渐订婚之时，对其描写很少，往往只是只言片语，或是几次对话。而我过于愚笨，更是不了解孙小姐是怎样一个人。作者写的很精妙，直到赵辛楣说孙小姐为了得到方鸿渐我才恍然明白孙小姐平时举动是多么有用意，只不过方鸿渐并没有察觉到，反而是赵辛楣这个局外人看的清楚。你说两个人如果不了解对方，婚姻能美满？现代人的生活节奏愈来愈快，闪婚已经不是一个新鲜词，但是又有多少人的婚姻美满？我们不顾一切的想进入婚姻这座城，进去了又不顾一切想冲出这座城。不是每一座婚姻之城都是坟墓之城，爱情的美满程度往往取决于两个人的宽容、迁就、信任的程度。&lt;/p&gt;
+
+&lt;p&gt;钱钟书说不希望有人去研究《围城》，但实际书中其实应当是包含着更多不同层次的深意在，只是我读不出，也许脑子不够用，也许经历不够多，我能读到的不过是一些表面，甚至连表面都无法全部理解。&lt;/p&gt;
+
+&lt;p&gt;写了半天竟觉得以上文字纯属扯淡。其实就算脑子里有一些想法，却也表达不好，好生悲哀，还需努力。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>解决Java读取Mysql数据后的乱码问题</title>
+   <link href="http://www.leopan.me/study%20note/2012/02/28/%E8%A7%A3%E5%86%B3java%E8%AF%BB%E5%8F%96mysql%E6%95%B0%E6%8D%AE%E5%90%8E%E7%9A%84%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+   <updated>2012-02-28T15:37:09+08:00</updated>
+   <id>http://www.leopan.me/study%20note/2012/02/28/解决java读取mysql数据后的乱码问题</id>
+   <content type="html">&lt;p&gt;JAVAEE非常让人蛋疼菊紧，好好的一本书，前八章的内容竟然是web编程技术中闪过的，真心不太明白学院老师是如何选教材的。果然还不如去借一本书看，买的好后悔。&lt;/p&gt;
+
+&lt;p&gt;言归正传，以前用的mysql是大神同学给配置好的，所有乱码问题都解决了，这次轮到自己了，其实在mysql的客户端中中文显示是正常的，但是java一读出来就不对了，很显然，应该是mysql编码问题，默认貌似是latin1，虽然我不曾认识这个编码，但是从现在开始获取我要开始憎恨它了。&lt;/p&gt;
+
+&lt;p&gt;从网上找了一些资料，发现主要问题是my.ini这个配置文件，如何找到这个目录呢，我是在C:\Program Files\MySQL\MySQL Server 5.5 目录下面
+关键要修改几个地方：\n\n
+[client]加入
+[cc lang=&quot;perl]default-character-set=gbk[/cc]
+[mysql]也是&lt;/p&gt;
+
+&lt;p&gt;[cc lang=&quot;perl]default-character-set=gbk[/cc]
+并把
+[mysqld]中的
+[cc lang=&quot;perl]character-set-server=utf8 #gbk应该也可以[/cc]&lt;/p&gt;
+
+&lt;p&gt;然后保存文件
+打开控制台
+[cc lang=&quot;perl]net stop mysql //停止mysql服务
+net start mysql //开启mysql服务[/cc]&lt;/p&gt;
+
+&lt;p&gt;然后进入mysql&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+mysql&gt; show variables like &#39;character%&#39;;
+| Variable_name            | Value
+| character_set_client     | gbk
+| character_set_connection | gbk
+| character_set_database   | utf8
+| character_set_filesystem | binary
+| character_set_results    | gbk
+| character_set_server     | utf8
+| character_set_system     | utf8
+| character_sets_dir       | C:\Program Files\MySQL\MySQL Server 5.5\share\charsets\ |
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;如果结果如上所示，应该就不是乱码了。&lt;/p&gt;
+
+&lt;p&gt;如果还是不行。亲参考&lt;a href=&quot;http://developer.51cto.com/art/200906/130425.htm&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Goodbye 2011，Hello 2012</title>
+   <link href="http://www.leopan.me/life/2012/01/24/goodbye-2011efbc8chello-2012/"/>
+   <updated>2012-01-24T00:05:06+08:00</updated>
+   <id>http://www.leopan.me/life/2012/01/24/goodbye-2011efbc8chello-2012</id>
+   <content type="html">&lt;p&gt;♠♠♠♠不知道从什么时候开始起，好像已经懒到什么都不想写了，有些情感放心里便好，但是往往博文又能帮我记录一些生活琐事，一些值得回味的事情与他人分享，本来我也是不提倡把不开心的东西写出来，写出来了就能开心了吗？这未必见得，只不过每个人有每个人的自由，有些事情乱不到我来评头论足，除非，他妨碍到了我。&lt;/p&gt;
+
+&lt;p&gt;♠♠♠♠在0点钟声敲响之时，2011，在农历（&lt;a href=&quot;http://www.guokr.com/article/90696/&quot;&gt;今年为什么没有三十&lt;/a&gt;）上来说，旧的一年结束了，我们迎来了2012。2011这一年对我来说似乎过的非常的快，就仿佛昨日还是2011的开年一样，当然这是夸张了，也许生活中没有太多的事让我去纪念，没有那么多印象深刻的事情发生在我身上，所以才会觉得过的如此之快，以至于现在的我已经生活在了被人们称为世界末日的2012。&lt;/p&gt;
+
+&lt;p&gt;\n\n&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;感情篇：&lt;/strong&gt;2010年的年末做了一个最残酷的决定，和ex的分手，其实某种意义上说换做别人是我，也许会好好的过日子下去。可能不太适应被怀疑，对猜疑最是受不了，种种事情的发生，让我的2011上半年似乎还处于分手的阴影中，提出的人是我，所以似乎显得特别的内疚，不是没有想过去和好，只是某些我很在意地方我做不到退一步，所以我无法保证没有下一次的分手。有人会说真心相爱的人根本不在乎这些，性格不合可以磨合，拿这些作为分手理由只能说明不够相爱。也许吧，只是我也普通到不能再普通的平凡人，我没有那么包容的心，我很自私，随着时间的推移很多事情也会慢慢的过去，既然自私了一次就坏人做到底。于是2011这一年似乎处于爱情的空白期，没有中意的对象，也没有对象中意我。一方面自己一开始没有摆脱前一次，导致一段时间内没有想过要找女朋友；另外一方面，生活的交际好像越来越窄，每天面对的只是一张张老脸，很少有简单新鲜女生的面孔。似乎已经没有大一时候的干劲了，自从不做领导开始，认识的人少了，以前认识的也不过是生活中的泛泛之交，既然没有相同的话题，也没什么心思去联系。生活就像给我开了一个大玩笑，从我开始喜欢女生开始，好像很久没有这样长时间没有喜欢的对象了。于是寒假一回家，妈妈开始唠叨什么时候能抱孙子，亲戚们开始问有没有女朋友。其实没有女朋友我们可以有五姑娘，不是么？期待2012。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;生活篇：&lt;/strong&gt;生活上似乎没有什么大起大幅的事情，但是越来越发现自己回家的时间越来越少了，作为一个离学校并不远的人来说，在家的时间真的太少了，一个学期差不多就是回了2次家，撇开寒暑假不算，其实我完全有一个月一回家，半个月一回家的机会，只是每当空闲的时候时间总是被自己消磨掉，现在想不来发生了什么，只是每当想到要回一次家的时候又总有事情缠身。毕业的临近预示着陪父母的时间将越来越少，而父母总是担心自己钱不够花，穿的不够暖，身体会不会不好等等，自己似乎从来没有主动去关心爸妈身体如何。爸妈很不容易的撑起一个家，本身家里经济条件并不是很好，还要每个月承担我其实并不少的生活费，让我于心有愧。&lt;/p&gt;
+
+&lt;p&gt;2011在生活中最忠实的陪伴者就是我的耳鸣了，它的不离不弃让我感动到死。几次就医的无果让我彻底对这家伙没辙了，只能想方设法的去忘记它的存在，可总在夜深人静的时候，它又悄悄打开我的心门，似乎要与我诉说什么。耳鸣一下子打破原本应该充满激情的生活，歌，不能听了；电影，很少看了；连上课的都成了一种折磨。每每去医院总是能遇到几个同病相怜的人，大家交换着自己的故事，却又那么的无可奈何，当然，他们中的大部分，是大叔甚至大爷了。2011年，没有体会一秒钟的“静”。哦不！如果把梦也算进去的话，那还是有，至少梦中从来没有体会到耳鸣的感觉，如果梦可以一天天延续着做就好了，这样能将梦当做现实，现实，只不过是另一场可怕的噩梦。&lt;/p&gt;
+
+&lt;p&gt;所以2012的期望很简单，希望自己能更加关心爸妈，然后让耳鸣这家伙shut fuck up。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;学习篇：&lt;/strong&gt;学习方面，就像&lt;a href=&quot;http://blog.fity.me&quot;&gt;ReallyTang&lt;/a&gt;说的那样，其实过去两年半的课堂都是睡过来的。其实上课不听最后取得了不差的成绩并不能说明他一定是一个天才，也许他平时自学的很好，也许他考试很有“技巧”。其实2011这一年，似乎听的课比从前越来越少，当然我可以找借口说老师用话筒，声音响的让我无法接受，还记得刚开始耳鸣那会儿甚至是想吐出来，并不是针对老师，只是说真的是不习惯耳鸣。当然耳鸣是一个原因，其次我相信是从高中带过来的坏已习惯，上课不听。至于高中为什么不听，我只能归咎于叛逆了，每天和同桌，基友们玩玩闹闹，哪里还静得下心来学习，当然这些事情永远是不会后悔的，青春的日子每个人都有自己放荡不羁的方式。所以这一年来，课堂是不是睡觉就是玩手机，当然还有些时候是压根就没有到课堂，而是躺在温暖的被窝里，或者哪里野去了。回顾上半年那个学期，总之专业课方面考挺不错的，所以上课的不听但是下课的作业很多时候都是自己好好完成的。知识这东西在于积累，好的老师往往能吸引住学生，没有生动授课的老师教导，那么大部分时候靠的就是自学了。总而言之在上课方面，自己的做法真的无法跟认真这两个字搭上边，至于2012，我不想有什么决心，因为2011的开年我已经说过了，关键还是看自己吧。&lt;/p&gt;
+
+&lt;p&gt;这一年里，第一次接触到项目的概念是从MC哪儿，那个关于音频分析的项目，说来真心惭愧，一分忙也没有帮上，第一个借口是耳朵不给力似乎对声音方面的东西有些排斥，第二个理由，可能真心不对这类东西感兴趣，以至于最后等于没有参加这一个项目，非常的惭愧和抱歉。由于大三了，很多同学开始找老师做项目赚经验之类的，由于自己比较懒一开始似乎没有这个想法，也对自己的能力保持怀疑状态。后来X5问我有没有想过做项目，一番交流之后决定自己去找水哥谈谈。水哥，非常不错的一个老师，上课幽默，人也好。我也只是询问下能否跟着他做项目，似乎他想都没想便是答应了，也并不了解我的底细，他总说不会可以学，然后很有幸认识了远舰小组的成为包括X5，军哥和彬哥。于是在2011的11,12月，大半的和他们混在一起，一个年级参差的组合，大三大四加研一，和他们在一起很欢乐，在一起的时间总是在码着代码，碰到解决不了的问题可以请教他们。他们也都非常的热心。其实在这个项目中我发现自己的不听课导致的问题终于来了，基础不扎实，有时候会逻辑紊乱。有时候会为了一个小bug调试到深夜里，项目中属于自己做的部分不多，而且很不完美。这一点让我觉得其实软件工程文档还是必要的。只顾着码代码，一旦错了说不定就是从头来过，这一点我已经深深明白了。只有不断的从实践中去发现错误我们才能更好的认识自我，基础这东西其实它就摆在那儿，拿不拿，由你。2012，希望做的更好&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;展望篇：&lt;/strong&gt;已经到了和2011 say goodbye的时候了，作为一个传统的炎黄子孙，今天才是2012壬辰年的第一天。这么一写下来，其实2011也不是完全没有可圈可点的地方，只是也许并不太充实，很多时候活在迷茫之中，每天的任务只是机械的上课，然后玩手机，回寝室就是电脑，人人，微博，g+，豆瓣这样无止尽的刷，屏幕面前只是一张麻木的脸，不过幸好，最后的时间还是过的非常充实的，在远舰学到了非常多的东西，也有了很大的学习欲望。2012年我想从心而做，做自己爱做的事情，也希望自己在处事，学习，生活，感情方面都能更加的成熟与稳重。其实无乱那个方面都不要强求自己，但是对于一些想做的事希望保持一种坚持的态度，在困难面前，不逼自己一把，你怎么知道自己不能成功？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;At last:Goodbye 2011,Hello 2012&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>wp回复邮件代码</title>
+   <link href="http://www.leopan.me/life/2012/01/20/wp%E5%9B%9E%E5%A4%8D%E9%82%AE%E4%BB%B6%E4%BB%A3%E7%A0%81/"/>
+   <updated>2012-01-20T16:26:19+08:00</updated>
+   <id>http://www.leopan.me/life/2012/01/20/wp回复邮件代码</id>
+   <content type="html">&lt;p&gt;很久没有折腾wordpress了
+昨天在读&lt;a href=&quot;http://xavierskip.sinaapp.com/?p=303&quot;&gt;《什么是墙为什么要翻墙以及怎么翻墙》&lt;/a&gt;这篇文章的时候，发现他的主题挺好看的，于是找到了一个不错的UI设计师的站点：&lt;a href=&quot;http://xuui.net&quot;&gt;xu Design&lt;/a&gt;，一个不错的站点，当然好看的东西总是要收费的，很多时候拿钱去换一些别人付出辛劳汗水的作品是无可厚非的。当然这个主题是免费的，我又无耻的做了一回伸手党。&lt;br/&gt;
+\n\n
+好像在上次升级之后之前用的回复评论邮件的插件失效了，虽然本博没有什么留言，但是人要追求的总是更好的，于是决定用另外一种方法去实现回复邮件的代码，代码网上搜了一箩筐，但是部分博客中的文章总是把别人的代码复制过来，上面还写着只需将代码复制进主题中即可，但是亲身试过之后才知道，直接复制根本无法实现功能，反而导致了访问博客时网页中什么都无法显示，当然代码基本上是对的，唯一出现的问题是，复制下来的代码中往往该是英文的单引号的地方是中文的单引号，在我人品还不算差的时候，只能说明这些是博主们的错误，当然很多时候一些站点无非是为了赚取访问量+广告点击率。&lt;/p&gt;
+
+&lt;p&gt;废话不说了，代码加在function.php代码中：
+[code lang=&quot;php&quot;]add_action(&#39;comment_post&#39;, &#39;comment_mail_notify&#39;);
+function comment_mail_notify($comment_id) {
+    $admin_notify = &#39;0&#39;;
+        // admin 要不要收回覆通知 ( &#39;1&#39;=要 ; &#39;0&#39;=不要 )，显然这里是最好为0，要不然自己别人在回复自己评论时会出现2封邮件
+    $admin_email = get_bloginfo (&#39;admin_email&#39;);
+        // $admin_email 可改為你指定的 e-mail.
+    $comment = get_comment($comment_id);
+    $comment_author_email = trim($comment-&gt;comment_author_email);
+    $parent_id = $comment-&gt;comment_parent ? $comment-&gt;comment_parent :”;
+    global $wpdb;
+    if ($wpdb-&gt;query(&quot;Describe {$wpdb-&gt;comments} comment_mail_notify&quot;) == ”)
+        $wpdb-&gt;query(&quot;ALTER TABLE {$wpdb-&gt;comments} ADD COLUMN comment_mail_notify TINYINT NOT NULL DEFAULT 0;&quot;);
+    if (($comment_author_email != $admin_email &amp;amp;&amp;amp; isset($&lt;em&gt;POST[&#39;comment_mail_notify&#39;]))
+                || ($comment_author_email== $admin_email &amp;amp;&amp;amp; $admin_notify == &#39;1&#39;))
+        $wpdb-&gt;query(&quot;UPDATE {$wpdb-&gt;comments} SET comment_mail_notify=&#39;1&#39; WHERE comment_ID=&#39;$comment_id&#39;&quot;);
+        $notify = $parent_id ? get_comment($parent_id)-&gt;comment_mail_notify : &#39;0&#39;;
+        $spam_confirmed = $comment-&gt;comment_approved;
+    if ($parent_id != ” &amp;amp;&amp;amp; $spam_confirmed != &#39;spam&#39; &amp;amp;&amp;amp; $notify == &#39;1&#39;) {
+        $wp_email = &#39;Leo&#39; . preg_replace(&#39;#^www.#&#39;, ”, strtolower($&lt;/em&gt;SERVER[&#39;SERVER_NAME&#39;]));
+                // LEO改为你的即可
+        $to = trim(get_comment($parent_id)-&gt;comment_author_email);
+        $subject = &#39;您在 [&#39; . get_option(&quot;blogname&quot;) . &#39;] 的回复有了回应&#39;;
+        $message = &#39;
+            &lt;div style=&quot;background-color:#eef2fa; border:1px solid #d8e3e8; color:#111; padding:0 15px; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px;&quot;&gt;
+            &lt;p&gt;&#39; . trim(get_comment($parent_id)-&gt;comment_author) . &#39;, 您好!&lt;/p&gt;
+            &lt;p&gt;您曾在《&#39; . get_the_title($comment-&gt;comment_post_ID) . &#39;》的留言:&lt;br /&gt;
+            &#39; . trim(get_comment($parent_id)-&gt;comment_content) . &#39;&lt;/p&gt;
+            &lt;p&gt;&#39; . trim($comment-&gt;comment_author) . &#39; 給您的回应:&lt;br /&gt;
+            &#39; . trim($comment-&gt;comment_content) . &#39;&lt;br /&gt;&lt;/p&gt;
+            &lt;p&gt;您可以点击 &lt;a href=&quot;&#39; . htmlspecialchars(get_comment_link($parent_id)) . &#39;&quot;&gt;查看回应完整內容&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;欢迎再度光临本博客 &lt;a href=&quot;&#39; . get_option(&#39;home&#39;) . &#39;&quot;&gt;&#39; . get_option(&#39;blogname&#39;) . &#39;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;(此邮件为系统自动发送，请勿回复.)&lt;/p&gt;
+            &lt;/div&gt;&#39;;
+            $from = &quot;From: \&quot;&quot; . get_option(&#39;blogname&#39;) . &quot;\&quot; &amp;lt;$wp_email&gt;&quot;;
+            $headers = &quot;$from\nContent-Type: text/html; charset=&quot; . get_option(&#39;blog_charset&#39;) . &quot;\n&quot;;
+            wp_mail( $to, $subject, $message, $headers );
+//echo &#39;mail to &#39;, $to, &#39;&lt;br/&gt; &#39; , $subject, $message; // for testing
+}
+}&lt;/p&gt;
+
+&lt;p&gt;/&lt;em&gt; 自动加勾选栏 &lt;/em&gt;/
+function add_checkbox() {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &#39;&amp;lt;input type=&quot;checkbox&quot; name=&quot;comment_mail_notify&quot; id=&quot;comment_mail_notify&quot; value=&quot;comment_mail_notify&quot; checked=&quot;checked&quot; style=&quot;margin-left:20px;&quot; /&amp;gt;&amp;lt;label for=&quot;comment_mail_notify&quot;&amp;gt;有人回复是邮件通知我&amp;lt;/label&amp;gt;&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+add_action(&#39;comment_form&#39;, &#39;add_checkbox&#39;); [/code]
+PS:代码源自网络&lt;/p&gt;
+
+&lt;p&gt;这边有个小问题是在自己回复别人评论的时候，页面上也会出现“有人回复是邮件通知我”这个勾选栏，看着比较烦就自己把它改掉了：
+[code lang=&quot;php&quot;]
+function add_checkbox() {
+$current_user = wp_get_current_user();
+if ( 0 == $current_user-&gt;ID||&#39;leopure110@gmail.com&#39;!=$current_user-&gt;user_email ) {//没有登录
+    echo &#39;&lt;input type=&quot;checkbox&quot; name=&quot;comment_mail_notify&quot; id=&quot;comment_mail_notify&quot; value=&quot;comment_mail_notify&quot; checked=&quot;checked&quot; style=&quot;margin-left:20px;&quot; /&gt;
+   &lt;label for=&quot;comment_mail_notify&quot;&gt;有人回复是邮件通知我&lt;/label&gt;&#39;;
+}&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;[/code]&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;全文完&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>2011-2012学期总结</title>
+   <link href="http://www.leopan.me/life/2012/01/08/2011-2012%E5%AD%A6%E6%9C%9F%E6%80%BB%E7%BB%93/"/>
+   <updated>2012-01-08T15:42:08+08:00</updated>
+   <id>http://www.leopan.me/life/2012/01/08/2011-2012学期总结</id>
+   <content type="html">&lt;p&gt;相对来说这个学期确实非常的短，小小总结一下是必要的
+9月份：开学，然后各种给自己找理由不听课。
+10月份：国庆过后似乎3个礼拜，已经记不得自己在干嘛了，估计还是各种给自己找理由不做事不学习。
+11月份：加入远舰小组打酱油，一开始学习了googlemap的API，虽然后来没用上，但是那个礼拜确实一直在学习这东西；后来接触\n\nibatis+struts2+jquery-easyui，自己负责的部分感觉做的很差，软件工程没有学好，也没有利用进去。
+12月份：各种大型实验开始，delphi，J2ME,SE,OS,LINUX，基本上把我折磨死了
+1月份前半天：复习+预习+考试。&lt;/p&gt;
+
+&lt;p&gt;总结：有时候好好学习的念头总是在脑子里闪过，可是总是不会去实施，其实我并不讨厌写代码，有时候反而觉得写起来非常棒，只是前些时候的基础打的不够扎实导致了自己在实践中往往犯下很多错误，然后实践精力就浪费了，也同时落下了功课，当时功课这东西主要还是上课不好好听的原因，导致最后的两门课看书时间没了，就像OS考试之前我以为我懂了，结果做题太少，一考试我就傻眼了，做完后心情非常的失落，不是因为考的差，关键在于任课老师是认识的，让我心存内疚，愧疚，遗憾。总之这个学期就那么过去了。再一年半大学就毕业了，说实在的，这寒假确实该好好想想是否该考研，这是一个很严重的问题。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A* 八数码问题JAVA版本</title>
+   <link href="http://www.leopan.me/artificial%20intelligence/study%20note/2011/12/06/a-%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98JAVA%E7%89%88%E6%9C%AC/"/>
+   <updated>2011-12-06T09:28:37+08:00</updated>
+   <id>http://www.leopan.me/artificial%20intelligence/study%20note/2011/12/06/a-八数码问题JAVA版本</id>
+   <content type="html">&lt;p&gt;作业拖欠了好久了，暂时搞个java的应付下作业先，参考了下网上的资料写的，bug还是有的吧。
+\n\n
+[code lang=&quot;java&quot;]
+import java.util.*;
+//Extension points扩展节点
+class ExtenPoint// 扩展节点类
+{
+    private int f;// f为估价函数的值
+    private int g;// g为扩展节点的深度
+    private int h;// 不在位数
+    private String currentState;// 当前状态
+    private String endState;// 目的状态
+    private ExtenPoint parent;// 当前状态的父亲
+    public int getF() {return f;}
+    public void setF(int f){this.f = f;}
+    public int getG(){return g;}
+    public void setG(int g) {this.g = g;}
+    public int getH() {return h;}
+    public void setH(int h) {this.h = h;}
+    public String getCurrentState() {return currentState;}
+    public void setCurrentState(String currentState) {this.currentState = currentState;}
+    public String getEndState() {return endState;}
+    public void setEndState(String endState) {this.endState = endState;}
+    public ExtenPoint getParent() {return parent;}
+    public void setParent(ExtenPoint parent) {this.parent = parent;}
+    public ExtenPoint(String currentState, String endState, int g) {
+        this.currentState = currentState;// 当前状态初始化
+        this.endState = endState;// 目的状态初始化
+        this.g = g;// 深度赋值
+        parent = this;// 父节点初始化
+        this.h =calcH2(currentState, endState);
+        //System.out.println(this.h);
+        f = g + h;// 估价函数
+    }&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public int calcH(String state, String end) {// 计算h
+    int result = 0;
+    char[] startState = state.toCharArray();// 转为数组
+    char[] endState = end.toCharArray();// 转为数组
+    for (int i = 0; i &amp;lt; state.length()&amp;amp;&amp;amp;i&amp;lt;end.length(); i++) {// 循环到状态末
+        if (startState[i] != endState[i])// 如果不在位
+        {
+            result++;// 计算不在位的数码作为启发信息的度量
+        }
+    }
+    return result;// 返回不在位信息
+}
+public int calcH2(String state, String end) {// 计算h,h为从该位置到目标位置的距离
+    int result = 0;
+    char[] startState = state.toCharArray();// 转为数组
+    char[] endState = end.toCharArray();// 转为数组
+    for (int i = 0; i &amp;lt; state.length()&amp;amp;&amp;amp;i&amp;lt;end.length(); i++) {// 循环到状态末
+        for(int j=0;j&amp;lt;end.length();j++)
+        {
+            if(i!=j&amp;amp;&amp;amp;startState[i]==endState[j])
+            {
+                //System.out.println(&quot;i: &quot;+i+&quot; j: &quot;+j);
+                result+=Math.abs((i/3-j/3)+(i%3-j%3));
+                //System.out.println(&quot;result:&quot;+Math.abs((i/3-j/3)+(i%3-j%3)));
+            }
+        }
+    }
+    return result;// 返回不在位信息
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;class cmp implements Comparator&lt;ExtenPoint&gt; {// 比较函数
+    public int compare(ExtenPoint x, ExtenPoint y) {// 重写比较方法
+        return x.getF() - y.getF();// 根据估价函数大小排序
+    }
+}&lt;/p&gt;
+
+&lt;p&gt;public class MyTable {
+    private String start;// 初始状态
+    private String end;// 目的状态
+    private long time =System.currentTimeMillis();// 运行时间
+    private int ExtenPointNum;// 扩展节点数
+    private PriorityQueue&lt;ExtenPoint&gt; open;// open表,采用优先队列
+    private HashMap&amp;lt;String, ExtenPoint&gt; closed;// closed表
+    private HashMap&amp;lt;String, ExtenPoint&gt; Record;// 记录结果的节点
+    private int[] turn = { 0, 1, 0, -1,1,0,-1,0};// 移动&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public MyTable(String start, String end) {// 构造函数
+    this.start = start;// 初始化初始状态
+    this.end = end;// 初始化目的状态
+}
+
+private int getRev(String str) {// 逆序数 根据C++原版逆序数写的
+    int result = 0;// 定义结果
+    char[] s = str.toCharArray();// string转为char的数组
+    for (int i = 0; i &amp;lt; 9; i++) {
+        for (int j = 0; j &amp;lt; i; j++) {
+            if ((s[j] &amp;gt;s[i]) &amp;amp;&amp;amp;s[i]!=&#39;0&#39; )
+                result++;
+        }
+    }
+    return result;
+}
+
+private boolean hasWay() {// 通过逆序数判断是否有解.
+    /*System.out.println(&quot;getReverseNum(start):&quot;+getRev(start));
+    System.out.println(&quot;getReverseNum(end):&quot;+getRev(end));*/
+    return getRev(start) % 2 == getRev(end) % 2;
+}
+
+public boolean solve()// 搜索算法
+{
+    if (hasWay()) {
+        // 如果有解
+        open = new PriorityQueue&amp;lt;ExtenPoint&amp;gt;(100000, new cmp());// 初始化open表
+        closed = new HashMap&amp;lt;String, ExtenPoint&amp;gt;();// 初始化closed表
+        open.add(new ExtenPoint(start, end, 0));// 将第初始状态点放入open表中
+        Record = new HashMap&amp;lt;String, ExtenPoint&amp;gt;();// 初始化Record
+        Record.put(start, new ExtenPoint(start, end, 0));// 记录结果节点的表 加入第一个状态
+        ExtenPointNum = 0;// 扩展节点数为0
+        while (!open.isEmpty())// open表不为空
+        {
+            ExtenPoint current = open.poll();// 获得优先队列中首个元素
+            closed.put(current.getCurrentState(), current);// 放入closed表
+            if (current.getCurrentState().equals(end))// 如果该节点的状态与目的状态相同
+            {
+                time = (long)System.currentTimeMillis()-time;;
+
+                return true;// 返回true表示找到了
+            }
+            int xofSpace;// 3*3的表格，除得到在第几行
+            int yofSpace;// 取模得到列数
+            int indexOfChange;// 需要跟空格交换的数
+            String nextState = current.getCurrentState();// 初始化下个状态
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;//              System.out.println(&quot;current:&quot;+current.getCurrentState());
+                ExtenPoint nextPoint;// 下一个扩展节点
+                for (int i = 0; i &amp;lt; 4; i++) {
+                    // 移动空格所在位子
+                    xofSpace = current.getCurrentState().indexOf(&quot;0&quot;) / 3;// 3*3的表格，除得到在第几行
+                    yofSpace = current.getCurrentState().indexOf(&quot;0&quot;) % 3;// 取模得到列数
+                    xofSpace += turn[i];// 左右移动
+                    yofSpace += turn[i+4];// 上下移动
+                    if (xofSpace &gt;= 0 &amp;amp;&amp;amp; xofSpace &amp;lt;= 2 &amp;amp;&amp;amp; yofSpace &gt;= 0
+                            &amp;amp;&amp;amp; yofSpace &amp;lt;= 2)// 判断移动之后是否还在表格中
+                    {
+                        nextState = current.getCurrentState();// 初始化下个状态
+//                      System.out.println(&quot;nextStatePre:&quot;+nextState);
+                        indexOfChange = xofSpace * 3 + yofSpace;// 得到与空格交换的数字的下标
+//                      System.out.println(&quot;indexOfChange:&quot;+indexOfChange);
+                        char next[] = nextState.toCharArray();// 转换成字符串
+                        next[current.getCurrentState().indexOf(&quot;0&quot;)]=next[indexOfChange];// 移动空格
+                        next[indexOfChange] = &#39;0&#39;;// 移动交换的数字&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                    nextState =String.valueOf(next);
+                        //getNextState(nextState,indexOfChange,current.getCurrentState().indexOf(&quot;0&quot;));// 获得新的状态
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;//                      System.out.println(&quot;nextState:&quot;+nextState);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                    nextPoint = new ExtenPoint(nextState, end,current.getG() + 1);// 初始化下一个扩展节点
+
+                    if (Record.containsKey(nextState)) {
+                        // 如果已经在Record表中出现过，相当于书本163页伪码的存在于open或者closed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;//                          System.out.println(&quot;nextState:&quot;+nextState);
+                            if (closed.containsKey(nextState))// 如果在closed表中出现过
+                            {
+                                // 如果过该子状态沿着一条比在closed表中已有的更短路径到达,则将该状态移到open中
+                                ExtenPoint temp = closed.get(nextState);//得到closed表中的节点
+                                if(temp.getF()&gt;nextPoint.getF())//如果nextPoint的估价函数小于closed表中点
+                                {
+                                    closed.remove(nextState);//将该状态移入open
+                                    open.add(nextPoint);
+                                }
+                            } else {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                            ExtenPoint temp =Record.get(nextState);
+                            if(temp.getF()&amp;gt;nextPoint.getF())//如果表中的估价函数函数大于这个节点
+                            {
+                                Record.remove(nextState);
+                                Record.put(nextState, nextPoint);//替换
+                            }
+                        }
+                    }
+                    else {// 如果没有出现过
+                        nextPoint.setParent(current);// 设置该节点的父节点
+                        Record.put(nextState, nextPoint);//放入记录中
+                        open.add(nextPoint);//放入open表等到扩展
+                        ExtenPointNum++;// 扩展节点数增加
+                    }
+                }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;//                  System.out.println();
+                }
+            }
+        } else {// 无解返回false&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        return false;
+    }
+    time = (long)System.currentTimeMillis()-time;//(new Date().getTime()-starttime.getTime());
+    return true;// 无解返回false
+}
+public void print(){//打印结果
+    System.out.println(&quot;步骤数：&quot; + Record.get(end).getG());//打印步骤数
+    System.out.println(&quot;扩展节点数：&quot; + closed.size());//打印步骤数
+    ExtenPoint point = Record.get(end);//获得目标状态
+    ExtenPoint []answer = new ExtenPoint[Record.get(end).getG()];//初始化实例对象
+    for (int i=0;!point.getParent().equals(point);i++) {//获得结果
+        answer[i]=point;
+        point = point.getParent();//寻找它的父节点
+    }
+    for(int j=Record.get(end).getG()-1;j&amp;gt;=0;j--){//循环打印出结果
+        for(int i=0;i&amp;lt;9;i+=3)
+            System.out.println(answer[j].getCurrentState().substring(i,i+3));
+        System.out.println();
+    }
+}
+
+public long getTime()// 获得运行时间
+{
+    return this.time;
+}
+
+public int getExtenPointNum()// 获得扩展节点数
+{
+    return this.ExtenPointNum;
+}
+public static void main(String args[])
+{
+
+    String startstate=&quot;283164705&quot;;//定义初始状态
+    String endstate =&quot;123804765&quot;;//定义目标状态
+    MyTable mytable = new MyTable(startstate,endstate);//初始化mytable的实例对象
+    System.out.println(&quot;初始状态==&amp;gt;目的状态&quot;);//在屏幕输出初始状态和目的状态
+    for(int i=0;i&amp;lt;9;i+=3)
+    {
+        System.out.print(startstate.substring(i,i+3));
+        if(i==3)System.out.print(&quot;====&amp;gt;&quot;);
+        else System.out.print(&quot;     &quot;);
+        System.out.print(endstate.substring(i,i+3));
+        System.out.println();
+    }
+    System.out.println();
+    if(mytable.solve())//如果有解
+    {
+        //有解
+        mytable.print();//打印结果
+        System.out.println(&quot;生成节点数：&quot; + mytable.getExtenPointNum());//打印扩展节点数
+        System.out.println(&quot;运行时间数：&quot; + mytable.getTime());//打印时间
+    }else{
+        System.out.println(&quot;该转换无解&quot;);//如果无解
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+[/code]&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>如何区别32位系统和64位系统的问题</title>
+   <link href="http://www.leopan.me/life/2011/09/10/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E5%92%8C64%E4%BD%8D%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+   <updated>2011-09-10T19:35:57+08:00</updated>
+   <id>http://www.leopan.me/life/2011/09/10/如何区别32位系统和64位系统的问题</id>
+   <content type="html">&lt;p&gt;突然想到水哥在操作系统课上布置了一个题目，不要查看系统信息的情况下了解区别哪个是32位系统哪个是64位系统？
+这个问题出来的时候第一反应是看Int之类的取值范围，由于计算机知识比较缺乏，所以还是google了一下到底64位和32
+位系统在这个方面有什么区别，结果发现原来32位和64位的int都是4个字节，但是long就不一样了，32位系统上，32位；
+而在64位系统上，long类型是64位的。。
+：&lt;/p&gt;
+
+&lt;p&gt;[cc lang=&quot;c&quot;]&lt;/p&gt;
+
+&lt;h1&gt;include &quot;stdafx.h&quot;&lt;/h1&gt;
+
+&lt;p&gt;int main(int argc, char* argv[])
+{
+int l = sizeof(long);
+printf(&quot;%d&quot;,l);
+return 0;
+}
+[/cc]
+打印出了4 说明Long是4个字节，属于32，但是没有64位系统的就没试过。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>推荐wordpress的一个插件WordPress Database Backup</title>
+   <link href="http://www.leopan.me/wordpress/2011/09/09/%E6%8E%A8%E8%8D%90wordpress%E7%9A%84%E4%B8%80%E4%B8%AA%E6%8F%92%E4%BB%B6WordPress%20Database%20Backup/"/>
+   <updated>2011-09-09T23:08:19+08:00</updated>
+   <id>http://www.leopan.me/wordpress/2011/09/09/推荐wordpress的一个插件WordPress Database Backup</id>
+   <content type="html">&lt;p&gt;今天购买了一个新的空间和域名，准备摆脱dotcloud和tk了。com让我感觉是装逼利器，没有办法，没有技术就只能装装B了，所以就注册了，主机和域名的购买地址就不写了，以免广告之嫌。但是com这个域名一直在处理中，还不能用，所以先着手博客搬家。
+博客搬家其实最重要的数据库，主题和插件。
+备份数据库的话对于我这个dotcloud的用户来说又是有点挑战了，毕竟没有用过，所以找了一款不错的插件：WordPress Database Backup
+这个插件一键式搞定数据库的备份
+&lt;a href=&quot;http://wordpress.org/extend/plugins/wp-db-backup/&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最近博客留言系统不太对。留言跳到wp-contents-post.php，但是留言是成功的。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ubuntu+eclipse+wtk2.5.2+eclipseme配置j2me环境</title>
+   <link href="http://www.leopan.me/j2me/study%20note/2011/09/06/ubuntu+eclipse+wtk2.5.2+eclipseme%E9%85%8D%E7%BD%AEj2me%E7%8E%AF%E5%A2%83/"/>
+   <updated>2011-09-06T08:43:16+08:00</updated>
+   <id>http://www.leopan.me/j2me/study%20note/2011/09/06/ubuntu+eclipse+wtk2.5.2+eclipseme配置j2me环境</id>
+   <content type="html">&lt;p&gt;这学期开始上J2ME了，老师说起来很简单，但是还是必须认真对待，之前没有试过J2ME的东西。
+将博客作为记录学习笔记的地方还是不错的选择。windows下面的安装比较简单，ubuntu下面的配置稍微有点点不一样，无非就是安装wtk的时候用到了指令，在这里也记录下。
+当然事先还是靠了谷歌搜索下了，知识是前人留下的产物，理解了就是自己的。&lt;/p&gt;
+
+&lt;p&gt;前提1：JDK
+前提2：eclipse
+前提3：&lt;a href=&quot;http://sourceforge.net/projects/eclipseme/files/eclipseme/&quot;&gt;eclipseme&lt;/a&gt;（我的理解是链接eclipse和模拟器的一个枢纽吧）
+前提4：wtk（Wireless Toolkit，这里我又不太理解了，有一个是名字带ml版本的，比较大，另一个没有ml，不知道啥区别？？？我下了第二个，程序还是跑起来，就先不管了）
+&lt;a href=&quot;http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javame-419430.html#sun_java_wireless_toolkit-2.5.2_01b-oth-JPR&quot;&gt;wtk下载&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;JDK安装：略过
+eclipse安装：直接解压
+wtk的安装：
+首先官网上似乎说了要先下载几个包才能正确安装wtk:
+前提：这里用到了su的权限，
+执行下列指令即可[cc lang=&quot;perl&quot;]$sudo apt-get install libxpm-dev libxt-dev libx11-dev libice-dev libsm-dev libc6-dev libstdc++6-4.4-dev[/cc]
+接着是wtk的安装,这里有人说要取得权限先:
+[cc lang=&quot;perl&quot;]$sudo chmod +x sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin
+./sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin#开始安装，不行的话加sudo
+[/cc]
+\n\n
+安装的时候开始会有条例让你同意，这里我是按了很久回车建才按到底的，中间过程很简单，无非要你选择个jdk的路径
+如果不知到java路径在哪里的：
+[cc lang=&quot;perl&quot;]leopure@ubuntu:~$ which java
+/usr/bin/java#这是我的，所以jdk目录：/usr/bin
+[/cc]
+之后wtk就安装完成。&lt;/p&gt;
+
+&lt;p&gt;接着安装的是插件eclipseme：首先是打开是eclipse--&gt;help--&gt;install new software&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2011/09/1.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2011/09/1.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+点击add
+&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2011/09/2.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2011/09/2.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+填入信息。选择自己的插件
+&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2011/09/3.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2011/09/3.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;装完重启eclipse&lt;/p&gt;
+
+&lt;p&gt;这样插件就装好了，然后在windows--&gt;preference中如果又J2ME选项就表示成功了,但是这里还得配置下:
+选择好wtkroot的目录.
+&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2011/09/5.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2011/09/5.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2011/09/6.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2011/09/6.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;全文完，转载说明出处。本文非全部原创。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>推荐wordpress上好用的代码插件</title>
+   <link href="http://www.leopan.me/wordpress/2011/09/04/%E6%8E%A8%E8%8D%90wordpress%E4%B8%8A%E5%A5%BD%E7%94%A8%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8F%92%E4%BB%B6/"/>
+   <updated>2011-09-04T15:30:40+08:00</updated>
+   <id>http://www.leopan.me/wordpress/2011/09/04/推荐wordpress上好用的代码插件</id>
+   <content type="html">&lt;p&gt;作为一个软件工程的学生，在文章中插入代码是很正常的事情，前段时间发现了coolcode，但是不知道为什么我在编辑文章的时候没有看到标签，这样使用起来不是很方便，所以又找了一款新插件，对于wordpress新手还是挺好用的，codecolorer，下载在&lt;a href=&quot;http://wordpress.org/extend/plugins/codecolorer/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用方式非常简单：
+选择html编辑模式：&lt;img src=&quot;http://img2081.poco.cn/mypoco/myphoto/20110904/15/64353555201109041520001025975135185_003.jpg&quot; alt=&quot;&quot; /&gt;
+\n\n&lt;/p&gt;
+
+&lt;p&gt;点击cc，键入语言：&lt;img src=&quot;http://img2081.poco.cn/mypoco/myphoto/20110904/15/64353555201109041521132878590740518_002.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然可以自己键入这段代码：
+&lt;img src=&quot;http://img2081.poco.cn/mypoco/myphoto/20110904/15/64353555201109041521132878590740518_001.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最后的效果：[cc lang=&quot;c++&quot;]cout&amp;lt;&amp;lt;&quot;hello,world!&quot;&amp;lt;&amp;lt;endl[/cc]&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>一个乡下人进城的故事</title>
+   <link href="http://www.leopan.me/life/2011/08/26/%E4%B8%80%E4%B8%AA%E4%B9%A1%E4%B8%8B%E4%BA%BA%E8%BF%9B%E5%9F%8E%E7%9A%84%E6%95%85%E4%BA%8B/"/>
+   <updated>2011-08-26T04:18:50+08:00</updated>
+   <id>http://www.leopan.me/life/2011/08/26/一个乡下人进城的故事</id>
+   <content type="html">&lt;p&gt;这几天雨下的很平凡，温度也渐渐降低，可没有降低的是工地施工的噪音，耳朵里无法言语出来的杂音。
+/&lt;em&gt;之前老早打算和ZL去看imax的哈7，也终于在昨天如愿以偿，只不过是订了晚上的票，来回也算是艰辛折磨了，走之前正在更新ubuntu，不料宕机，重启再也无法进入系统，这算是一件悲催的事情，果不其然，回来之后也无法进入，懒得搜索了这次，本来10G的东西，正好也升到20G，重新来过不算什么。只是意料之中悲剧的事情发生了，没有被封wp，然后再dotcloud的push之下，博客消失了。还有也没什么东西，算是个教训，也在刚刚全部恢复了。&lt;/em&gt;/\n\n
+说说昨天吧，跨入万象城百老汇的一瞬间我仿佛被扒去了伪装成小P民的外衣，眼里放出了金光，十足把自己未见过市面的本质体现出来了，映如我眼帘的是一片金币辉煌和一个个豪华的洋文logo，我想这就是国际品牌吧，一家家连听都没听过店名，只记得进去之后拿起一双三位数的拖鞋我就无所适从了，面露尴尬，服务员也只是看着我，没有任何表情，宏大的大厦里，原谅我用了宏大，这个词也不太理解，就当是比巨大还巨大吧，其实大厦里这会儿人不算挺多，空荡荡的只有这些寂寞的商品，而这些服务员其实也是司空见惯了如我这般乡下来的穷人，一副穷酸像拿起一件我所支付不起的商品，然后面露让她能发笑的表情，我想这也算是他们这里的一项娱乐项目了吧。而我望着光滑的能映出人像的，我叫不出算是什么的金属装饰品时，一个红T，黑牛仔，还不合时宜的混搭一双白色回力时，忍不住狠狠的赏了自己两个字——傻逼。
+作为一个傻逼也是要饿，一开始也没有想到底这里会有多少家能吃的店，看见的只有肯德基，麦当劳，星巴克，必胜客等高端社会出来的产物，想想口袋里的钱，曾一个寒碜了得，这是眼睛一辆看到了味千拉面，很耳熟，似乎身边好多人都吃过，想想这总算是吃得其了，和ZL悻悻走入，不想拿起菜单，最便宜的面是23，这得两个汉堡，4顿快餐，本欲走出，只是服务员都看着，未免会有失体面，下狠了决心，那就两碗最便宜的面吧，面汤也算不错，这么贵的面又怎么能不再微博上装B一把，未想到有人说这是勾兑的汤底，想想不知是否算是上了当，不过汤也算得不错，又是大品牌的东西，也算是值，即便将来不再吃这货了，也有可以装B的说我算是吃过味千的人，当然对象也只能是比我还寒碜的人，于是心中又不由的一喜。
+之后看了哈7。也总算是见识到了什么是3d的，什么是IMax的，作为一个没见过什么市面的人，这回总算是见过市面，当然在走进苏宁电器的时候我才发现原来苹果的电脑可以是那么大，不仅大而且帅，忍不住又要上前把玩把玩，似乎又有点不太好意思，未料其实服务员也是看了看我们，定知不会买，便连招呼都不打，更不提招待了，自顾自己聊天休闲，而我也体验了一把什么是mac，当然还有很多手机，各种适用。当然这是我也发现有一个保安叔叔拿着那里的一个样机一直在看小说，仿佛很入迷，况且还是一台三星的I9000这一系列的高端产品，看得不亦乐乎，又非常的仔细，突然心中又飘过一个可怕的念头，不如将来当个保安，像这样的保安平日什么数码产品碰不到，只要打好了关系，店员店长也不会来管，这简直是一个美差！
+之后的之后又见了许多许多现在我已经记不清的东西，这就是一个乡下人进城的故事。也许这将一辈子印烙在故事主人公的心中，且久久不能平息。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ubuntu+wordpress+dotcloud搭建属于自己的博客</title>
+   <link href="http://www.leopan.me/dotcloud/ubuntu/2011/08/21/ubuntu+wordpress+dotcloud%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+   <updated>2011-08-21T23:10:31+08:00</updated>
+   <id>http://www.leopan.me/dotcloud/ubuntu/2011/08/21/ubuntu+wordpress+dotcloud搭建属于自己的博客</id>
+   <content type="html">&lt;p&gt;最近是流行搭博客么？表示没有什么水平，没钱买空间和域名，就用了免费的tk域名和免费的dotcloud，步骤还算是比较简单的，所以拿出来分享下，也由于博客没有人气，所以算是自己的日志或者是记录怎么搭建。
+首先当然是准备工作，安装Dotcloud CLI(Command Line Interface)，由于通过easy_install安装所以
+首先安装easy_install：
+[cc lang=&quot;Perl&quot;]  $wget http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+   $tar -xf setuptools-0.6c11.tar.gz
+   $cd setuptools-0.6c11
+   $sudo python2.7 setup.py install   //其中的python2.7大家换成自己机器上的
+[/cc]\n\n
+  接下来才是安装Dotcloud CLI:
+[cc lang=&quot;Perl&quot;]$sudo easy_install pip &amp;amp;&amp;amp; sudo pip install dotcloud   //安装python-pip以安装  [/cc]
+此时dotcloud CLI应该装完,可以用最简单的命令测试:
+[cc lang=&quot;perl&quot;] $dotcloud[/cc]
+此时键入API KEY，API Key可以登录dotcloud网站在 setting里找到。&lt;/p&gt;
+
+&lt;p&gt;此时可以创建你的blog所在目录了，例如我的myapp/blog/&lt;a href=&quot;http://cn.wordpress.org/&quot;&gt;wordpress&lt;/a&gt;，&lt;a href=&quot;http://cn.wordpress.org/&quot;&gt;wordpress&lt;/a&gt;在官方下载。中英随意。
+将wordpress解压到你的目录下面。&lt;/p&gt;
+
+&lt;p&gt;接着键入代码：
+[cc lang=&quot;perl&quot;]cd myapp/blog/wordpress
+git clone https://github.com/qpleple/wordpress-on-dotcloud #此处如果没有安装git则sudo apt-get install git
+mv wordpress-on-dotcloud/* .
+dotcloud create myblog #你app自己的名字
+dotcloud push myblog
+dotcloud push myblog
+dotcloud push myblog #push 2-3次工程进入提示网址即可5分钟注册wordpress
+[/cc]&lt;/p&gt;
+
+&lt;p&gt;最后可以绑定你的域名：
+[cc lang=&quot;perl&quot;]$ dotcloud alias add myblog.www www.example.com[/cc]
+根据提示更改DNS。&lt;/p&gt;
+
+&lt;p&gt;这样自己的blog就搭建完了，当然push的功能非常不完美，容易坏事儿。推荐使用ssh。
+推荐mckelvin的简易教程：http://www.mckelvin.tk/?p=740&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Hello,World!</title>
+   <link href="http://www.leopan.me/helloworld/2011/08/20/hello-world/"/>
+   <updated>2011-08-20T11:14:04+08:00</updated>
+   <id>http://www.leopan.me/helloworld/2011/08/20/hello-world</id>
+   <content type="html">
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello ,World!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+
+</feed>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      LeoPan &middot; 人生就是不断的做选择题
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>小屋如舟衾似沙<br>灵芝劫尽枕芦花<br>杜宇声声归何处<br>群玉山头第一家<br></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archives/">Archives</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about-me/">About me</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+<!--     <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v</span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2014. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">LeoPan</a>
+            <small>人生就是不断的做选择题</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/linux/2013/05/18/arche4bc91e79ca0e68c82e8b5b7e79bb4e68ea5e6adbbe68e89e58e9fe69da5e698afe68891e582bbe980bc/">
+        Arch休眠/挂起直接死掉,原来是我傻逼
+      </a>
+    </h1>
+
+    <span class="post-date">18 May 2013</span>
+    <h2>问题简述</h2>
+
+<p>之前安装Arch的时候基本都是<a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">wiki</a>来的,毕竟wiki是那么的全面,arch新手的福音.后来发现一旦挂起或者休眠就再也无法唤醒了,一直不知道如何解决,未果.</p>
+
+<p>后来在G+的linux Communities无意间发现说休眠必须要用到Swap,作为一个Linux GUI使用者,表示对linux的文件系统所知甚少.再加之之前不知道哪里看到说一般来说内存有4G可以不需要Swap,所以安装arch的时候没有去给Swap分区</p>
+
+<h2>解决</h2>
+
+    <!-- <h2>问题简述</h2>
+
+<p>之前安装Arch的时候基本都是<a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">wiki</a>来的,毕竟wiki是那么的全面,arch新手的福音.后来发现一旦挂起或者休眠就再也无法唤醒了,一直不知道如何解决,未果.</p>
+
+<p>后来在G+的linux Communities无意间发现说休眠必须要用到Swap,作为一个Linux GUI使用者,表示对linux的文件系统所知甚少.再加之之前不知道哪里看到说一般来说内存有4G可以不需要Swap,所以安装arch的时候没有去给Swap分区</p>
+
+<h2>解决</h2>
+
+<p>\n\n
+解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki</p>
+
+<ul>
+<li>如下:[cc lang="bash"]
+$ su #root 权限,或者sudo
+$ fallocate -l 512M /swapfile #创建大小为512M的交换文件
+$ dd if=/dev/zero of=/swapfile bs=1M count=512
+$ chmod 600 /swapfile
+$ mkswap /swapfile
+$ swapon /swapfile
+$ vim /etc/fstab #添加
+$ /swapfile none swap defaults 0 0[/cc]</li>
+</ul>
+
+
+<p>然后就Ok,所以说,还得多学学linux的知识...</p>
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2013/05/10/monodevelop%E5%BC%80%E5%8F%91asp.net%20mvc2%20json%E5%BA%8F%E5%88%97%E5%8C%96%E5%87%BA%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">
+        Monodevelop开发asp.net mvc2 json序列化出错的问题
+      </a>
+    </h1>
+
+    <span class="post-date">10 May 2013</span>
+    <hr />
+
+<p>author: LeoPan
+comments: true
+date: 2013-05-10 16:18:10+00:00
+layout: post
+slug: monodevelop开发asp.net-mvc2-json序列化出错的问题
+title: MonoDevelop开发ASP.NET MVC2 JSON序列化出错的问题
+wordpress_id: 590
+categories:
+- ASP.NET
+- MONO
+- Study Note
+tags:
+- ASP.NET</p>
+
+<h2>- MONO</h2>
+
+<h3>PS:我知道在Linux上写C# ASP.NET是很反人类的事</h3>
+
+<p>Mono 版本 2.10.9-1</p>
+
+<p>简单的ASP.NET MVC2的程序
+前台框架:Extjs</p>
+
+<p>关键代码</p>
+
+    <!-- <hr />
+
+<p>author: LeoPan
+comments: true
+date: 2013-05-10 16:18:10+00:00
+layout: post
+slug: monodevelop开发asp.net-mvc2-json序列化出错的问题
+title: MonoDevelop开发ASP.NET MVC2 JSON序列化出错的问题
+wordpress_id: 590
+categories:
+- ASP.NET
+- MONO
+- Study Note
+tags:
+- ASP.NET</p>
+
+<h2>- MONO</h2>
+
+<h3>PS:我知道在Linux上写C# ASP.NET是很反人类的事</h3>
+
+<p>Mono 版本 2.10.9-1</p>
+
+<p>简单的ASP.NET MVC2的程序
+前台框架:Extjs</p>
+
+<p>关键代码</p>
+
+<p>\n\n
+<code>
+//UserController简单代码
+public ActionResult getUser(){
+    User user = new User (a,b,c);
+    JavaScriptSerializer serializer = new JavaScriptSerializer();
+    String strJson = serializer.Serialize(user);
+    return Json(strJson,JsonRequestBehavior.AllowGet);
+}
+</code>
+[cc lang="javascript"]
+//Extjs Model中简单代码
+Ext.define('leo.model.User',{
+    extend: 'Ext.data.Model',
+    fields: ['a','b','c'],</p>
+
+<pre><code>&lt;code&gt;proxy: {
+    type: 'ajax',
+    api:{
+        read:'/User/getUser'
+    } , 
+    reader: {
+        type: 'json'
+    },  
+}
+&lt;/code&gt;
+</code></pre>
+
+<p>})
+[/cc]</p>
+
+<p>当请求发送至后台,后台返回json数据的时候出现错误(###在vs2010下正常)
+<code>(Cannot cast from source type to destination type)
+at System.Web.Script.Serialization.JavaScriptSerializer..ctor (System.Web.Script.Serialization.JavaScriptTypeResolver resolver, Boolean registerConverters) [0x0000d] in /build/mono/src/mono-2.10.9/mcs/class/System.Web.Extensions/System.Web.Script.Serialization/JavaScriptSerializer.cs:66
+at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &lt;filename unknown&gt;:0</code></p>
+
+<ul>
+<li>分析:
+在程序启动后,MonoDevelop应用程序输出中发现System.Web.Extensions 4.0.0.0已经加载了
+<a href="http://www.leopan.me/wp-content/uploads/2013/05/2013-05-11-000530_1091x668_scrot.png"><img src="http://www.leopan.me/wp-content/uploads/2013/05/2013-05-11-000530_1091x668_scrot.png" alt="2013-05-11-000530_1091x668_scrot" /></a></li>
+</ul>
+
+
+<p><code>Loaded assembly: ..../System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll</code></p>
+
+<p>可是当请求Controller时,程序又加载了一遍System.Web.Extensions,不过这次是3.5.0.0
+<code>Loaded assembly: ..../System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll</code></p>
+
+<p>于是就知道基本上是冲突了吧.</p>
+
+<ul>
+<li>解决方法
+在web.config中配置下绑定System.Web.Extensions不指向3.5.0.0即可</li>
+</ul>
+
+
+<p>[cc lang ="xml"]</p>
+
+<p>[/cc]</p>
+
+<h3>PPS: 此处web.config 不是Views视图中的web.config 而是整个解决方案中的Web.config.</h3>
+
+<p>最后,发现我根本就可以不需要用JavaScriptSerializer,不过解决问题总是好的.</p>
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/mapreduce/study%20note/2012/08/07/mapreduce-%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">
+        MapReduce 入门笔记
+      </a>
+    </h1>
+
+    <span class="post-date">07 Aug 2012</span>
+    <p>7月,严格意义上实习的“First blood”，每天早8晚8，感觉自己都还没学到什么，还没做出点东西来的时候，时间已经不经意间流走，甚至甩都不甩我一下，如今已经是8月头了，再不记录点东西，这个月恐怕一篇博文都写不出了。</p>
+
+<p>MapReduce是实习第一周公司带我的导师要我去了解的一个东西，估计是想看看我的学习能力，理解能力如何，结果我发现自己不是一般的弱，想要变强，只能多看多学多实践。下面记录一些学习到的东西，大部分东西都是摘自论文或者一些博客，还真没什么原创的，不过语言还是自己组织下，加深下印象。（这语气怎么好像跟写技术博一样！明明博客从写流水账\日志就没什么访问量了！）</p>
+
+    <!-- <p>7月,严格意义上实习的“First blood”，每天早8晚8，感觉自己都还没学到什么，还没做出点东西来的时候，时间已经不经意间流走，甚至甩都不甩我一下，如今已经是8月头了，再不记录点东西，这个月恐怕一篇博文都写不出了。</p>
+
+<p>MapReduce是实习第一周公司带我的导师要我去了解的一个东西，估计是想看看我的学习能力，理解能力如何，结果我发现自己不是一般的弱，想要变强，只能多看多学多实践。下面记录一些学习到的东西，大部分东西都是摘自论文或者一些博客，还真没什么原创的，不过语言还是自己组织下，加深下印象。（这语气怎么好像跟写技术博一样！明明博客从写流水账\日志就没什么访问量了！）</p>
+
+<p>\n\n</p>
+
+<h2>1.什么是MapReduce？</h2>
+
+<p>《<a href="http://static.usenix.org/event/osdi04/tech/full_papers/dean/dean.pdf">MapReduce Simplified Data Processing on Large Clusters</a>》这是Google大牛Jeffrey Dean的文章，貌似这抽象模型就是他提出来了。《<a href="http://blog.jobbole.com/1321/">我是如何向老婆解释MapReduce的</a>》，这篇文章非常简单易懂的把MapReduce的表达了出来，非技术人员也能很快理解MapReduce到底是做什么。MapReduce在我看来，无非就是问题拆分成独立的子问题（Map），然后各个击破、解决，最后把结果（Reduce）（咦！这不就是分治么？）</p>
+
+<h2>2.MapReduce抽象模型的工作流程\执行方式:</h2>
+
+<p>按照网上所有认识MapReduce博文千篇一律的尿性，我要放上一张原理图：</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg"><img src="http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-680x398.jpg" alt="" /></a></p>
+
+<p>简言之：在输入数据的记录上进行Map操作，得到中间集&lt;key,value>对集，再对具有相同key的&lt;key,value>对上进行Reduce操作，生成结果输出</p>
+
+<p>稍微复杂点，可以根据图中的分布:</p>
+
+<ol>
+<li><p> 用户程序将任务分成N片</p></li>
+<li><p> Master主机想空闲的worker工作机器分配任务Map或者Reduce</p></li>
+<li><p> 负责Map的机器读取相关的split数据，分析出key\value对缓存到内存中</p></li>
+<li><p> 将缓存在内存中的key\value对写入本地磁盘，并将数据的相对位置通知master</p></li>
+<li><p> Master负责告知执行reduce的worker数据的位置，由worker读取数据进行排序操作，将相同key的value合并到一个集合中</p></li>
+<li><p> 将不同的key和对应的value添加到reduce函数，reduce函数把结果最终写入输出文件</p></li>
+<li><p> 当所有Map、Reduce任务完成后，通知Master，给用户输出结果</p></li>
+</ol>
+
+
+<blockquote>
+  
+> 
+> 更详细版本：直接看Jeffrey Dean的论文吧  
+
+> 
+> 
+</blockquote>
+
+
+<h2>3.MapReduce可应用的场景:</h2>
+
+<p>其实在网上搜索MapReduce基本都是关于云计算啊，并行计算等等，看上去很可怕，毕竟云这个东西是新鲜玩意儿，大家都想从这块蛋糕中获取点利益，于是你争我抢的时代开始了，扯远了。</p>
+
+<blockquote>
+  
+> 
+> MR主要可用在  
+
+> 
+> 
+</blockquote>
+
+
+<ul>
+<li><p>分布grep、分布排序、计算URL访问频率、倒转网络连接图、每个主机的术语向量、倒排索引、web访问日志分析、反响索引构建、文档聚类、机器学习，基于统计的机器翻译，生成整个搜索的索引等大规模数据处理；</p></li>
+<li><p>也能用于数据挖掘、信息提取等</p></li>
+<li><p>mapReduce 适合从事数据密集型、结构化大数据的处理和分析</p></li>
+<li><p>虽然上面很多技术闻所未闻见所未见，不过记录下来总是好的。</p></li>
+</ul>
+
+
+<h2>4.MapReduce优缺点:</h2>
+
+<blockquote>
+  
+> 
+> MapReduce的优点：  
+
+> 
+> 
+</blockquote>
+
+
+<p>1.处理大规模数据</p>
+
+<p>2.隐藏了繁琐的细节：自动并行化、负载均衡、数据分布和灾备管理等</p>
+
+<p>3.伸缩性好：增加一台服务器，就能将差不多的计算能力接入集群中</p>
+
+<blockquote>
+  
+> 
+> MapReduce的缺点：  
+
+> 
+> 
+</blockquote>
+
+
+<p>1.不适合实时应用的需求</p>
+
+<p>2.不适合单一的请求</p>
+
+<p>3.没有索引，只能靠计算能力来处理</p>
+
+<blockquote>
+  
+> 
+> 这些都是那会儿接触的时候网上各个博文论文摘录过来的
+> 
+> 
+</blockquote>
+
+
+<h2>5. MapReduce的task分配机制，出错和冗余机制</h2>
+
+<ul>
+<li><p>对于处理map的task，最优的分配是处理本地的数据，因为不必要的网络通信容易带来一定的复杂性，如果本地worker处于运行状态，则应当就近原则选择一个worker执行该map；</p></li>
+<li><p>对于处理reduce任务，选择空闲的worker执行下一条任务列表里面的reduce任务。</p></li>
+</ul>
+
+
+<p>出错和冗余机制：</p>
+
+<ul>
+<li><p> 如果是对于Worker机产生错误，则在失效的机器上产生的map任务将被重新执行，因为其输出时本地磁盘，所以无法访问，如果是完成的reduce任务，则不会再被执行，因为它的输出在全局文件系统中</p></li>
+<li><p>对于master机产生的错误，则终止计算，检查状态后可重新执行。</p></li>
+<li><p>Master如果重复接收到已完成的map任务信息时则会屏蔽掉这类冗余信息以确保结果正确</p></li>
+<li><p>Reduce完成后产生的冗余信息，可以通过最后的冗余处理来保证下一次运行的质量。</p></li>
+</ul>
+
+
+<h2>6.《数学之美》中的一个简单MapReduce例子:</h2>
+
+<p>最近在拜读吴军大牛的《数学之美》，如果仅仅作为一个想对现有技术算法做一个了解的人来说，书中部分章节极大的满足了这个需求；如果想要对这些技术做一个深度的了解，那在看此书前最好是好好复习复习线性代数、概率论等等。（很明显我还读不懂其中一些比较高深的东西）</p>
+
+<p>书中的例子非常简单：有两个矩阵A(N_N)、B(N_N)，求矩阵C = A*B（A,B过大，一台服务器无法存下），这个时候用MapReduce的原理来解决就非常简单了（其实就是分而治之），首先将矩阵A拆分10个小矩阵，每一个小矩阵有N/10行</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png"><img src="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png" alt="" /></a></p>
+
+<p>将矩阵B拆分为10个小矩阵，每一个小矩阵有N/10列</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png"><img src="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png" alt="" /></a></p>
+
+<p>很明显这个时候如果一个服务器处理一个Ai*Bj则能计算出Cij，得到子问题的解，最后将Cij的结果合并起来便是所求矩阵C了，一台服务器搞不定的问题，多台服务器搞定了</p>
+
+<p>有人肯定会说这个问题简直是太水了，图森破，但是正是这个简单的例子体现MapReduce的根本原理，往往我们解决大问题的灵感都来自于这些最常见，最简单的问题。</p>
+
+<h2>7.总结：</h2>
+
+<p>文章水到这里也水得差不多了，东平西凑，没什么自己的见解，权当留作学习回顾之用，想要更多的了解MR还可以去了解Hadoop这类怪兽级框架。PS:真正想要学好一样东西，关键还是看兴趣。</p>
+
+<p>&lt;全文完></p>
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2012/07/08/%E6%B5%81%E6%B0%B4%E8%B4%A6/">
+        流水账
+      </a>
+    </h1>
+
+    <span class="post-date">08 Jul 2012</span>
+    <p>也许是因为我昨天的手贱升级了wordpress到最新版，今天起床发现blog崩溃了，具体的说应该是数据库崩掉了，好在一直有用插件自动备份数据库，虽然blog里面没有特别重要的东西，不过作为一种回忆的载体，承载的是一份美好，也可能是遗憾、收获等等。</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg"><img src="http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg" alt="" /></a></p>
+
+    <!-- <p>也许是因为我昨天的手贱升级了wordpress到最新版，今天起床发现blog崩溃了，具体的说应该是数据库崩掉了，好在一直有用插件自动备份数据库，虽然blog里面没有特别重要的东西，不过作为一种回忆的载体，承载的是一份美好，也可能是遗憾、收获等等。</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg"><img src="http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg" alt="" /></a></p>
+
+<p>\n\n</p>
+
+<p>这几天的日头很毒辣，5点多外面的天已经很亮了，伴随着大一军训“1,2,3,4”的口号声醒来，然后看看躺在身边的手机，6到没到，也就是说还能在眯一会儿，对于嗜睡的我来说，是幸福也是折磨，毕竟起床的点摆在那里，丝毫没有谦让我的意思。迷迷糊糊的躺到6点半的闹钟响起，然后起床，连一点赖床的机会都不给自己，事实证明，就算是睡了2年懒觉的自己也一样能在6点30起床，雷打不动。</p>
+
+<p>洗刷完毕，7点不到，这时候日头其实已经升的很高了，阳光的力道很猛，往往能晒出我一身鸡皮疙瘩，这会儿的公交总是最挤的时候，可是能怎样，一样得上。顶着厚重的眼皮，撑着随时可能咕噜叫的肚子，狠一下心也就上了。以前在海宁的时候也没有公交车晕车，不过自从到了杭州，那种推背感，每一下令人作呕。其实这并不是最艰难的，最艰难的是有狐臭。每个人都有自己的难言之隐，狐臭也不是你故意要散发的，这点我可以理解，只不过如果能动个小手术解决掉难道不好嘛？一车子的人，那味儿真心想吐。PS：我有时候我会特地闻闻自己有没有这样的味儿，一个人走在外面，并不一定要穿的多好，但是形象很重要，至少得得体，这也是对别人尊重的一种形式，至少，我是这么觉得。</p>
+
+<p>8点半，几乎每天我都能赶上这个点到，除了个别和陈布斯挤公交的日子，似乎次次都迟到，这真的是一个迷。6点半到8点半，这算得上是我每天上班最痛苦的时间段之一，这段时间的体验好坏，直接决定了上午的工作效率，确切点说应当是学习效率。实习开始2个礼拜，对公司来说我似乎尚未作出任何实际的贡献，第一个礼拜一直在了解MapReduce、分布式计算方面的一些东西，第二个礼拜涉及到的是多线程编程，那个时候其实稍有信心了，但是一下子又懵了，大学这3年来学到的有关多线程的东西似乎都非常的基础，根本用不到大一点的应用程序中，也就是说，我还得再重新学。两个礼拜几乎都对着一堆的论文、技术博、书本等，猛然发现这3年来脑子的运转速度越来越慢，简而言之是智商降低了，脑子转的不够快，加深急于求进，后果可想而知。很多时候学校本身只是我们踏入社会前的一个跳板，如何利用全看自己。而我便是那个利用差了的人，基础不扎实，更谈不上技术进阶了。所以说，实习的重要重要性在于：一方面检验自己所学成果，另一方面增强自己在实际应用方面的技能。现在的努力无非是为将来的实际应用打基础。每天看似很安逸的学习，其实压力还是挺大的，毕竟会有那么一天我得真刀真枪的干，下场也就两个，要么留下，要么走人。所以为了翻过三座大山，除了严于律己之外还能怎么办？</p>
+
+<p>不过就算只是短短两个礼拜的实习，除了发现自己在知识方面的欠缺外我也发现了自己身上的很多缺点，可能是平常懒惯了，加上前一段时间无止尽的Dota导致自己无法跟上现在的节奏，因为公司肯定不能玩游戏，所以常常看着看着电脑便不自觉的打开微博、人人、豆瓣等等，这算是患上了社交综合症吗？不停得刷新内容，时刻关注着关注人的动态，再加上有了微博之后，事情传播速度非常快，往往是谣言真相满天飞，这些内容又往往很吸引我，一下子工作时间又耗费了不少，这其实是该自己的反思的事儿，工作归工作，娱乐归娱乐，这两码子事儿搅合在一块儿，哪个都做不好。第二点，发觉自己对电子材料的阅读、接受能力很弱，其实这也应该算在耐心不够的头上，往往对电脑上的东西一目十行，可又记不住，耗时还不得力。再一点，当我对一个东西搞不懂的时候，容易在这个问题上死磕，时间就这么磕走了，雄赳赳气昂昂，头也不回，显然我很应该把握一个度，但是至少在前两周，我还没有做到。最后，我终于意识到了自己有病入膏肓的拖延症，所以明天还是得迎接6点30分的太阳，因为，至今还没把住房落实好。X！</p>
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2012/04/16/%E5%86%99%E5%9C%A8%E5%AE%9E%E4%B9%A0%E5%89%8D/">
+        写在实习前
+      </a>
+    </h1>
+
+    <span class="post-date">16 Apr 2012</span>
+    <p>竟然已经是4月16日了，还记得学期刚开始的时候兴致勃勃的想着考研的事，想着如何认真复习看书，我还真以为我能做的到。事实还是高估了自己，最后的放弃不止是因为不想天天看书，更多的是研究生可能真的不适合我，毕竟我不是学术派，我只想赚点钱养家糊口罢了。</p>
+
+<p>既然放弃了考研，那就得为工作这条路做好一些准备，比如将近的实习。记得某个早晨收到学校一条短信，提到就业形势不佳，顿时有点紧张，想想5月份的招聘会也很快就要到了，虽然这不是唯一的机会，不过能把握的尽量把握住，毕竟如果能到相对较好的公司实习对将来也是莫大的帮助，毕竟学校教给的东西太少，更多的经验只有实际工作中才能领悟到。想着这些竟然发现简历没有写，头疼的是我发现除了一些基本信息外我的简历竟然是如此的单调，单调到让我有那么些后悔没去把握那些流逝的机会。</p>
+
+<p>不过接下来的实习希望自己能好好把握，也希望自已有一篇丰厚的实习总结。</p>
+
+    <!-- <p>竟然已经是4月16日了，还记得学期刚开始的时候兴致勃勃的想着考研的事，想着如何认真复习看书，我还真以为我能做的到。事实还是高估了自己，最后的放弃不止是因为不想天天看书，更多的是研究生可能真的不适合我，毕竟我不是学术派，我只想赚点钱养家糊口罢了。</p>
+
+<p>既然放弃了考研，那就得为工作这条路做好一些准备，比如将近的实习。记得某个早晨收到学校一条短信，提到就业形势不佳，顿时有点紧张，想想5月份的招聘会也很快就要到了，虽然这不是唯一的机会，不过能把握的尽量把握住，毕竟如果能到相对较好的公司实习对将来也是莫大的帮助，毕竟学校教给的东西太少，更多的经验只有实际工作中才能领悟到。想着这些竟然发现简历没有写，头疼的是我发现除了一些基本信息外我的简历竟然是如此的单调，单调到让我有那么些后悔没去把握那些流逝的机会。</p>
+
+<p>不过接下来的实习希望自己能好好把握，也希望自已有一篇丰厚的实习总结。</p>
+ -->
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page3">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/">Newer</a>
+    
+  
+</div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,279 @@
+---
+author: LeoPan
+comments: true
+date: 2013-09-08 13:37:39+00:00
+layout: post
+slug: '设计模式简单学习——工厂模式'
+title: 设计模式简单学习——工厂模式
+wordpress_id: 706
+categories:
+- Design Pattern
+tags:
+- C#
+- 设计模式
+---
+
+### 什么是设计模式?
+
+
+
+
+
+
+
+  * 90年代由建筑引入计算机行业
+
+
+  * 用于解决程序存在各式各样问题而提出的一系列解决方案
+
+
+  * 致力于代码可重用,更容易被理解,保证代码可靠性,程序的正确性,可维护性强等
+
+
+  * 用于解决由针对上下文的特定问题的解决方案
+\n\n
+
+
+
+
+
+### 设计模式的三大类型
+
+
+
+
+
+
+
+  1. 创建型模式:单例,工厂等(用于创建对象)
+
+
+  2. 结构型模式:适配器,装饰,外观,代理等(用于处理类或对象之间的组合)
+
+
+  3. 行为型模式:命令,迭代,中介者,策略模式等(用于处理类或对象之间的交互与职责分配)
+
+
+
+
+
+<blockquote>
+  
+> 
+> tip: 根据范围又可分为类模式和对象模式
+> 
+> 
+</blockquote>
+
+
+
+
+
+### 工厂模式
+
+
+
+
+
+
+
+  * 工厂模式是属于创建型(类)模式,主要用处理类和子类的关系
+
+
+
+
+
+<blockquote>
+  
+> 
+> 简单工厂模式
+  简单例子
+> 
+> 
+</blockquote>
+
+
+
+
+
+[csharp]
+namespace SimpleFactory{
+    public interface coat{
+        //...
+    }
+    public class CoatA:coat{
+        ///...
+    }
+    public class CoatB:coat{
+        ///...
+    }
+    public class CoatStore{
+        SimpleCoatFactory factory;
+        public CoatStore(SimpleCoatFactory factory){
+            this.factory = factory;
+        }
+        public Coat createCoat(string type){
+            Coat coat;
+            /*
+                如果不使用工厂,直接在createCoat中创建实例,不仅使代码耦合度增高,而且扩展性灵敏性较低
+                switch(type.Trim().ToLower()){
+                case "A":
+                    coat = new CoatA();
+                case "B":
+                    coat = new CoatB();
+                }
+            */
+            coat = factory.createCoat(type);
+            /*
+                create coat method
+                不经常修改,固定代码
+            */
+            return coat;
+        }
+    }
+    public class SimpleCoatFactory {
+        //将对象实例化于对象使用进行分离,能降低代码耦合度,扩展性亦较好
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+                case "A":
+                    return new CoatA();
+                case "B":
+                    return new CoatB();
+                default :
+                    throw new Exception("没有您需要的外套");
+            }
+        }
+    }
+}
+[/csharp]
+
+
+
+
+
+简单工厂的类图如下:
+
+
+
+
+
+[![simplefactory](http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png)](http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png)
+
+
+
+
+
+
+
+  * 简单工厂模式更像是一个编程的习惯,而不是一种设计模式
+
+
+  * 似乎更像是把问题抛给了另外一个对象,但是实际上这样做的好处是factory会有很多不同的用户,我们想改变的代码的时候改变factory即可,我们要把具体实例化的过程从客户代码中删除掉
+
+
+
+
+
+<blockquote>
+  
+> 
+> 真正的工厂模式 简单例子
+> 
+> 
+</blockquote>
+
+
+
+
+
+[csharp]
+/*
+ 假设有其他不同制衣店加盟
+*/
+namespace FactoryMethod{
+    public abstract class CoatFactory{
+        public Coat makeCoat(string type){
+           Coat coat;
+           coat = createCoat(type);
+            /*
+                coat method
+                不经常修改,固定代码
+            */
+            return coat;
+        }
+        //将得到coat实例的方法抽象,由子类去决定
+        abstract Coat createCoat(string type);
+    }
+    public class HangzhouCoatFactory : CoatFactory{
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+            case "A":
+                return new HangzhouStyleCoatA();
+            case "B":
+                return new HangzhouStyleCoatB();
+            }
+        }
+    }
+    public class GangNamCoatFactory : CoatFactory{
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+                case "A":
+                    return new GangNamStyleCoatA();
+                case "B":
+                    return new GangNamStyleCoatB();
+            }
+        }
+    }
+    public class HangzhouStyleCoatA:coat{
+        ///...
+    }
+    public class HangzhouStyleCoatB:coat{
+        ///...
+    }
+    public class GangNamStyleCoatA:coat{
+        ///...
+    }
+    public class GangNamStyleCoatB:coat{
+        ///...
+    }
+}
+[/csharp]
+
+
+
+
+
+工厂方法的类图:
+[![FactoryMethod](http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png)](http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png)
+
+
+
+
+
+
+
+  * 在工厂方法中我们定义一个创建对象的接口,但由子类决定要实例化的类是哪一个,工厂方法让类把实例化推迟到子类(非运行时)
+
+
+  * 父类负责定义创建对象的公共接口，而子类则负责生成具体的对象
+
+
+  * 如果只有一个具体的创建者,工厂模式依然有用:将对"产品"的"实现"和从"使用"中解耦出来
+
+
+  * 工厂方法的扩展性强,当需要新的工厂时候,只需要重新继承工厂基类显示,而不需要改动原本的工厂
+
+
+
+
+
+简单工厂和工厂模式的区别,从表面上看,仅仅只是在工厂方法中返回对象的子类,但是实际上简单工厂像是把所有的工作都做了,而工厂方法仅仅是提供了一个框架,让子类决定如何去实现.简单工厂方法只有一个具体工厂类来创建基于基类的派生类,而工厂方法有多个基于工厂基类的具体工厂类来创建基于基类的派生类.
+
+
+
+
+
+<未完... 抽象工厂>
+
+
+

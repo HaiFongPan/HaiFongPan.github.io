@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      LeoPan &middot; 人生就是不断的做选择题
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>小屋如舟衾似沙<br>灵芝劫尽枕芦花<br>杜宇声声归何处<br>群玉山头第一家<br></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archives/">Archives</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about-me/">About me</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+<!--     <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v</span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2014. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">LeoPan</a>
+            <small>人生就是不断的做选择题</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2014/01/23/%E5%88%92%E8%AF%8D%E6%90%9C%E7%B4%A2%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1/">
+        划词搜索豆瓣电影
+      </a>
+    </h1>
+
+    <span class="post-date">23 Jan 2014</span>
+    <p>马年将至，厂里的重活儿也渐少了，每天在厂里的时间里总有个把小时时间身体处于空闲期，总不能让身体馊掉吧？总要学学好的榜样，攒点新知识吧？脑子里又正好蹦达出搞个插件「划词搜索豆瓣电影」玩玩的想法，于是就说搞就搞了，虽说在厂里做与车间无关的东西似是不太厚道，但是总也算是「积攒知识」吧，日后也好推动车间发展。</p>
+
+    <!-- <p>马年将至，厂里的重活儿也渐少了，每天在厂里的时间里总有个把小时时间身体处于空闲期，总不能让身体馊掉吧？总要学学好的榜样，攒点新知识吧？脑子里又正好蹦达出搞个插件「划词搜索豆瓣电影」玩玩的想法，于是就说搞就搞了，虽说在厂里做与车间无关的东西似是不太厚道，但是总也算是「积攒知识」吧，日后也好推动车间发展。
+\n\n</p>
+
+<h3>说干就干</h3>
+
+<p>第一步当然是找找chrome插件的入门教程，通俗易懂的中文教程遍地都是，虽然说比不上官方的全面，可对付吾等屁民也算绰绰有余，快速的看了几篇，知道了主要的文件结构插件，于是在搜索中发现了「<a href="http://www.cnblogs.com/linchao/archive/2012/12/15/2819812.html">划词搜书</a>」，这下好了节省了很多事情。</p>
+
+<p>第二步当然是开搞，对css一窍不通个和对js不太熟悉的我在样式上和基本逻辑上一开始直接照搬了划词搜书的，当然本身这个插件的需求就非常的简单：</p>
+
+<ul>
+<li><p>首先选中词语</p></li>
+<li><p>其次是取得光标位置，开始请求豆瓣的api</p></li>
+<li><p>然后将api返回的json内容填充到div块中</p></li>
+<li><p>最后将div块加入当钱页面就好了</p></li>
+</ul>
+
+
+<p>之后暴露出的问题比如代码很乱，翻页问题，内容过多等等，于是自己写了很多东西，几乎全部重写了css，div内容加载用了<a href="https://code.google.com/p/jquery-load-json/">JQuery.loadJSON</a>，简介内容过多采用了豆瓣手机的方式隐藏起来再加上了一个扩展按钮。</p>
+
+<p>最后的结果：</p>
+
+<p><img src="https://github.com/HaiFongPan/searchMoviedb/blob/master/pic/example.png?raw=true" alt="如图" /></p>
+
+<ul>
+<li>github：<a href="https://github.com/HaiFongPan/searchMoviedb">searchMoviedb</a></li>
+</ul>
+
+
+<p>最后，由于没给google $5，所以本插件还只能开发者模式搞搞= =</p>
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F,%E5%A4%96%E8%A7%82%E5%B1%82%E6%A8%A1%E5%BC%8F,%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+        设计模式简单学习——适配器模式,外观层模式,代理模式
+      </a>
+    </h1>
+
+    <span class="post-date">08 Sep 2013</span>
+    <h3>适配器模式</h3>
+
+<blockquote>
+  
+> 
+> 定义:将一个类的接口,转换成客户期望的另一个接口,适配器让原本接口不兼容的类可以合作无间
+> 
+> 
+</blockquote>
+
+
+<p>首先,什么是适配器?如下图,适配器就像一个中间件,能使调用者理解被适配者</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png" alt="Adapter2" /></a></p>
+
+    <!-- <h3>适配器模式</h3>
+
+<blockquote>
+  
+> 
+> 定义:将一个类的接口,转换成客户期望的另一个接口,适配器让原本接口不兼容的类可以合作无间
+> 
+> 
+</blockquote>
+
+
+<p>首先,什么是适配器?如下图,适配器就像一个中间件,能使调用者理解被适配者</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png" alt="Adapter2" /></a>
+\n\n
+适配器模式简单实例:</p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">ADAPTER</span><span class="p">{</span>
+        <span class="c1">//用户调用的目标</span>
+    <span class="k">public</span> <span class="k">interface</span> <span class="n">Target</span><span class="p">{</span>
+        <span class="k">void</span> <span class="nf">request</span><span class="p">();</span>
+    <span class="p">}</span>
+        <span class="c1">//被适配者</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Adaptee</span><span class="p">{</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">specificRequest</span><span class="p">(){</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;I have specific request&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+        <span class="c1">//适配器:继承了被适配者,实现了目标</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Adapter</span> <span class="p">:</span><span class="n">Adaptee</span><span class="p">,</span><span class="n">Target</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">request</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">specificRequest</span> <span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+        <span class="c1">//测试</span>
+    <span class="k">class</span> <span class="nc">MainClass</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Target</span> <span class="n">t</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Adapter</span> <span class="p">();</span>
+            <span class="n">t</span><span class="p">.</span><span class="n">request</span> <span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>适配器模式类图:</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/09/adapter.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/adapter.png" alt="adapter" /></a></p>
+
+<ul>
+<li><p>该模式通过创建适配器进行接口转换,让不兼容的接口变成兼容,这可以让客户从实现的接口解耦.如果在一段时间后,我们想要改变接口,适配器可以将改变的部分封装起来,客户就不必为了应对不同的接口而每次跟着修改了.</p></li>
+<li><p>适配器又分为类适配器(多重继承)和对象适配器(直接调用对象)</p></li>
+<li><p>适配器模式将目标类和适配者类解耦,增强了扩展性灵活性,且符合<a href="http://zh.wikipedia.org/zh/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99">开闭原则</a></p></li>
+</ul>
+
+
+<h3>外观模式</h3>
+
+<blockquote>
+  
+> 
+> 定义:提供一个统一的接口,用来访问子系统中的一群接口,外观定义了一个高层接口,让子系统更容易使用
+> 
+> 
+</blockquote>
+
+
+<p>外观层类图:</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/09/facade.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/facade.png" alt="facade" /></a></p>
+
+<ul>
+<li><p>类图明显反应了调用者完全不需要知道各个子系统分担了什么功能</p></li>
+<li><p>外观层的意图是要提供一个简单的接口,好让一个子系统更易于使用,从这个模式的类图可以感受到</p></li>
+<li><p>使用Facade层作为若干子系统的统一简单入口,可以降低系统的复杂性,降低客户类与子系统之间的耦合度</p></li>
+<li><p>使用Facade层在有新增子系统的情况,除了怎家子系统还需要修改Facade层或者客户端的源代码</p></li>
+</ul>
+
+
+<h3>代理模式</h3>
+
+<blockquote>
+  
+> 
+> 定义:给某一个对象提供一个代理，并由代理对象控制对原对象的引用
+> 
+> 
+</blockquote>
+
+
+<p>代理模式简单实例:</p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">PROXY</span>
+<span class="p">{</span>
+        <span class="c1">//目标接口</span>
+    <span class="k">public</span> <span class="k">interface</span> <span class="n">Subject</span><span class="p">{</span>
+        <span class="k">void</span> <span class="nf">request</span><span class="p">();</span>
+    <span class="p">}</span>
+        <span class="c1">//真实目标</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nf">RealSubject</span><span class="p">(){</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">request</span><span class="p">(){</span>
+            <span class="c1">//...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+        <span class="c1">//利用代理了,控制了用户对真实目标的访问</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Proxy</span> <span class="n">implements</span> <span class="n">Subject</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="n">RealSubject</span> <span class="n">realSubject</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RealSubject</span><span class="p">();</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">preRequest</span><span class="p">(){</span>
+            <span class="c1">//...</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">request</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">preRequest</span><span class="p">();</span>
+            <span class="n">realSubject</span><span class="p">.</span><span class="n">request</span><span class="p">();</span>
+            <span class="n">postRequest</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">postRequest</span><span class="p">(){</span>
+            <span class="c1">//...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>代理模式类图:</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/09/proxy.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/proxy.png" alt="proxy" /></a></p>
+
+<ul>
+<li><p>代理模式中,代理类控制了客户对真实对象的访问,客户在调用时不需要关心真实对象本身</p></li>
+<li><p>代理模式能够协调调用者和被调用者，在一定程度上降低了系统的耦合度。</p></li>
+<li><p>远程代理使得客户端可以访问在远程机器上的对象，远程机器可能具有更好的计算性能与处理速度，可以快速响应并处理客户端请求。</p></li>
+<li><p>虚拟代理通过使用一个小对象来代表一个大对象，可以减少系统资源的消耗，对系统进行优化并提高运行速度。</p></li>
+<li><p>保护代理可以控制对真实对象的使用权限。</p></li>
+<li><p>由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢。</p></li>
+<li><p>实现代理模式需要额外的工作，有些代理模式的实现非常复杂。</p></li>
+<li><p>实例:远程代理,如RMI</p></li>
+<li><p>用于翻墙.用于FUCK GFW!</p></li>
+</ul>
+
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+        设计模式简单学习——单例模式
+      </a>
+    </h1>
+
+    <span class="post-date">08 Sep 2013</span>
+    <h3>单例模式</h3>
+
+<blockquote>
+  
+> 
+> 定义:确保一个类只有一个实例,并提供一个全局访问点
+> 
+> 
+</blockquote>
+
+
+<ul>
+<li><p>为什么不适用一个全局变量?</p>
+
+<ul>
+<li>全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象</li>
+</ul>
+</li>
+</ul>
+
+
+    <!-- <h3>单例模式</h3>
+
+<blockquote>
+  
+> 
+> 定义:确保一个类只有一个实例,并提供一个全局访问点
+> 
+> 
+</blockquote>
+
+
+<ul>
+<li><p>为什么不适用一个全局变量?</p>
+
+<ul>
+<li>全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象
+\n\n
+单例模式经典模式:
+[csharp]
+namespace SINGLETON{
+public class singleton {
+private static singleton instance;
+private singleton(){
+//...
+}
+public static singleton getInstace(){
+if (instance == null){
+  instance = new singleton();
+}
+return instance;
+}
+}
+}
+[/csharp]</li>
+</ul>
+</li>
+</ul>
+
+
+<p>单例模式多线程双重锁模式:
+[csharp]
+namespace SINGLETONSYNC{
+    public class singleton {
+        private static singleton instance;
+        private static Object <em>lock = new Object()
+        private singleton(){
+            //...
+        }
+        public static singleton getInstace(){
+            if (instance == null){
+                lock(</em>lock){
+                    if(instace == null){
+                        instance = new singleton();
+                    }
+                }
+            }
+            return instance;
+        }
+    }
+}
+[/csharp]</p>
+
+<p>单例模式急切饥饿模式:
+[csharp]
+// 这种模式不适合与消耗资源且利用次数少的对象
+namespace SINGLETONEAGERLY{
+    public class singleton {
+        private static readonly singleton instance = new sinlgeton();
+        private singleton(){
+            //...
+        }
+        public static singleton getInstace(){
+            return instance;
+        }
+    }
+}
+[/csharp]</p>
+
+<ul>
+<li><p>单例模式有经典的单例,适用于多线程的单例等</p></li>
+<li><p>应用实例,计算机的打印池</p></li>
+</ul>
+
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/design%20pattern/2013/09/08/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+        设计模式简单学习——工厂模式
+      </a>
+    </h1>
+
+    <span class="post-date">08 Sep 2013</span>
+    <h3>什么是设计模式?</h3>
+
+<ul>
+<li><p>90年代由建筑引入计算机行业</p></li>
+<li><p>用于解决程序存在各式各样问题而提出的一系列解决方案</p></li>
+<li><p>致力于代码可重用,更容易被理解,保证代码可靠性,程序的正确性,可维护性强等</p></li>
+<li><p>用于解决由针对上下文的特定问题的解决方案</p></li>
+</ul>
+
+
+    <!-- <h3>什么是设计模式?</h3>
+
+<ul>
+<li><p>90年代由建筑引入计算机行业</p></li>
+<li><p>用于解决程序存在各式各样问题而提出的一系列解决方案</p></li>
+<li><p>致力于代码可重用,更容易被理解,保证代码可靠性,程序的正确性,可维护性强等</p></li>
+<li><p>用于解决由针对上下文的特定问题的解决方案
+\n\n</p></li>
+</ul>
+
+
+<h3>设计模式的三大类型</h3>
+
+<ol>
+<li><p> 创建型模式:单例,工厂等(用于创建对象)</p></li>
+<li><p> 结构型模式:适配器,装饰,外观,代理等(用于处理类或对象之间的组合)</p></li>
+<li><p> 行为型模式:命令,迭代,中介者,策略模式等(用于处理类或对象之间的交互与职责分配)</p></li>
+</ol>
+
+
+<blockquote>
+  
+> 
+> tip: 根据范围又可分为类模式和对象模式
+> 
+> 
+</blockquote>
+
+
+<h3>工厂模式</h3>
+
+<ul>
+<li>工厂模式是属于创建型(类)模式,主要用处理类和子类的关系</li>
+</ul>
+
+
+<blockquote>
+  
+> 
+> 简单工厂模式
+  简单例子
+> 
+> 
+</blockquote>
+
+
+<p>[csharp]
+namespace SimpleFactory{
+    public interface coat{
+        //...
+    }
+    public class CoatA:coat{
+        ///...
+    }
+    public class CoatB:coat{
+        ///...
+    }
+    public class CoatStore{
+        SimpleCoatFactory factory;
+        public CoatStore(SimpleCoatFactory factory){
+            this.factory = factory;
+        }
+        public Coat createCoat(string type){
+            Coat coat;
+            /<em>
+                如果不使用工厂,直接在createCoat中创建实例,不仅使代码耦合度增高,而且扩展性灵敏性较低
+                switch(type.Trim().ToLower()){
+                case "A":
+                    coat = new CoatA();
+                case "B":
+                    coat = new CoatB();
+                }
+            </em>/
+            coat = factory.createCoat(type);
+            /<em>
+                create coat method
+                不经常修改,固定代码
+            </em>/
+            return coat;
+        }
+    }
+    public class SimpleCoatFactory {
+        //将对象实例化于对象使用进行分离,能降低代码耦合度,扩展性亦较好
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+                case "A":
+                    return new CoatA();
+                case "B":
+                    return new CoatB();
+                default :
+                    throw new Exception("没有您需要的外套");
+            }
+        }
+    }
+}
+[/csharp]</p>
+
+<p>简单工厂的类图如下:</p>
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png" alt="simplefactory" /></a></p>
+
+<ul>
+<li><p>简单工厂模式更像是一个编程的习惯,而不是一种设计模式</p></li>
+<li><p>似乎更像是把问题抛给了另外一个对象,但是实际上这样做的好处是factory会有很多不同的用户,我们想改变的代码的时候改变factory即可,我们要把具体实例化的过程从客户代码中删除掉</p></li>
+</ul>
+
+
+<blockquote>
+  
+> 
+> 真正的工厂模式 简单例子
+> 
+> 
+</blockquote>
+
+
+<p>[csharp]
+/<em>
+ 假设有其他不同制衣店加盟
+</em>/
+namespace FactoryMethod{
+    public abstract class CoatFactory{
+        public Coat makeCoat(string type){
+           Coat coat;
+           coat = createCoat(type);
+            /<em>
+                coat method
+                不经常修改,固定代码
+            </em>/
+            return coat;
+        }
+        //将得到coat实例的方法抽象,由子类去决定
+        abstract Coat createCoat(string type);
+    }
+    public class HangzhouCoatFactory : CoatFactory{
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+            case "A":
+                return new HangzhouStyleCoatA();
+            case "B":
+                return new HangzhouStyleCoatB();
+            }
+        }
+    }
+    public class GangNamCoatFactory : CoatFactory{
+        public Coat createCoat(string type){
+            switch(type.Trim().ToLower()){
+                case "A":
+                    return new GangNamStyleCoatA();
+                case "B":
+                    return new GangNamStyleCoatB();
+            }
+        }
+    }
+    public class HangzhouStyleCoatA:coat{
+        ///...
+    }
+    public class HangzhouStyleCoatB:coat{
+        ///...
+    }
+    public class GangNamStyleCoatA:coat{
+        ///...
+    }
+    public class GangNamStyleCoatB:coat{
+        ///...
+    }
+}
+[/csharp]</p>
+
+<p>工厂方法的类图:
+<a href="http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png"><img src="http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png" alt="FactoryMethod" /></a></p>
+
+<ul>
+<li><p>在工厂方法中我们定义一个创建对象的接口,但由子类决定要实例化的类是哪一个,工厂方法让类把实例化推迟到子类(非运行时)</p></li>
+<li><p>父类负责定义创建对象的公共接口，而子类则负责生成具体的对象</p></li>
+<li><p>如果只有一个具体的创建者,工厂模式依然有用:将对"产品"的"实现"和从"使用"中解耦出来</p></li>
+<li><p>工厂方法的扩展性强,当需要新的工厂时候,只需要重新继承工厂基类显示,而不需要改动原本的工厂</p></li>
+</ul>
+
+
+<p>简单工厂和工厂模式的区别,从表面上看,仅仅只是在工厂方法中返回对象的子类,但是实际上简单工厂像是把所有的工作都做了,而工厂方法仅仅是提供了一个框架,让子类决定如何去实现.简单工厂方法只有一个具体工厂类来创建基于基类的派生类,而工厂方法有多个基于工厂基类的具体工厂类来创建基于基类的派生类.</p>
+
+<p>&lt;未完... 抽象工厂></p>
+ -->
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2013/07/07/awesome-%E6%8A%98%E8%85%BE%E8%AE%B0/">
+        awesome 折腾记
+      </a>
+    </h1>
+
+    <span class="post-date">07 Jul 2013</span>
+    <p>在G+的archlinux Communities中总是能看到有人Po 桌面的，很多码农都是用的平铺式的wm，就像awesome，同学中也不乏有使用xmonad这样的wm，所以对平铺还是有点心动的，毕竟那样的界面写代码似乎非常的舒服，关键是看起来也很geek很装13，在一次又一次的犹豫后，总算是开始了awesome折腾之旅（虽然我的渣14寸笔记本用2个窗口就差不多了，有米还是得入一个显示器啊！）</p>
+
+<ul>
+<li>安装</li>
+</ul>
+
+
+<p>[code lang="bash"]
+$ pacman -S awesome # 安装awesome
+$ mkdir ~/.config/awesome # 创建配置文件目录
+$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
+[/code]</p>
+
+<ul>
+<li>配置</li>
+</ul>
+
+
+    <!-- <p>在G+的archlinux Communities中总是能看到有人Po 桌面的，很多码农都是用的平铺式的wm，就像awesome，同学中也不乏有使用xmonad这样的wm，所以对平铺还是有点心动的，毕竟那样的界面写代码似乎非常的舒服，关键是看起来也很geek很装13，在一次又一次的犹豫后，总算是开始了awesome折腾之旅（虽然我的渣14寸笔记本用2个窗口就差不多了，有米还是得入一个显示器啊！）</p>
+
+<ul>
+<li>安装</li>
+</ul>
+
+
+<p>[code lang="bash"]
+$ pacman -S awesome # 安装awesome
+$ mkdir ~/.config/awesome # 创建配置文件目录
+$ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
+[/code]</p>
+
+<ul>
+<li>配置</li>
+</ul>
+
+
+<p>\n\n
+配置文件主要是lua脚本rc.lua的配置，基本上来说配置的example已经够用，在折腾的时候犹豫不想深入去学习lua所以基本参考了前辈们的例子。如：</p>
+
+<blockquote>依云仙子的[例子](https://github.com/lilydjwg/myawesomerc)</blockquote>
+
+
+<p>基本上参考了他写的音量和电池的两个function，其中修改了一下电池信息的function：</p>
+
+<p>[code lang="js"]
+function update_batwidget()
+    local bat_dir = "/sys/class/power_supply/BAT0/"
+    local f = io.open(bat_dir..'status','r')
+    if not f then
+        batwidget:set_markup('<span color="red">ERR</span>')
+        return
+    end
+    local state = f:read('<em>l')
+    f:close()
+    state = battery_state[state] or battery_state.unknown
+    f = io.open(bat_dir .. 'present')
+    now = io.open(bat_dir .. 'energy_now')
+    full = io.open(bat_dir .. 'energy_full')
+    if not f then
+        batwidget:set_markup('<span color="red">ERR</span>')
+        return
+    end
+    --local percent = tonumber(f:read('</em>l'))
+    local now_n = tonumber(now:read('<em>l'))
+    local full_n = tonumber(full:read('</em>l'))
+    local percent = math.ceil((now_n/full_n)*100)
+    f:close()
+    if percent &lt;= 35 then
+        percent = '<span color="red">' .. percent .. '</span>' .. ' | '
+    end
+    batwidget:set_markup(state .. percent .. '%</span>' .. ' | ')
+end
+[/code]</p>
+
+<p><code>应用菜单</code>主要是用 archlinux-xdg-menu 这个包
+执行如下语句即可生成menu文件，配置到rc.lua中即可：
+[code lang="bash"]
+xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu > ~/.config/awesome/menu.lua
+[/code]</p>
+
+<p>关于休眠
+偷懒了一下直接在sudoer中设置了pm-suspend 不需要输入密码，然后rc.lua配置一下即可，
+[code lang="bash"]
+leo ALL = (ALL) NOPASSWD: /usr/bin/pm-hibernate
+leo ALL = (ALL) NOPASSWD: /usr/bin/pm-suspend
+[/code]</p>
+
+<ul>
+<li>效果图</li>
+</ul>
+
+
+<p><a href="http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot.png"><img src="http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot-1024x575.png" alt="2013-07-07-201818_1366x768_scrot" /></a></p>
+
+<ul>
+<li><p>其他</p>
+
+<ul>
+<li><p>其实我觉得除了装X以外，awesome给我的感觉却是不错，当然前提要对基础的一下快捷键有一些了解，否则的话,对于小白来说简直是灾难</p></li>
+<li><p>应该少花时间在无意义的配置上,比如美化</p></li>
+<li><p>awesome 确实 awesome 还得用时间来适应,还需要大屏幕</p></li>
+<li><p><a href="http://wordpress.org/plugins/syntaxhighlighter/">syntaxhighlighter</a>是一个不错的wordpress高亮插件,甩colorcode几条街.</p></li>
+<li><p><a href="https://github.com/HaiFongPan/awesome.conf">无耻的贴一下自己的awesome备份地址</a></p></li>
+</ul>
+</li>
+</ul>
+
+ -->
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page2">Older</a>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+      </div>
+    </div>
+
+  </body>
+</html>
