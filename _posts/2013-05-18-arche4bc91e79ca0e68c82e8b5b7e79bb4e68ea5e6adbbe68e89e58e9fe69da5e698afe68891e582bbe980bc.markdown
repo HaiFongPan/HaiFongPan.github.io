@@ -38,7 +38,7 @@ tags:
 
 
 
-\n\n
+<!-- more -->
 解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki
 
 
@@ -47,7 +47,7 @@ tags:
 
 
 
-  * 如下:[cc lang="bash"]
+  * 如下:{% highlight bash %}
 $ su #root 权限,或者sudo
 $ fallocate -l 512M /swapfile #创建大小为512M的交换文件
 $ dd if=/dev/zero of=/swapfile bs=1M count=512
@@ -55,7 +55,9 @@ $ chmod 600 /swapfile
 $ mkswap /swapfile
 $ swapon /swapfile
 $ vim /etc/fstab #添加
-$ /swapfile none swap defaults 0 0[/cc]
+$ /swapfile none swap defaults 0 0
+
+{% endhighlight %}
 
 
 

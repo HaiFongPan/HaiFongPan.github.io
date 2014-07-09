@@ -16,7 +16,7 @@ categories:
 而在64位系统上，long类型是64位的。。
 ：
 
-[cc lang="c"]
+{% highlight c %}
 
 #include "stdafx.h"
 
@@ -26,5 +26,5 @@ int l = sizeof(long);
 printf("%d",l);
 return 0;
 }
-[/cc]
+{% endhighlight %}
 打印出了4 说明Long是4个字节，属于32，但是没有64位系统的就没试过。

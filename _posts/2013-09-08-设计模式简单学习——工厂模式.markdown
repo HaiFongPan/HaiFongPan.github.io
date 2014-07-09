@@ -31,7 +31,7 @@ tags:
 
 
   * 用于解决由针对上下文的特定问题的解决方案
-\n\n
+<!-- more -->
 
 
 
@@ -96,7 +96,7 @@ tags:
 
 
 
-[csharp]
+{% highlight csharp linenos%}
 namespace SimpleFactory{
     public interface coat{
         //...
@@ -145,7 +145,7 @@ namespace SimpleFactory{
         }
     }
 }
-[/csharp]
+{% endhighlight %}
 
 
 
@@ -186,7 +186,7 @@ namespace SimpleFactory{
 
 
 
-[csharp]
+{% highlight csharp linenos%}
 /*
  假设有其他不同制衣店加盟
 */
@@ -237,7 +237,7 @@ namespace FactoryMethod{
         ///...
     }
 }
-[/csharp]
+{% endhighlight %}
 
 
 

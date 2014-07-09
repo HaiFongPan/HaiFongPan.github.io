@@ -49,9 +49,9 @@ tags:
 
 
 [![Adapter2](http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png)](http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png)
-\n\n
+<!-- more -->
 适配器模式简单实例:
-{% highlight csharp%}
+{% highlight csharp linenos%}
 namespace ADAPTER{
         //用户调用的目标
     public interface Target{
@@ -191,7 +191,7 @@ namespace ADAPTER{
 
 
 代理模式简单实例:
-{% highlight csharp%}
+{% highlight csharp linenos%}
 namespace PROXY
 {
         //目标接口

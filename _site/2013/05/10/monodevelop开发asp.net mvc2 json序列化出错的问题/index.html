@@ -25,8 +25,10 @@ tags:
 
 <p>关键代码</p>
 
-<p>\n\n
-<code>
+<!-- more -->
+
+
+<p><code>
 //UserController简单代码
 public ActionResult getUser(){
     User user = new User (a,b,c);
@@ -34,27 +36,34 @@ public ActionResult getUser(){
     String strJson = serializer.Serialize(user);
     return Json(strJson,JsonRequestBehavior.AllowGet);
 }
-</code>
-[cc lang="javascript"]
-//Extjs Model中简单代码
-Ext.define('leo.model.User',{
-    extend: 'Ext.data.Model',
-    fields: ['a','b','c'],</p>
+</code></p>
 
-<pre><code>&lt;code&gt;proxy: {
-    type: 'ajax',
-    api:{
-        read:'/User/getUser'
-    } , 
-    reader: {
-        type: 'json'
-    },  
-}
-&lt;/code&gt;
-</code></pre>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//Extjs Model中简单代码</span>
+<span class="nx">Ext</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;leo.model.User&#39;</span><span class="p">,{</span>
+    <span class="nx">extend</span><span class="o">:</span> <span class="s1">&#39;Ext.data.Model&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span>
 
-<p>})
-[/cc]</p>
+
+
+
+    
+    <span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">proxy</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;ajax&#39;</span><span class="p">,</span>
+        <span class="nx">api</span><span class="o">:</span><span class="p">{</span>
+            <span class="nx">read</span><span class="o">:</span><span class="s1">&#39;/User/getUser&#39;</span>
+        <span class="p">}</span> <span class="p">,</span> 
+        <span class="nx">reader</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span>
+        <span class="p">},</span>  
+    <span class="p">}</span>
+    <span class="o">&lt;</span><span class="err">/code&gt;</span>
+
+
+
+
+
+<span class="p">})</span></code></pre></div>
+
 
 <p>当请求发送至后台,后台返回json数据的时候出现错误(###在vs2010下正常)
 <code>(Cannot cast from source type to destination type)
@@ -80,10 +89,6 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 在web.config中配置下绑定System.Web.Extensions不指向3.5.0.0即可</li>
 </ul>
 
-
-<p>[cc lang ="xml"]</p>
-
-<p>[/cc]</p>
 
 <h3>PPS: 此处web.config 不是Views视图中的web.config 而是整个解决方案中的Web.config.</h3>
 

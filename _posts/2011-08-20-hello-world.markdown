@@ -11,7 +11,7 @@ tags:
 - HelloWorld
 ---
 
-{% highlight c%}
+{% highlight c linenos %}
 #include <stdio.h>
 int main()
 {

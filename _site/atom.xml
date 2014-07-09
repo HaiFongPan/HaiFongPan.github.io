@@ -4,7 +4,7 @@
  <title>LeoPan</title>
  <link href="http://www.leopan.me/atom.xml" rel="self"/>
  <link href="http://www.leopan.me/"/>
- <updated>2014-07-09T19:09:02+08:00</updated>
+ <updated>2014-07-09T20:18:07+08:00</updated>
  <id>http://www.leopan.me</id>
  <author>
    <name>Leo Pan</name>
@@ -17,8 +17,10 @@
    <link href="http://www.leopan.me/life/2014/01/23/%E5%88%92%E8%AF%8D%E6%90%9C%E7%B4%A2%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1/"/>
    <updated>2014-01-23T23:15:10+08:00</updated>
    <id>http://www.leopan.me/life/2014/01/23/划词搜索豆瓣电影</id>
-   <content type="html">&lt;p&gt;马年将至，厂里的重活儿也渐少了，每天在厂里的时间里总有个把小时时间身体处于空闲期，总不能让身体馊掉吧？总要学学好的榜样，攒点新知识吧？脑子里又正好蹦达出搞个插件「划词搜索豆瓣电影」玩玩的想法，于是就说搞就搞了，虽说在厂里做与车间无关的东西似是不太厚道，但是总也算是「积攒知识」吧，日后也好推动车间发展。
-\n\n&lt;/p&gt;
+   <content type="html">&lt;p&gt;马年将至，厂里的重活儿也渐少了，每天在厂里的时间里总有个把小时时间身体处于空闲期，总不能让身体馊掉吧？总要学学好的榜样，攒点新知识吧？脑子里又正好蹦达出搞个插件「划词搜索豆瓣电影」玩玩的想法，于是就说搞就搞了，虽说在厂里做与车间无关的东西似是不太厚道，但是总也算是「积攒知识」吧，日后也好推动车间发展。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
 
 &lt;h3&gt;说干就干&lt;/h3&gt;
 
@@ -67,37 +69,40 @@
 
 &lt;p&gt;首先,什么是适配器?如下图,适配器就像一个中间件,能使调用者理解被适配者&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot; alt=&quot;Adapter2&quot; /&gt;&lt;/a&gt;
-\n\n
-适配器模式简单实例:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot; alt=&quot;Adapter2&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ADAPTER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//用户调用的目标&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//被适配者&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adaptee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;specificRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I have specific request&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//适配器:继承了被适配者,实现了目标&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adaptee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;specificRequest&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//测试&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainClass&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;适配器模式简单实例:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ADAPTER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//用户调用的目标&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//被适配者&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adaptee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;specificRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I have specific request&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//适配器:继承了被适配者,实现了目标&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adaptee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;specificRequest&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//测试&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainClass&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;20&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;21&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;22&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;23&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Adapter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;24&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;25&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;26&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;27&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;适配器模式类图:&lt;/p&gt;
@@ -147,36 +152,36 @@
 
 &lt;p&gt;代理模式简单实例:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PROXY&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//目标接口&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//真实目标&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RealSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//利用代理了,控制了用户对真实目标的访问&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Proxy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subject&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RealSubject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;realSubject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RealSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;preRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;preRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;realSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;postRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;postRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PROXY&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//目标接口&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//真实目标&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RealSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//利用代理了,控制了用户对真实目标的访问&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Proxy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Subject&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RealSubject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;realSubject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RealSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;preRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;20&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;21&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;22&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;preRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;23&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;realSubject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;24&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;postRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;25&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;26&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;postRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;27&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;28&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;29&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;代理模式类图:&lt;/p&gt;
@@ -218,68 +223,71 @@
 &lt;li&gt;&lt;p&gt;为什么不适用一个全局变量?&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象
-\n\n
-单例模式经典模式:
-[csharp]
-namespace SINGLETON{
-public class singleton {
-private static singleton instance;
-private singleton(){
-//...
-}
-public static singleton getInstace(){
-if (instance == null){
-  instance = new singleton();
-}
-return instance;
-}
-}
-}
-[/csharp]&lt;/li&gt;
+&lt;li&gt;全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;p&gt;单例模式多线程双重锁模式:
-[csharp]
-namespace SINGLETONSYNC{
-    public class singleton {
-        private static singleton instance;
-        private static Object &lt;em&gt;lock = new Object()
-        private singleton(){
-            //...
-        }
-        public static singleton getInstace(){
-            if (instance == null){
-                lock(&lt;/em&gt;lock){
-                    if(instace == null){
-                        instance = new singleton();
-                    }
-                }
-            }
-            return instance;
-        }
-    }
-}
-[/csharp]&lt;/p&gt;
+&lt;!-- more --&gt;
 
-&lt;p&gt;单例模式急切饥饿模式:
-[csharp]
-// 这种模式不适合与消耗资源且利用次数少的对象
-namespace SINGLETONEAGERLY{
-    public class singleton {
-        private static readonly singleton instance = new sinlgeton();
-        private singleton(){
-            //...
-        }
-        public static singleton getInstace(){
-            return instance;
-        }
-    }
-}
-[/csharp]&lt;/p&gt;
+
+&lt;p&gt;单例模式经典模式:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SINGLETON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getInstace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;单例模式多线程双重锁模式:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SINGLETONSYNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_lock&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getInstace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;                     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instace&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;                         &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;                     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;单例模式急切饥饿模式:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这种模式不适合与消耗资源且利用次数少的对象&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SINGLETONEAGERLY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;readonly&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sinlgeton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getInstace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;单例模式有经典的单例,适用于多线程的单例等&lt;/p&gt;&lt;/li&gt;
@@ -300,9 +308,11 @@ namespace SINGLETONEAGERLY{
 &lt;li&gt;&lt;p&gt;90年代由建筑引入计算机行业&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;用于解决程序存在各式各样问题而提出的一系列解决方案&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;致力于代码可重用,更容易被理解,保证代码可靠性,程序的正确性,可维护性强等&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;用于解决由针对上下文的特定问题的解决方案
-\n\n&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用于解决由针对上下文的特定问题的解决方案&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;!-- more --&gt;
 
 
 &lt;h3&gt;设计模式的三大类型&lt;/h3&gt;
@@ -340,56 +350,57 @@ namespace SINGLETONEAGERLY{
 &lt;/blockquote&gt;
 
 
-&lt;p&gt;[csharp]
-namespace SimpleFactory{
-    public interface coat{
-        //...
-    }
-    public class CoatA:coat{
-        ///...
-    }
-    public class CoatB:coat{
-        ///...
-    }
-    public class CoatStore{
-        SimpleCoatFactory factory;
-        public CoatStore(SimpleCoatFactory factory){
-            this.factory = factory;
-        }
-        public Coat createCoat(string type){
-            Coat coat;
-            /&lt;em&gt;
-                如果不使用工厂,直接在createCoat中创建实例,不仅使代码耦合度增高,而且扩展性灵敏性较低
-                switch(type.Trim().ToLower()){
-                case &quot;A&quot;:
-                    coat = new CoatA();
-                case &quot;B&quot;:
-                    coat = new CoatB();
-                }
-            &lt;/em&gt;/
-            coat = factory.createCoat(type);
-            /&lt;em&gt;
-                create coat method
-                不经常修改,固定代码
-            &lt;/em&gt;/
-            return coat;
-        }
-    }
-    public class SimpleCoatFactory {
-        //将对象实例化于对象使用进行分离,能降低代码耦合度,扩展性亦较好
-        public Coat createCoat(string type){
-            switch(type.Trim().ToLower()){
-                case &quot;A&quot;:
-                    return new CoatA();
-                case &quot;B&quot;:
-                    return new CoatB();
-                default :
-                    throw new Exception(&quot;没有您需要的外套&quot;);
-            }
-        }
-    }
-}
-[/csharp]&lt;/p&gt;
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SimpleFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CoatA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;///...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CoatB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;///...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CoatStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;SimpleCoatFactory&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CoatStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SimpleCoatFactory&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt;             &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                如果不使用工厂,直接在createCoat中创建实例,不仅使代码耦合度增高,而且扩展性灵敏性较低&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                switch(type.Trim().ToLower()){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;21&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                case &amp;quot;A&amp;quot;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;22&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                    coat = new CoatA();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                case &amp;quot;B&amp;quot;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;24&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                    coat = new CoatB();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;25&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                }&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;26&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;            */&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;27&lt;/span&gt;             &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;28&lt;/span&gt;             &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;29&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                create coat method&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                不经常修改,固定代码&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;31&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;            */&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;32&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;33&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;34&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;35&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SimpleCoatFactory&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;36&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//将对象实例化于对象使用进行分离,能降低代码耦合度,扩展性亦较好&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;37&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;38&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ToLower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;39&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;40&lt;/span&gt;                     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CoatA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;41&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;42&lt;/span&gt;                     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CoatB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;43&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;44&lt;/span&gt;                     &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;没有您需要的外套&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;45&lt;/span&gt;             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;46&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;47&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;48&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;简单工厂的类图如下:&lt;/p&gt;
 
@@ -410,58 +421,59 @@ namespace SimpleFactory{
 &lt;/blockquote&gt;
 
 
-&lt;p&gt;[csharp]
-/&lt;em&gt;
- 假设有其他不同制衣店加盟
-&lt;/em&gt;/
-namespace FactoryMethod{
-    public abstract class CoatFactory{
-        public Coat makeCoat(string type){
-           Coat coat;
-           coat = createCoat(type);
-            /&lt;em&gt;
-                coat method
-                不经常修改,固定代码
-            &lt;/em&gt;/
-            return coat;
-        }
-        //将得到coat实例的方法抽象,由子类去决定
-        abstract Coat createCoat(string type);
-    }
-    public class HangzhouCoatFactory : CoatFactory{
-        public Coat createCoat(string type){
-            switch(type.Trim().ToLower()){
-            case &quot;A&quot;:
-                return new HangzhouStyleCoatA();
-            case &quot;B&quot;:
-                return new HangzhouStyleCoatB();
-            }
-        }
-    }
-    public class GangNamCoatFactory : CoatFactory{
-        public Coat createCoat(string type){
-            switch(type.Trim().ToLower()){
-                case &quot;A&quot;:
-                    return new GangNamStyleCoatA();
-                case &quot;B&quot;:
-                    return new GangNamStyleCoatB();
-            }
-        }
-    }
-    public class HangzhouStyleCoatA:coat{
-        ///...
-    }
-    public class HangzhouStyleCoatB:coat{
-        ///...
-    }
-    public class GangNamStyleCoatA:coat{
-        ///...
-    }
-    public class GangNamStyleCoatB:coat{
-        ///...
-    }
-}
-[/csharp]&lt;/p&gt;
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt; 假设有其他不同制衣店加盟&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;*/&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FactoryMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CoatFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;             &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                coat method&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;                不经常修改,固定代码&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;            */&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;//将得到coat实例的方法抽象,由子类去决定&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HangzhouCoatFactory&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CoatFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;20&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ToLower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;21&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;22&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;HangzhouStyleCoatA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;23&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;24&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;HangzhouStyleCoatB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;25&lt;/span&gt;             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;26&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;27&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;28&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GangNamCoatFactory&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CoatFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;29&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Coat&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCoat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;30&lt;/span&gt;             &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ToLower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()){&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;31&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;32&lt;/span&gt;                     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GangNamStyleCoatA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;33&lt;/span&gt;                 &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;34&lt;/span&gt;                     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GangNamStyleCoatB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;35&lt;/span&gt;             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;36&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;37&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;38&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HangzhouStyleCoatA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;39&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;///...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;40&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;41&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HangzhouStyleCoatB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;42&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;///...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;43&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;44&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GangNamStyleCoatA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;45&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;///...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;46&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;47&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GangNamStyleCoatB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;48&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;///...&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;49&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;工厂方法的类图:
 &lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png&quot; alt=&quot;FactoryMethod&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -503,8 +515,10 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
 &lt;/ul&gt;
 
 
-&lt;p&gt;\n\n
-配置文件主要是lua脚本rc.lua的配置，基本上来说配置的example已经够用，在折腾的时候犹豫不想深入去学习lua所以基本参考了前辈们的例子。如：&lt;/p&gt;
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;配置文件主要是lua脚本rc.lua的配置，基本上来说配置的example已经够用，在折腾的时候犹豫不想深入去学习lua所以基本参考了前辈们的例子。如：&lt;/p&gt;
 
 &lt;blockquote&gt;依云仙子的[例子](https://github.com/lilydjwg/myawesomerc)&lt;/blockquote&gt;
 
@@ -590,20 +604,24 @@ leo ALL = (ALL) NOPASSWD: /usr/bin/pm-suspend
 
 &lt;h2&gt;解决&lt;/h2&gt;
 
-&lt;p&gt;\n\n
-解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki&lt;/p&gt;
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;如下:[cc lang=&quot;bash&quot;]
-$ su #root 权限,或者sudo
-$ fallocate -l 512M /swapfile #创建大小为512M的交换文件
-$ dd if=/dev/zero of=/swapfile bs=1M count=512
-$ chmod 600 /swapfile
-$ mkswap /swapfile
-$ swapon /swapfile
-$ vim /etc/fstab #添加
-$ /swapfile none swap defaults 0 0[/cc]&lt;/li&gt;
+&lt;li&gt;如下:&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;su &lt;span class=&quot;c&quot;&gt;#root 权限,或者sudo&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;fallocate -l 512M /swapfile &lt;span class=&quot;c&quot;&gt;#创建大小为512M的交换文件&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/swapfile &lt;span class=&quot;nv&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1M &lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;512
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;chmod &lt;span class=&quot;m&quot;&gt;600&lt;/span&gt; /swapfile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkswap /swapfile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;swapon /swapfile
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim /etc/fstab &lt;span class=&quot;c&quot;&gt;#添加&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/swapfile none swap defaults &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;然后就Ok,所以说,还得多学学linux的知识...&lt;/p&gt;
@@ -642,8 +660,10 @@ tags:
 
 &lt;p&gt;关键代码&lt;/p&gt;
 
-&lt;p&gt;\n\n
-&lt;code&gt;
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;&lt;code&gt;
 //UserController简单代码
 public ActionResult getUser(){
     User user = new User (a,b,c);
@@ -651,27 +671,34 @@ public ActionResult getUser(){
     String strJson = serializer.Serialize(user);
     return Json(strJson,JsonRequestBehavior.AllowGet);
 }
-&lt;/code&gt;
-[cc lang=&quot;javascript&quot;]
-//Extjs Model中简单代码
-Ext.define(&#39;leo.model.User&#39;,{
-    extend: &#39;Ext.data.Model&#39;,
-    fields: [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;],&lt;/p&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;code&amp;gt;proxy: {
-    type: &#39;ajax&#39;,
-    api:{
-        read:&#39;/User/getUser&#39;
-    } , 
-    reader: {
-        type: &#39;json&#39;
-    },  
-}
-&amp;lt;/code&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//Extjs Model中简单代码&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Ext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;leo.model.User&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;extend&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Ext.data.Model&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
 
-&lt;p&gt;})
-[/cc]&lt;/p&gt;
+
+
+
+    
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ajax&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/User/getUser&amp;#39;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;nx&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;json&amp;#39;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/code&amp;gt;&lt;/span&gt;
+
+
+
+
+
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;当请求发送至后台,后台返回json数据的时候出现错误(###在vs2010下正常)
 &lt;code&gt;(Cannot cast from source type to destination type)
@@ -698,10 +725,6 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 &lt;/ul&gt;
 
 
-&lt;p&gt;[cc lang =&quot;xml&quot;]&lt;/p&gt;
-
-&lt;p&gt;[/cc]&lt;/p&gt;
-
 &lt;h3&gt;PPS: 此处web.config 不是Views视图中的web.config 而是整个解决方案中的Web.config.&lt;/h3&gt;
 
 &lt;p&gt;最后,发现我根本就可以不需要用JavaScriptSerializer,不过解决问题总是好的.&lt;/p&gt;
@@ -717,7 +740,8 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 
 &lt;p&gt;MapReduce是实习第一周公司带我的导师要我去了解的一个东西，估计是想看看我的学习能力，理解能力如何，结果我发现自己不是一般的弱，想要变强，只能多看多学多实践。下面记录一些学习到的东西，大部分东西都是摘自论文或者一些博客，还真没什么原创的，不过语言还是自己组织下，加深下印象。（这语气怎么好像跟写技术博一样！明明博客从写流水账\日志就没什么访问量了！）&lt;/p&gt;
 
-&lt;p&gt;\n\n&lt;/p&gt;
+&lt;!-- more --&gt;
+
 
 &lt;h2&gt;1.什么是MapReduce？&lt;/h2&gt;
 
@@ -870,7 +894,8 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 
 &lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;\n\n&lt;/p&gt;
+&lt;!-- more --&gt;
+
 
 &lt;p&gt;这几天的日头很毒辣，5点多外面的天已经很亮了，伴随着大一军训“1,2,3,4”的口号声醒来，然后看看躺在身边的手机，6到没到，也就是说还能在眯一会儿，对于嗜睡的我来说，是幸福也是折磨，毕竟起床的点摆在那里，丝毫没有谦让我的意思。迷迷糊糊的躺到6点半的闹钟响起，然后起床，连一点赖床的机会都不给自己，事实证明，就算是睡了2年懒觉的自己也一样能在6点30起床，雷打不动。&lt;/p&gt;
 
@@ -915,7 +940,8 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 
 &lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;\n\n&lt;/p&gt;
+&lt;!-- more --&gt;
+
 
 &lt;p&gt;小时候不爱看书，所以家里也很少买书，但是偶尔买的一些书，像《朝花夕拾》、《钢铁是怎样炼成的》、《三国演义》等等，虽然记不太清　楚，但是我相信这类书应当是语文老师们推荐给我买的，而且都是高中以前买的，只是至今我都没看过这几本书，更别说其他一些名著了。从小便是才疏学浅，一直喜欢理科的东西，不爱文字不爱文学，也总是耐不下心来看书。可总算还是在这个年纪拾起了书本，跟风也好，文艺也罢，书中得到的道理，悟到的想法总是自己的，以后不仅得读，还得多写。写，不是为了给人看，更多的能记录一些想法，观点，还能成熟自己的书面表达能力。第一次听到钱钟书应该是中学语文课本上杨绛先生的《老王》下面的注释吧，其实自己也记不太清楚是不是这篇文章的注释了，毕竟那已经是很久以前的事。&lt;/p&gt;
 
@@ -941,35 +967,43 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 &lt;p&gt;言归正传，以前用的mysql是大神同学给配置好的，所有乱码问题都解决了，这次轮到自己了，其实在mysql的客户端中中文显示是正常的，但是java一读出来就不对了，很显然，应该是mysql编码问题，默认貌似是latin1，虽然我不曾认识这个编码，但是从现在开始获取我要开始憎恨它了。&lt;/p&gt;
 
 &lt;p&gt;从网上找了一些资料，发现主要问题是my.ini这个配置文件，如何找到这个目录呢，我是在C:\Program Files\MySQL\MySQL Server 5.5 目录下面
-关键要修改几个地方：\n\n
-[client]加入
-[cc lang=&quot;perl]default-character-set=gbk[/cc]
-[mysql]也是&lt;/p&gt;
+关键要修改几个地方：&lt;!-- more --&gt;
+[client]加入&lt;/p&gt;
 
-&lt;p&gt;[cc lang=&quot;perl]default-character-set=gbk[/cc]
-并把
-[mysqld]中的
-[cc lang=&quot;perl]character-set-server=utf8 #gbk应该也可以[/cc]&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gbk&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;[mysql]也是&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gbk&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;并把
+[mysqld]中的&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;character&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#gbk应该也可以&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;然后保存文件
-打开控制台
-[cc lang=&quot;perl]net stop mysql //停止mysql服务
-net start mysql //开启mysql服务[/cc]&lt;/p&gt;
+打开控制台&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;停止&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;服务&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;net&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;开启&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;服务&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;然后进入mysql&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-mysql&gt; show variables like &#39;character%&#39;;
-| Variable_name            | Value
-| character_set_client     | gbk
-| character_set_connection | gbk
-| character_set_database   | utf8
-| character_set_filesystem | binary
-| character_set_results    | gbk
-| character_set_server     | utf8
-| character_set_system     | utf8
-| character_sets_dir       | C:\Program Files\MySQL\MySQL Server 5.5\share\charsets\ |
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variables&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;character%&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Variable_name&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Value&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_client&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gbk&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_connection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gbk&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_database&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_filesystem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;binary&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_results&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gbk&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_server&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_set_system&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;character_sets_dir&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Program&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySQL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySQL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Server&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;charsets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;\&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;如果结果如上所示，应该就不是乱码了。&lt;/p&gt;
 
@@ -986,7 +1020,8 @@ mysql&gt; show variables like &#39;character%&#39;;
 
 &lt;p&gt;♠♠♠♠在0点钟声敲响之时，2011，在农历（&lt;a href=&quot;http://www.guokr.com/article/90696/&quot;&gt;今年为什么没有三十&lt;/a&gt;）上来说，旧的一年结束了，我们迎来了2012。2011这一年对我来说似乎过的非常的快，就仿佛昨日还是2011的开年一样，当然这是夸张了，也许生活中没有太多的事让我去纪念，没有那么多印象深刻的事情发生在我身上，所以才会觉得过的如此之快，以至于现在的我已经生活在了被人们称为世界末日的2012。&lt;/p&gt;
 
-&lt;p&gt;\n\n&lt;/p&gt;
+&lt;!-- more --&gt;
+
 
 &lt;p&gt;&lt;strong&gt;感情篇：&lt;/strong&gt;2010年的年末做了一个最残酷的决定，和ex的分手，其实某种意义上说换做别人是我，也许会好好的过日子下去。可能不太适应被怀疑，对猜疑最是受不了，种种事情的发生，让我的2011上半年似乎还处于分手的阴影中，提出的人是我，所以似乎显得特别的内疚，不是没有想过去和好，只是某些我很在意地方我做不到退一步，所以我无法保证没有下一次的分手。有人会说真心相爱的人根本不在乎这些，性格不合可以磨合，拿这些作为分手理由只能说明不够相爱。也许吧，只是我也普通到不能再普通的平凡人，我没有那么包容的心，我很自私，随着时间的推移很多事情也会慢慢的过去，既然自私了一次就坏人做到底。于是2011这一年似乎处于爱情的空白期，没有中意的对象，也没有对象中意我。一方面自己一开始没有摆脱前一次，导致一段时间内没有想过要找女朋友；另外一方面，生活的交际好像越来越窄，每天面对的只是一张张老脸，很少有简单新鲜女生的面孔。似乎已经没有大一时候的干劲了，自从不做领导开始，认识的人少了，以前认识的也不过是生活中的泛泛之交，既然没有相同的话题，也没什么心思去联系。生活就像给我开了一个大玩笑，从我开始喜欢女生开始，好像很久没有这样长时间没有喜欢的对象了。于是寒假一回家，妈妈开始唠叨什么时候能抱孙子，亲戚们开始问有没有女朋友。其实没有女朋友我们可以有五姑娘，不是么？期待2012。&lt;/p&gt;
 
@@ -1007,84 +1042,6 @@ mysql&gt; show variables like &#39;character%&#39;;
  </entry>
  
  <entry>
-   <title>wp回复邮件代码</title>
-   <link href="http://www.leopan.me/life/2012/01/20/wp%E5%9B%9E%E5%A4%8D%E9%82%AE%E4%BB%B6%E4%BB%A3%E7%A0%81/"/>
-   <updated>2012-01-20T16:26:19+08:00</updated>
-   <id>http://www.leopan.me/life/2012/01/20/wp回复邮件代码</id>
-   <content type="html">&lt;p&gt;很久没有折腾wordpress了
-昨天在读&lt;a href=&quot;http://xavierskip.sinaapp.com/?p=303&quot;&gt;《什么是墙为什么要翻墙以及怎么翻墙》&lt;/a&gt;这篇文章的时候，发现他的主题挺好看的，于是找到了一个不错的UI设计师的站点：&lt;a href=&quot;http://xuui.net&quot;&gt;xu Design&lt;/a&gt;，一个不错的站点，当然好看的东西总是要收费的，很多时候拿钱去换一些别人付出辛劳汗水的作品是无可厚非的。当然这个主题是免费的，我又无耻的做了一回伸手党。&lt;br/&gt;
-\n\n
-好像在上次升级之后之前用的回复评论邮件的插件失效了，虽然本博没有什么留言，但是人要追求的总是更好的，于是决定用另外一种方法去实现回复邮件的代码，代码网上搜了一箩筐，但是部分博客中的文章总是把别人的代码复制过来，上面还写着只需将代码复制进主题中即可，但是亲身试过之后才知道，直接复制根本无法实现功能，反而导致了访问博客时网页中什么都无法显示，当然代码基本上是对的，唯一出现的问题是，复制下来的代码中往往该是英文的单引号的地方是中文的单引号，在我人品还不算差的时候，只能说明这些是博主们的错误，当然很多时候一些站点无非是为了赚取访问量+广告点击率。&lt;/p&gt;
-
-&lt;p&gt;废话不说了，代码加在function.php代码中：
-[code lang=&quot;php&quot;]add_action(&#39;comment_post&#39;, &#39;comment_mail_notify&#39;);
-function comment_mail_notify($comment_id) {
-    $admin_notify = &#39;0&#39;;
-        // admin 要不要收回覆通知 ( &#39;1&#39;=要 ; &#39;0&#39;=不要 )，显然这里是最好为0，要不然自己别人在回复自己评论时会出现2封邮件
-    $admin_email = get_bloginfo (&#39;admin_email&#39;);
-        // $admin_email 可改為你指定的 e-mail.
-    $comment = get_comment($comment_id);
-    $comment_author_email = trim($comment-&gt;comment_author_email);
-    $parent_id = $comment-&gt;comment_parent ? $comment-&gt;comment_parent :”;
-    global $wpdb;
-    if ($wpdb-&gt;query(&quot;Describe {$wpdb-&gt;comments} comment_mail_notify&quot;) == ”)
-        $wpdb-&gt;query(&quot;ALTER TABLE {$wpdb-&gt;comments} ADD COLUMN comment_mail_notify TINYINT NOT NULL DEFAULT 0;&quot;);
-    if (($comment_author_email != $admin_email &amp;amp;&amp;amp; isset($&lt;em&gt;POST[&#39;comment_mail_notify&#39;]))
-                || ($comment_author_email== $admin_email &amp;amp;&amp;amp; $admin_notify == &#39;1&#39;))
-        $wpdb-&gt;query(&quot;UPDATE {$wpdb-&gt;comments} SET comment_mail_notify=&#39;1&#39; WHERE comment_ID=&#39;$comment_id&#39;&quot;);
-        $notify = $parent_id ? get_comment($parent_id)-&gt;comment_mail_notify : &#39;0&#39;;
-        $spam_confirmed = $comment-&gt;comment_approved;
-    if ($parent_id != ” &amp;amp;&amp;amp; $spam_confirmed != &#39;spam&#39; &amp;amp;&amp;amp; $notify == &#39;1&#39;) {
-        $wp_email = &#39;Leo&#39; . preg_replace(&#39;#^www.#&#39;, ”, strtolower($&lt;/em&gt;SERVER[&#39;SERVER_NAME&#39;]));
-                // LEO改为你的即可
-        $to = trim(get_comment($parent_id)-&gt;comment_author_email);
-        $subject = &#39;您在 [&#39; . get_option(&quot;blogname&quot;) . &#39;] 的回复有了回应&#39;;
-        $message = &#39;
-            &lt;div style=&quot;background-color:#eef2fa; border:1px solid #d8e3e8; color:#111; padding:0 15px; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px;&quot;&gt;
-            &lt;p&gt;&#39; . trim(get_comment($parent_id)-&gt;comment_author) . &#39;, 您好!&lt;/p&gt;
-            &lt;p&gt;您曾在《&#39; . get_the_title($comment-&gt;comment_post_ID) . &#39;》的留言:&lt;br /&gt;
-            &#39; . trim(get_comment($parent_id)-&gt;comment_content) . &#39;&lt;/p&gt;
-            &lt;p&gt;&#39; . trim($comment-&gt;comment_author) . &#39; 給您的回应:&lt;br /&gt;
-            &#39; . trim($comment-&gt;comment_content) . &#39;&lt;br /&gt;&lt;/p&gt;
-            &lt;p&gt;您可以点击 &lt;a href=&quot;&#39; . htmlspecialchars(get_comment_link($parent_id)) . &#39;&quot;&gt;查看回应完整內容&lt;/a&gt;&lt;/p&gt;
-            &lt;p&gt;欢迎再度光临本博客 &lt;a href=&quot;&#39; . get_option(&#39;home&#39;) . &#39;&quot;&gt;&#39; . get_option(&#39;blogname&#39;) . &#39;&lt;/a&gt;&lt;/p&gt;
-            &lt;p&gt;(此邮件为系统自动发送，请勿回复.)&lt;/p&gt;
-            &lt;/div&gt;&#39;;
-            $from = &quot;From: \&quot;&quot; . get_option(&#39;blogname&#39;) . &quot;\&quot; &amp;lt;$wp_email&gt;&quot;;
-            $headers = &quot;$from\nContent-Type: text/html; charset=&quot; . get_option(&#39;blog_charset&#39;) . &quot;\n&quot;;
-            wp_mail( $to, $subject, $message, $headers );
-//echo &#39;mail to &#39;, $to, &#39;&lt;br/&gt; &#39; , $subject, $message; // for testing
-}
-}&lt;/p&gt;
-
-&lt;p&gt;/&lt;em&gt; 自动加勾选栏 &lt;/em&gt;/
-function add_checkbox() {&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo &#39;&amp;lt;input type=&quot;checkbox&quot; name=&quot;comment_mail_notify&quot; id=&quot;comment_mail_notify&quot; value=&quot;comment_mail_notify&quot; checked=&quot;checked&quot; style=&quot;margin-left:20px;&quot; /&amp;gt;&amp;lt;label for=&quot;comment_mail_notify&quot;&amp;gt;有人回复是邮件通知我&amp;lt;/label&amp;gt;&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-add_action(&#39;comment_form&#39;, &#39;add_checkbox&#39;); [/code]
-PS:代码源自网络&lt;/p&gt;
-
-&lt;p&gt;这边有个小问题是在自己回复别人评论的时候，页面上也会出现“有人回复是邮件通知我”这个勾选栏，看着比较烦就自己把它改掉了：
-[code lang=&quot;php&quot;]
-function add_checkbox() {
-$current_user = wp_get_current_user();
-if ( 0 == $current_user-&gt;ID||&#39;leopure110@gmail.com&#39;!=$current_user-&gt;user_email ) {//没有登录
-    echo &#39;&lt;input type=&quot;checkbox&quot; name=&quot;comment_mail_notify&quot; id=&quot;comment_mail_notify&quot; value=&quot;comment_mail_notify&quot; checked=&quot;checked&quot; style=&quot;margin-left:20px;&quot; /&gt;
-   &lt;label for=&quot;comment_mail_notify&quot;&gt;有人回复是邮件通知我&lt;/label&gt;&#39;;
-}&lt;/p&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;[/code]&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;全文完&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>2011-2012学期总结</title>
    <link href="http://www.leopan.me/life/2012/01/08/2011-2012%E5%AD%A6%E6%9C%9F%E6%80%BB%E7%BB%93/"/>
    <updated>2012-01-08T15:42:08+08:00</updated>
@@ -1092,7 +1049,7 @@ if ( 0 == $current_user-&gt;ID||&#39;leopure110@gmail.com&#39;!=$current_user-&g
    <content type="html">&lt;p&gt;相对来说这个学期确实非常的短，小小总结一下是必要的
 9月份：开学，然后各种给自己找理由不听课。
 10月份：国庆过后似乎3个礼拜，已经记不得自己在干嘛了，估计还是各种给自己找理由不做事不学习。
-11月份：加入远舰小组打酱油，一开始学习了googlemap的API，虽然后来没用上，但是那个礼拜确实一直在学习这东西；后来接触\n\nibatis+struts2+jquery-easyui，自己负责的部分感觉做的很差，软件工程没有学好，也没有利用进去。
+11月份：加入远舰小组打酱油，一开始学习了googlemap的API，虽然后来没用上，但是那个礼拜确实一直在学习这东西；后来接触&lt;!-- more --&gt;ibatis+struts2+jquery-easyui，自己负责的部分感觉做的很差，软件工程没有学好，也没有利用进去。
 12月份：各种大型实验开始，delphi，J2ME,SE,OS,LINUX，基本上把我折磨死了
 1月份前半天：复习+预习+考试。&lt;/p&gt;
 
@@ -1105,9 +1062,12 @@ if ( 0 == $current_user-&gt;ID||&#39;leopure110@gmail.com&#39;!=$current_user-&g
    <link href="http://www.leopan.me/artificial%20intelligence/study%20note/2011/12/06/a-%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98JAVA%E7%89%88%E6%9C%AC/"/>
    <updated>2011-12-06T09:28:37+08:00</updated>
    <id>http://www.leopan.me/artificial%20intelligence/study%20note/2011/12/06/a-八数码问题JAVA版本</id>
-   <content type="html">&lt;p&gt;作业拖欠了好久了，暂时搞个java的应付下作业先，参考了下网上的资料写的，bug还是有的吧。
-\n\n
-[code lang=&quot;java&quot;]
+   <content type="html">&lt;p&gt;作业拖欠了好久了，暂时搞个java的应付下作业先，参考了下网上的资料写的，bug还是有的吧。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;[code lang=&quot;java&quot;]
 import java.util.*;
 //Extension points扩展节点
 class ExtenPoint// 扩展节点类
@@ -1377,18 +1337,17 @@ public static void main(String args[])
 而在64位系统上，long类型是64位的。。
 ：&lt;/p&gt;
 
-&lt;p&gt;[cc lang=&quot;c&quot;]&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;quot;stdafx.h&amp;quot;&lt;/span&gt;
 
-&lt;h1&gt;include &quot;stdafx.h&quot;&lt;/h1&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;int main(int argc, char* argv[])
-{
-int l = sizeof(long);
-printf(&quot;%d&quot;,l);
-return 0;
-}
-[/cc]
-打印出了4 说明Long是4个字节，属于32，但是没有64位系统的就没试过。&lt;/p&gt;
+
+&lt;p&gt;打印出了4 说明Long是4个字节，属于32，但是没有64位系统的就没试过。&lt;/p&gt;
 </content>
  </entry>
  
@@ -1427,18 +1386,30 @@ eclipse安装：直接解压
 wtk的安装：
 首先官网上似乎说了要先下载几个包才能正确安装wtk:
 前提：这里用到了su的权限，
-执行下列指令即可[cc lang=&quot;perl&quot;]$sudo apt-get install libxpm-dev libxt-dev libx11-dev libice-dev libsm-dev libc6-dev libstdc++6-4.4-dev[/cc]
-接着是wtk的安装,这里有人说要取得权限先:
-[cc lang=&quot;perl&quot;]$sudo chmod +x sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin
-./sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin#开始安装，不行的话加sudo
-[/cc]
-\n\n
-安装的时候开始会有条例让你同意，这里我是按了很久回车建才按到底的，中间过程很简单，无非要你选择个jdk的路径
-如果不知到java路径在哪里的：
-[cc lang=&quot;perl&quot;]leopure@ubuntu:~$ which java
-/usr/bin/java#这是我的，所以jdk目录：/usr/bin
-[/cc]
-之后wtk就安装完成。&lt;/p&gt;
+执行下列指令即可&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libxpm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libxt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libx11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libice&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libsm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libc6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接着是wtk的安装,这里有人说要取得权限先:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sun_java_wireless_toolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5.2_01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linuxi486&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;./&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sun_java_wireless_toolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5.2_01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linuxi486&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#开始安装，不行的话加sudo&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;安装的时候开始会有条例让你同意，这里我是按了很久回车建才按到底的，中间过程很简单，无非要你选择个jdk的路径
+如果不知到java路径在哪里的：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;leopure&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;@ubuntu:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;which&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;/usr/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/java#这是我的，所以jdk目录：/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;之后wtk就安装完成。&lt;/p&gt;
 
 &lt;p&gt;接着安装的是插件eclipseme：首先是打开是eclipse--&gt;help--&gt;install new software&lt;/p&gt;
 
@@ -1457,32 +1428,12 @@ wtk的安装：
  </entry>
  
  <entry>
-   <title>推荐wordpress上好用的代码插件</title>
-   <link href="http://www.leopan.me/wordpress/2011/09/04/%E6%8E%A8%E8%8D%90wordpress%E4%B8%8A%E5%A5%BD%E7%94%A8%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8F%92%E4%BB%B6/"/>
-   <updated>2011-09-04T15:30:40+08:00</updated>
-   <id>http://www.leopan.me/wordpress/2011/09/04/推荐wordpress上好用的代码插件</id>
-   <content type="html">&lt;p&gt;作为一个软件工程的学生，在文章中插入代码是很正常的事情，前段时间发现了coolcode，但是不知道为什么我在编辑文章的时候没有看到标签，这样使用起来不是很方便，所以又找了一款新插件，对于wordpress新手还是挺好用的，codecolorer，下载在&lt;a href=&quot;http://wordpress.org/extend/plugins/codecolorer/&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;使用方式非常简单：
-选择html编辑模式：&lt;img src=&quot;http://img2081.poco.cn/mypoco/myphoto/20110904/15/64353555201109041520001025975135185_003.jpg&quot; alt=&quot;&quot; /&gt;
-\n\n&lt;/p&gt;
-
-&lt;p&gt;点击cc，键入语言：&lt;img src=&quot;http://img2081.poco.cn/mypoco/myphoto/20110904/15/64353555201109041521132878590740518_002.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当然可以自己键入这段代码：
-&lt;img src=&quot;http://img2081.poco.cn/mypoco/myphoto/20110904/15/64353555201109041521132878590740518_001.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最后的效果：[cc lang=&quot;c++&quot;]cout&amp;lt;&amp;lt;&quot;hello,world!&quot;&amp;lt;&amp;lt;endl[/cc]&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>一个乡下人进城的故事</title>
    <link href="http://www.leopan.me/life/2011/08/26/%E4%B8%80%E4%B8%AA%E4%B9%A1%E4%B8%8B%E4%BA%BA%E8%BF%9B%E5%9F%8E%E7%9A%84%E6%95%85%E4%BA%8B/"/>
    <updated>2011-08-26T04:18:50+08:00</updated>
    <id>http://www.leopan.me/life/2011/08/26/一个乡下人进城的故事</id>
    <content type="html">&lt;p&gt;这几天雨下的很平凡，温度也渐渐降低，可没有降低的是工地施工的噪音，耳朵里无法言语出来的杂音。
-/&lt;em&gt;之前老早打算和ZL去看imax的哈7，也终于在昨天如愿以偿，只不过是订了晚上的票，来回也算是艰辛折磨了，走之前正在更新ubuntu，不料宕机，重启再也无法进入系统，这算是一件悲催的事情，果不其然，回来之后也无法进入，懒得搜索了这次，本来10G的东西，正好也升到20G，重新来过不算什么。只是意料之中悲剧的事情发生了，没有被封wp，然后再dotcloud的push之下，博客消失了。还有也没什么东西，算是个教训，也在刚刚全部恢复了。&lt;/em&gt;/\n\n
+/&lt;em&gt;之前老早打算和ZL去看imax的哈7，也终于在昨天如愿以偿，只不过是订了晚上的票，来回也算是艰辛折磨了，走之前正在更新ubuntu，不料宕机，重启再也无法进入系统，这算是一件悲催的事情，果不其然，回来之后也无法进入，懒得搜索了这次，本来10G的东西，正好也升到20G，重新来过不算什么。只是意料之中悲剧的事情发生了，没有被封wp，然后再dotcloud的push之下，博客消失了。还有也没什么东西，算是个教训，也在刚刚全部恢复了。&lt;/em&gt;/&lt;!-- more --&gt;
 说说昨天吧，跨入万象城百老汇的一瞬间我仿佛被扒去了伪装成小P民的外衣，眼里放出了金光，十足把自己未见过市面的本质体现出来了，映如我眼帘的是一片金币辉煌和一个个豪华的洋文logo，我想这就是国际品牌吧，一家家连听都没听过店名，只记得进去之后拿起一双三位数的拖鞋我就无所适从了，面露尴尬，服务员也只是看着我，没有任何表情，宏大的大厦里，原谅我用了宏大，这个词也不太理解，就当是比巨大还巨大吧，其实大厦里这会儿人不算挺多，空荡荡的只有这些寂寞的商品，而这些服务员其实也是司空见惯了如我这般乡下来的穷人，一副穷酸像拿起一件我所支付不起的商品，然后面露让她能发笑的表情，我想这也算是他们这里的一项娱乐项目了吧。而我望着光滑的能映出人像的，我叫不出算是什么的金属装饰品时，一个红T，黑牛仔，还不合时宜的混搭一双白色回力时，忍不住狠狠的赏了自己两个字——傻逼。
 作为一个傻逼也是要饿，一开始也没有想到底这里会有多少家能吃的店，看见的只有肯德基，麦当劳，星巴克，必胜客等高端社会出来的产物，想想口袋里的钱，曾一个寒碜了得，这是眼睛一辆看到了味千拉面，很耳熟，似乎身边好多人都吃过，想想这总算是吃得其了，和ZL悻悻走入，不想拿起菜单，最便宜的面是23，这得两个汉堡，4顿快餐，本欲走出，只是服务员都看着，未免会有失体面，下狠了决心，那就两碗最便宜的面吧，面汤也算不错，这么贵的面又怎么能不再微博上装B一把，未想到有人说这是勾兑的汤底，想想不知是否算是上了当，不过汤也算得不错，又是大品牌的东西，也算是值，即便将来不再吃这货了，也有可以装B的说我算是吃过味千的人，当然对象也只能是比我还寒碜的人，于是心中又不由的一喜。
 之后看了哈7。也总算是见识到了什么是3d的，什么是IMax的，作为一个没见过什么市面的人，这回总算是见过市面，当然在走进苏宁电器的时候我才发现原来苹果的电脑可以是那么大，不仅大而且帅，忍不住又要上前把玩把玩，似乎又有点不太好意思，未料其实服务员也是看了看我们，定知不会买，便连招呼都不打，更不提招待了，自顾自己聊天休闲，而我也体验了一把什么是mac，当然还有很多手机，各种适用。当然这是我也发现有一个保安叔叔拿着那里的一个样机一直在看小说，仿佛很入迷，况且还是一台三星的I9000这一系列的高端产品，看得不亦乐乎，又非常的仔细，突然心中又飘过一个可怕的念头，不如将来当个保安，像这样的保安平日什么数码产品碰不到，只要打好了关系，店员店长也不会来管，这简直是一个美差！
@@ -1497,34 +1448,51 @@ wtk的安装：
    <id>http://www.leopan.me/dotcloud/ubuntu/2011/08/21/ubuntu+wordpress+dotcloud搭建属于自己的博客</id>
    <content type="html">&lt;p&gt;最近是流行搭博客么？表示没有什么水平，没钱买空间和域名，就用了免费的tk域名和免费的dotcloud，步骤还算是比较简单的，所以拿出来分享下，也由于博客没有人气，所以算是自己的日志或者是记录怎么搭建。
 首先当然是准备工作，安装Dotcloud CLI(Command Line Interface)，由于通过easy_install安装所以
-首先安装easy_install：
-[cc lang=&quot;Perl&quot;]  $wget http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
-   $tar -xf setuptools-0.6c11.tar.gz
-   $cd setuptools-0.6c11
-   $sudo python2.7 setup.py install   //其中的python2.7大家换成自己机器上的
-[/cc]\n\n
-  接下来才是安装Dotcloud CLI:
-[cc lang=&quot;Perl&quot;]$sudo easy_install pip &amp;amp;&amp;amp; sudo pip install dotcloud   //安装python-pip以安装  [/cc]
-此时dotcloud CLI应该装完,可以用最简单的命令测试:
-[cc lang=&quot;perl&quot;] $dotcloud[/cc]
-此时键入API KEY，API Key可以登录dotcloud网站在 setting里找到。&lt;/p&gt;
+首先安装easy_install：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$wget&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pypi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/packages/so&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urce&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/s/s&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;etuptools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setuptools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gz&lt;/span&gt; 
+   &lt;span class=&quot;nv&quot;&gt;$tar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setuptools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gz&lt;/span&gt; 
+   &lt;span class=&quot;nv&quot;&gt;$cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setuptools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c11&lt;/span&gt; 
+   &lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;python2&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.7&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;   &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;其中的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python2&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;大家换成自己机器上的&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;  接下来才是安装Dotcloud CLI:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;easy_install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt;   &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;安装&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;以安装&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;此时dotcloud CLI应该装完,可以用最简单的命令测试:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$dotcloud&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;此时键入API KEY，API Key可以登录dotcloud网站在 setting里找到。&lt;/p&gt;
 
 &lt;p&gt;此时可以创建你的blog所在目录了，例如我的myapp/blog/&lt;a href=&quot;http://cn.wordpress.org/&quot;&gt;wordpress&lt;/a&gt;，&lt;a href=&quot;http://cn.wordpress.org/&quot;&gt;wordpress&lt;/a&gt;在官方下载。中英随意。
 将wordpress解压到你的目录下面。&lt;/p&gt;
 
-&lt;p&gt;接着键入代码：
-[cc lang=&quot;perl&quot;]cd myapp/blog/wordpress
-git clone https://github.com/qpleple/wordpress-on-dotcloud #此处如果没有安装git则sudo apt-get install git
-mv wordpress-on-dotcloud/* .
-dotcloud create myblog #你app自己的名字
-dotcloud push myblog
-dotcloud push myblog
-dotcloud push myblog #push 2-3次工程进入提示网址即可5分钟注册wordpress
-[/cc]&lt;/p&gt;
+&lt;p&gt;接着键入代码：&lt;/p&gt;
 
-&lt;p&gt;最后可以绑定你的域名：
-[cc lang=&quot;perl&quot;]$ dotcloud alias add myblog.www www.example.com[/cc]
-根据提示更改DNS。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myapp&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/blog/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wordpress&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//gi&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thub&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/qpleple/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wordpress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#此处如果没有安装git则sudo apt-get install git&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mv&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordpress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#你app自己的名字&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblog&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblog&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;dotcloud&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#push 2-3次工程进入提示网址即可5分钟注册wordpress&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最后可以绑定你的域名：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-perl&quot; data-lang=&quot;perl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dotcloud&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;根据提示更改DNS。&lt;/p&gt;
 
 &lt;p&gt;这样自己的blog就搭建完了，当然push的功能非常不完美，容易坏事儿。推荐使用ssh。
 推荐mckelvin的简易教程：http://www.mckelvin.tk/?p=740&lt;/p&gt;
@@ -1538,11 +1506,11 @@ dotcloud push myblog #push 2-3次工程进入提示网址即可5分钟注册word
    <id>http://www.leopan.me/helloworld/2011/08/20/hello-world</id>
    <content type="html">
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello ,World!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello ,World!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 

@@ -12,7 +12,7 @@ categories:
 ---
 
 作业拖欠了好久了，暂时搞个java的应付下作业先，参考了下网上的资料写的，bug还是有的吧。
-\n\n
+<!-- more -->
 [code lang="java"]
 import java.util.*;
 //Extension points扩展节点

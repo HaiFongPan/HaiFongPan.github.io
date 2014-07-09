@@ -15,25 +15,25 @@ JAVAEE非常让人蛋疼菊紧，好好的一本书，前八章的内容竟然�
 言归正传，以前用的mysql是大神同学给配置好的，所有乱码问题都解决了，这次轮到自己了，其实在mysql的客户端中中文显示是正常的，但是java一读出来就不对了，很显然，应该是mysql编码问题，默认貌似是latin1，虽然我不曾认识这个编码，但是从现在开始获取我要开始憎恨它了。
 
 从网上找了一些资料，发现主要问题是my.ini这个配置文件，如何找到这个目录呢，我是在C:\Program Files\MySQL\MySQL Server 5.5 目录下面
-关键要修改几个地方：\n\n
+关键要修改几个地方：<!-- more -->
 [client]加入
-[cc lang="perl]default-character-set=gbk[/cc]
+{% highlight perl %}default-character-set=gbk{% endhighlight %}
 [mysql]也是
 
-[cc lang="perl]default-character-set=gbk[/cc]
+{% highlight perl %}default-character-set=gbk{% endhighlight %}
 并把
 [mysqld]中的
-[cc lang="perl]character-set-server=utf8 #gbk应该也可以[/cc]
+{% highlight perl %}character-set-server=utf8 #gbk应该也可以{% endhighlight %}
 
 然后保存文件
 打开控制台
-[cc lang="perl]net stop mysql //停止mysql服务
-net start mysql //开启mysql服务[/cc]
+{% highlight perl %}net stop mysql //停止mysql服务
+net start mysql //开启mysql服务{% endhighlight %}
 
 
 然后进入mysql
 
-<code>
+{% highlight perl %}
 mysql> show variables like 'character%';
 | Variable_name            | Value
 | character_set_client     | gbk
@@ -44,7 +44,7 @@ mysql> show variables like 'character%';
 | character_set_server     | utf8
 | character_set_system     | utf8
 | character_sets_dir       | C:\Program Files\MySQL\MySQL Server 5.5\share\charsets\ |
-</code>
+{% endhighlight %}
 
 如果结果如上所示，应该就不是乱码了。
 

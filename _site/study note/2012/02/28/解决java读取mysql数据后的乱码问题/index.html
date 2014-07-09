@@ -113,55 +113,63 @@
 <p>言归正传，以前用的mysql是大神同学给配置好的，所有乱码问题都解决了，这次轮到自己了，其实在mysql的客户端中中文显示是正常的，但是java一读出来就不对了，很显然，应该是mysql编码问题，默认貌似是latin1，虽然我不曾认识这个编码，但是从现在开始获取我要开始憎恨它了。</p>
 
 <p>从网上找了一些资料，发现主要问题是my.ini这个配置文件，如何找到这个目录呢，我是在C:\Program Files\MySQL\MySQL Server 5.5 目录下面
-关键要修改几个地方：\n\n
-[client]加入
-[cc lang="perl]default-character-set=gbk[/cc]
-[mysql]也是</p>
+关键要修改几个地方：<!-- more -->
+[client]加入</p>
 
-<p>[cc lang="perl]default-character-set=gbk[/cc]
-并把
-[mysqld]中的
-[cc lang="perl]character-set-server=utf8 #gbk应该也可以[/cc]</p>
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="n">default</span><span class="o">-</span><span class="n">character</span><span class="o">-</span><span class="n">set</span><span class="o">=</span><span class="n">gbk</span></code></pre></div>
+
+
+<p>[mysql]也是</p>
+
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="n">default</span><span class="o">-</span><span class="n">character</span><span class="o">-</span><span class="n">set</span><span class="o">=</span><span class="n">gbk</span></code></pre></div>
+
+
+<p>并把
+[mysqld]中的</p>
+
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="n">character</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">server</span><span class="o">=</span><span class="n">utf8</span> <span class="c1">#gbk应该也可以</span></code></pre></div>
+
 
 <p>然后保存文件
-打开控制台
-[cc lang="perl]net stop mysql //停止mysql服务
-net start mysql //开启mysql服务[/cc]</p>
+打开控制台</p>
+
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="n">net</span> <span class="n">stop</span> <span class="n">mysql</span> <span class="sr">//</span><span class="err">停止</span><span class="n">mysql</span><span class="err">服务</span>
+<span class="n">net</span> <span class="n">start</span> <span class="n">mysql</span> <span class="sr">//</span><span class="err">开启</span><span class="n">mysql</span><span class="err">服务</span></code></pre></div>
+
 
 <p>然后进入mysql</p>
 
-<p><code>
-mysql> show variables like 'character%';
-| Variable_name            | Value
-| character_set_client     | gbk
-| character_set_connection | gbk
-| character_set_database   | utf8
-| character_set_filesystem | binary
-| character_set_results    | gbk
-| character_set_server     | utf8
-| character_set_system     | utf8
-| character_sets_dir       | C:\Program Files\MySQL\MySQL Server 5.5\share\charsets\ |
-</code></p>
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">variables</span> <span class="n">like</span> <span class="s">&#39;character%&#39;</span><span class="p">;</span>
+<span class="o">|</span> <span class="n">Variable_name</span>            <span class="o">|</span> <span class="n">Value</span>
+<span class="o">|</span> <span class="n">character_set_client</span>     <span class="o">|</span> <span class="n">gbk</span>
+<span class="o">|</span> <span class="n">character_set_connection</span> <span class="o">|</span> <span class="n">gbk</span>
+<span class="o">|</span> <span class="n">character_set_database</span>   <span class="o">|</span> <span class="n">utf8</span>
+<span class="o">|</span> <span class="n">character_set_filesystem</span> <span class="o">|</span> <span class="n">binary</span>
+<span class="o">|</span> <span class="n">character_set_results</span>    <span class="o">|</span> <span class="n">gbk</span>
+<span class="o">|</span> <span class="n">character_set_server</span>     <span class="o">|</span> <span class="n">utf8</span>
+<span class="o">|</span> <span class="n">character_set_system</span>     <span class="o">|</span> <span class="n">utf8</span>
+<span class="o">|</span> <span class="n">character_sets_dir</span>       <span class="o">|</span> <span class="n">C:</span><span class="o">\</span><span class="n">Program</span> <span class="n">Files</span><span class="o">\</span><span class="n">MySQL</span><span class="o">\</span><span class="n">MySQL</span> <span class="n">Server</span> <span class="mf">5.5</span><span class="o">\</span><span class="n">share</span><span class="o">\</span><span class="n">charsets</span><span class="o">\</span> <span class="o">|</span></code></pre></div>
+
 
 <p>如果结果如上所示，应该就不是乱码了。</p>
 
 <p>如果还是不行。亲参考<a href="http://developer.51cto.com/art/200906/130425.htm">这里</a></p>
 
 </div>
- <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
+<div id="disqus_thread"></div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
 <!-- <div class="related">
   <h2>Related Posts</h2>

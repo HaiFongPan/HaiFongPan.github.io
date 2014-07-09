@@ -44,7 +44,7 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
 
 
 
-\n\n
+<!-- more -->
 配置文件主要是lua脚本rc.lua的配置，基本上来说配置的example已经够用，在折腾的时候犹豫不想深入去学习lua所以基本参考了前辈们的例子。如：
 
 

@@ -26,17 +26,17 @@ eclipse安装：直接解压
 wtk的安装：
 首先官网上似乎说了要先下载几个包才能正确安装wtk:
 前提：这里用到了su的权限，
-执行下列指令即可[cc lang="perl"]$sudo apt-get install libxpm-dev libxt-dev libx11-dev libice-dev libsm-dev libc6-dev libstdc++6-4.4-dev[/cc]
+执行下列指令即可{% highlight perl %}$sudo apt-get install libxpm-dev libxt-dev libx11-dev libice-dev libsm-dev libc6-dev libstdc++6-4.4-dev{% endhighlight %}
 接着是wtk的安装,这里有人说要取得权限先:
-[cc lang="perl"]$sudo chmod +x sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin
+{% highlight perl %}$sudo chmod +x sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin
 ./sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin#开始安装，不行的话加sudo
-[/cc]
-\n\n
+{% endhighlight %}
+<!-- more -->
 安装的时候开始会有条例让你同意，这里我是按了很久回车建才按到底的，中间过程很简单，无非要你选择个jdk的路径
 如果不知到java路径在哪里的：
-[cc lang="perl"]leopure@ubuntu:~$ which java
+{% highlight perl %}leopure@ubuntu:~$ which java
 /usr/bin/java#这是我的，所以jdk目录：/usr/bin
-[/cc]
+{% endhighlight %}
 之后wtk就安装完成。
 
 接着安装的是插件eclipseme：首先是打开是eclipse-->help-->install new software

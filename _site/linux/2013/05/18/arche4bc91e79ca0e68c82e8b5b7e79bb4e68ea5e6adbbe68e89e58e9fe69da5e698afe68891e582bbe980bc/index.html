@@ -116,39 +116,43 @@
 
 <h2>解决</h2>
 
-<p>\n\n
-解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki</p>
+<!-- more -->
+
+
+<p>解决方法当然就是给系统再搞个swap,懒得分区,直接搞一个swap文件即可,以下方法也是按照wiki</p>
 
 <ul>
-<li>如下:[cc lang="bash"]
-$ su #root 权限,或者sudo
-$ fallocate -l 512M /swapfile #创建大小为512M的交换文件
-$ dd if=/dev/zero of=/swapfile bs=1M count=512
-$ chmod 600 /swapfile
-$ mkswap /swapfile
-$ swapon /swapfile
-$ vim /etc/fstab #添加
-$ /swapfile none swap defaults 0 0[/cc]</li>
+<li>如下:</li>
 </ul>
+
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>su <span class="c">#root 权限,或者sudo</span>
+<span class="nv">$ </span>fallocate -l 512M /swapfile <span class="c">#创建大小为512M的交换文件</span>
+<span class="nv">$ </span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/swapfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>512
+<span class="nv">$ </span>chmod <span class="m">600</span> /swapfile
+<span class="nv">$ </span>mkswap /swapfile
+<span class="nv">$ </span>swapon /swapfile
+<span class="nv">$ </span>vim /etc/fstab <span class="c">#添加</span>
+<span class="nv">$ </span>/swapfile none swap defaults <span class="m">0</span> 0</code></pre></div>
 
 
 <p>然后就Ok,所以说,还得多学学linux的知识...</p>
 
 </div>
- <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
+<div id="disqus_thread"></div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
 <!-- <div class="related">
   <h2>Related Posts</h2>

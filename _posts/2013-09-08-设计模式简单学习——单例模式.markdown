@@ -45,24 +45,24 @@ tags:
 
 
     * 全局变量的缺点在于,首先我们必须在程序一开始的时候就创建好该对象(假设非常消耗资源,程序又很少使用,那么就浪费了),而且全局变量不能保证我们在程序执行过程中不实例化多个对象
-\n\n
+<!-- more -->
 单例模式经典模式:
-[csharp]
+{% highlight csharp linenos%}
 namespace SINGLETON{
-public class singleton {
-private static singleton instance;
-private singleton(){
+  public class singleton {
+    private static singleton instance;
+    private singleton(){
     //...
-}
-public static singleton getInstace(){
-    if (instance == null){
-        instance = new singleton();
     }
-    return instance;
+    public static singleton getInstace(){
+      if (instance == null){
+        instance = new singleton();
+      }
+      return instance;
+    }
+  }
 }
-}
-}
-[/csharp]
+{% endhighlight %}
 
 
 
@@ -71,7 +71,7 @@ public static singleton getInstace(){
 
 
 单例模式多线程双重锁模式:
-[csharp]
+{% highlight csharp linenos%}
 namespace SINGLETONSYNC{
     public class singleton {
         private static singleton instance;
@@ -91,27 +91,27 @@ namespace SINGLETONSYNC{
         }
     }
 }
-[/csharp]
+{% endhighlight %}
 
 
 
 
 
 单例模式急切饥饿模式:
-[csharp]
+{% highlight csharp linenos%}
 // 这种模式不适合与消耗资源且利用次数少的对象
 namespace SINGLETONEAGERLY{
-    public class singleton {
-        private static readonly singleton instance = new sinlgeton();
-        private singleton(){
-            //...
-        }
-        public static singleton getInstace(){
-            return instance;
-        }
+  public class singleton {
+    private static readonly singleton instance = new sinlgeton();
+    private singleton(){
+         //...
     }
+    public static singleton getInstace(){
+    return instance;
+    }
+  }
 }
-[/csharp]
+{% endhighlight %}
 
 
 

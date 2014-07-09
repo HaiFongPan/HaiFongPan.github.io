@@ -42,7 +42,7 @@ Mono 版本 2.10.9-1
 
 
 
-\n\n
+<!-- more -->
 `
 //UserController简单代码
 public ActionResult getUser(){
@@ -52,7 +52,7 @@ public ActionResult getUser(){
     return Json(strJson,JsonRequestBehavior.AllowGet);
 }
 `
-[cc lang="javascript"]
+{% highlight javascript %}
 //Extjs Model中简单代码
 Ext.define('leo.model.User',{
     extend: 'Ext.data.Model',
@@ -78,7 +78,7 @@ Ext.define('leo.model.User',{
 
 
 })
-[/cc]
+{% endhighlight %}
 
 
 
@@ -131,7 +131,7 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in <
 
 
 
-[cc lang ="xml"]
+{% highlight xml %}
  
       
          
@@ -140,7 +140,7 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in <
          
       
    
-[/cc]
+{% endhighlight %}
 
 
 

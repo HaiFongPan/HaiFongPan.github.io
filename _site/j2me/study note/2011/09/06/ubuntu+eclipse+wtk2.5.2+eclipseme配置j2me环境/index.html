@@ -123,18 +123,30 @@ eclipse安装：直接解压
 wtk的安装：
 首先官网上似乎说了要先下载几个包才能正确安装wtk:
 前提：这里用到了su的权限，
-执行下列指令即可[cc lang="perl"]$sudo apt-get install libxpm-dev libxt-dev libx11-dev libice-dev libsm-dev libc6-dev libstdc++6-4.4-dev[/cc]
-接着是wtk的安装,这里有人说要取得权限先:
-[cc lang="perl"]$sudo chmod +x sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin
-./sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin#开始安装，不行的话加sudo
-[/cc]
-\n\n
-安装的时候开始会有条例让你同意，这里我是按了很久回车建才按到底的，中间过程很简单，无非要你选择个jdk的路径
-如果不知到java路径在哪里的：
-[cc lang="perl"]leopure@ubuntu:~$ which java
-/usr/bin/java#这是我的，所以jdk目录：/usr/bin
-[/cc]
-之后wtk就安装完成。</p>
+执行下列指令即可</p>
+
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="nv">$sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libxpm</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span> <span class="n">libx11</span><span class="o">-</span><span class="n">dev</span> <span class="n">libice</span><span class="o">-</span><span class="n">dev</span> <span class="n">libsm</span><span class="o">-</span><span class="n">dev</span> <span class="n">libc6</span><span class="o">-</span><span class="n">dev</span> <span class="n">libstdc</span><span class="o">++</span><span class="mi">6</span><span class="o">-</span><span class="mf">4.4</span><span class="o">-</span><span class="n">dev</span></code></pre></div>
+
+
+<p>接着是wtk的安装,这里有人说要取得权限先:</p>
+
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="nv">$sudo</span> <span class="nb">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">sun_java_wireless_toolkit</span><span class="o">-</span><span class="mf">2.5.2_01</span><span class="o">-</span><span class="n">linuxi486</span><span class="o">.</span><span class="n">bin</span>
+<span class="o">./</span><span class="n">sun_java_wireless_toolkit</span><span class="o">-</span><span class="mf">2.5.2_01</span><span class="o">-</span><span class="n">linuxi486</span><span class="o">.</span><span class="n">bin</span><span class="c1">#开始安装，不行的话加sudo</span></code></pre></div>
+
+
+
+
+<!-- more -->
+
+
+<p>安装的时候开始会有条例让你同意，这里我是按了很久回车建才按到底的，中间过程很简单，无非要你选择个jdk的路径
+如果不知到java路径在哪里的：</p>
+
+<div class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="n">leopure</span><span class="nv">@ubuntu:</span><span class="o">~</span><span class="nv">$</span> <span class="nv">which</span> <span class="n">java</span>
+<span class="sr">/usr/</span><span class="n">bin</span><span class="sr">/java#这是我的，所以jdk目录：/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span></code></pre></div>
+
+
+<p>之后wtk就安装完成。</p>
 
 <p>接着安装的是插件eclipseme：首先是打开是eclipse-->help-->install new software</p>
 
@@ -151,20 +163,20 @@ wtk的安装：
 <a href="http://www.leopan.me/wp-content/uploads/2011/09/5.png"><img src="http://www.leopan.me/wp-content/uploads/2011/09/5.png" alt="" /></a><a href="http://www.leopan.me/wp-content/uploads/2011/09/6.png"><img src="http://www.leopan.me/wp-content/uploads/2011/09/6.png" alt="" /></a>全文完，转载说明出处。本文非全部原创。</p>
 
 </div>
- <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
+<div id="disqus_thread"></div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'leopanme'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
 <!-- <div class="related">
   <h2>Related Posts</h2>
