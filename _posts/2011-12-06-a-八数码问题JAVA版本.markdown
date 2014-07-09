@@ -13,7 +13,7 @@ categories:
 
 作业拖欠了好久了，暂时搞个java的应付下作业先，参考了下网上的资料写的，bug还是有的吧。
 <!-- more -->
-[code lang="java"]
+{% highlight java%}
 import java.util.*;
 //Extension points扩展节点
 class ExtenPoint// 扩展节点类
@@ -258,4 +258,4 @@ public class MyTable {
 	}
 
 }
-[/code]
+{% endhighlight %}

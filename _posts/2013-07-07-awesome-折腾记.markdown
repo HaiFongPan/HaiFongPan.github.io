@@ -26,11 +26,11 @@ tags:
 
 
 
-[code lang="bash"]
+{% highlight bash linenos%}
 $ pacman -S awesome # 安装awesome
 $ mkdir ~/.config/awesome # 创建配置文件目录
 $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
-[/code]
+{% endhighlight %}
 
 
 
@@ -63,7 +63,7 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome # 复制配置文件example
 
 
 
-[code lang="js"]
+{% highlight javascript linenos%}
 function update_batwidget()
     local bat_dir = "/sys/class/power_supply/BAT0/"
     local f = io.open(bat_dir..'status','r')
@@ -91,7 +91,7 @@ function update_batwidget()
     end
     batwidget:set_markup(state .. percent .. '%</span>' .. ' | ')
 end
-[/code]
+{% endhighlight %}
 
 
 
@@ -99,9 +99,9 @@ end
 
 `应用菜单`主要是用 archlinux-xdg-menu 这个包
 执行如下语句即可生成menu文件，配置到rc.lua中即可：
-[code lang="bash"]
+{% highlight bash linenos%}
 xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu > ~/.config/awesome/menu.lua
-[/code]
+{% endhighlight %}
 
 
 
@@ -109,10 +109,10 @@ xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu > ~/
 
 关于休眠
 偷懒了一下直接在sudoer中设置了pm-suspend 不需要输入密码，然后rc.lua配置一下即可，
-[code lang="bash"]
+{% highlight bash linenos%}
 leo ALL = (ALL) NOPASSWD: /usr/bin/pm-hibernate
 leo ALL = (ALL) NOPASSWD: /usr/bin/pm-suspend
-[/code]
+{% endhighlight %}
 
 
 

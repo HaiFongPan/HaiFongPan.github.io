@@ -21,5 +21,6 @@ paginate:         5
 # Custom vars
 # version:          2.0.0
 excerpt_separator:  '<!-- more -->'
+baseurl:          /
 # github:
 #   repo:           https://github.com/poole/lanyon
