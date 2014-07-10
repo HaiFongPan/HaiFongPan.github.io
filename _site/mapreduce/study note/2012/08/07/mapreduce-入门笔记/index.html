@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<!--   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400"> -->
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
@@ -74,8 +74,6 @@
     
       
     
-      
-    
 
 <!--     <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>
@@ -123,7 +121,7 @@
 
 <p>按照网上所有认识MapReduce博文千篇一律的尿性，我要放上一张原理图：</p>
 
-<p><a href="http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg"><img src="http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-680x398.jpg" alt="" /></a></p>
+<p><img src="/images/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-680x398.jpg" alt="mapreduce" /></p>
 
 <p>简言之：在输入数据的记录上进行Map操作，得到中间集&lt;key,value>对集，再对具有相同key的&lt;key,value>对上进行Reduce操作，生成结果输出</p>
 
@@ -239,11 +237,11 @@
 
 <p>书中的例子非常简单：有两个矩阵A(N_N)、B(N_N)，求矩阵C = A*B（A,B过大，一台服务器无法存下），这个时候用MapReduce的原理来解决就非常简单了（其实就是分而治之），首先将矩阵A拆分10个小矩阵，每一个小矩阵有N/10行</p>
 
-<p><a href="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png"><img src="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png" alt="" /></a></p>
+<p><img src="/images/QQ%E6%88%AA%E5%9B%BE20120807083748.png" alt="matrix1" /></p>
 
 <p>将矩阵B拆分为10个小矩阵，每一个小矩阵有N/10列</p>
 
-<p><a href="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png"><img src="http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png" alt="" /></a></p>
+<p><img src="/images/QQ%E6%88%AA%E5%9B%BE20120807083757.png" alt="matrix2" /></p>
 
 <p>很明显这个时候如果一个服务器处理一个Ai*Bj则能计算出Cij，得到子问题的解，最后将Cij的结果合并起来便是所求矩阵C了，一台服务器搞不定的问题，多台服务器搞定了</p>
 

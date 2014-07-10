@@ -48,7 +48,7 @@ tags:
 
 
 
-[![Adapter2](http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png)](http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png)
+![Adapter2](/images/Adapter2.png)
 <!-- more -->
 适配器模式简单实例:
 {% highlight csharp linenos%}
@@ -91,7 +91,7 @@ namespace ADAPTER{
 
 
 
-[![adapter](http://www.leopan.me/wp-content/uploads/2013/09/adapter.png)](http://www.leopan.me/wp-content/uploads/2013/09/adapter.png)
+![adapter](/images/adapter.png)
 
 
 
@@ -142,7 +142,7 @@ namespace ADAPTER{
 
 
 
-[![facade](http://www.leopan.me/wp-content/uploads/2013/09/facade.png)](http://www.leopan.me/wp-content/uploads/2013/09/facade.png)
+![facade](/images/facade.png)]
 
 
 
@@ -234,7 +234,7 @@ namespace PROXY
 
 
 
-[![proxy](http://www.leopan.me/wp-content/uploads/2013/09/proxy.png)](http://www.leopan.me/wp-content/uploads/2013/09/proxy.png)
+![proxy](/images/proxy.png)
 
 
 

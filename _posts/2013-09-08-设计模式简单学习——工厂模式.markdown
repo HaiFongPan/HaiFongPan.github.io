@@ -157,7 +157,7 @@ namespace SimpleFactory{
 
 
 
-[![simplefactory](http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png)](http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png)
+![simplefactory](/images/simplefactory.png)
 
 
 
@@ -244,7 +244,7 @@ namespace FactoryMethod{
 
 
 工厂方法的类图:
-[![FactoryMethod](http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png)](http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png)
+![FactoryMethod](/images/FactoryMethod.png)
 
 
 

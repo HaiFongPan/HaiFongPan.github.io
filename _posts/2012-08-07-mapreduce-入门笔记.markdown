@@ -61,7 +61,7 @@ MapReduce是实习第一周公司带我的导师要我去了解的一个东西�
 
 
 
-[![](http://www.leopan.me/wp-content/uploads/2012/08/MapReduce执行过程-680x398.jpg)](http://www.leopan.me/wp-content/uploads/2012/08/MapReduce执行过程.jpg)
+![mapreduce](/images/MapReduce执行过程-680x398.jpg)
 
 
 
@@ -287,7 +287,7 @@ MapReduce是实习第一周公司带我的导师要我去了解的一个东西�
 
 
 
-[![](http://www.leopan.me/wp-content/uploads/2012/08/QQ截图20120807083748.png)](http://www.leopan.me/wp-content/uploads/2012/08/QQ截图20120807083748.png)
+![matrix1](/images/QQ截图20120807083748.png)
 
 
 
@@ -299,7 +299,7 @@ MapReduce是实习第一周公司带我的导师要我去了解的一个东西�
 
 
 
-[![](http://www.leopan.me/wp-content/uploads/2012/08/QQ截图20120807083757.png)](http://www.leopan.me/wp-content/uploads/2012/08/QQ截图20120807083757.png)
+![matrix2](/images/QQ截图20120807083757.png)
 
 
 

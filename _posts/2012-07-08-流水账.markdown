@@ -13,7 +13,7 @@ categories:
 也许是因为我昨天的手贱升级了wordpress到最新版，今天起床发现blog崩溃了，具体的说应该是数据库崩掉了，好在一直有用插件自动备份数据库，虽然blog里面没有特别重要的东西，不过作为一种回忆的载体，承载的是一份美好，也可能是遗憾、收获等等。
 
 
-[![](http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg)](http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg)
+![](/images/Hello_by_Jazzy_Blues.jpg)
 
 
 

@@ -3,7 +3,7 @@ author: leopure
 comments: true
 date: 2011-09-09 15:08:19+00:00
 layout: post
-slug: '推荐wordpress的一个插件WordPress-Database-Backup'
+slug: '推荐wordpress的一个插件wordpress-database-backup'
 title: 推荐wordpress的一个插件WordPress Database Backup
 wordpress_id: 160
 categories:

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+<!--   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400"> -->
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
@@ -74,8 +74,6 @@
     
       
     
-      
-    
 
 <!--     <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>
     <a class="sidebar-nav-item" href="">GitHub project</a>
@@ -106,37 +104,6 @@
 
       <div class="container content">
         <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/reading/2012/04/10/%E8%AF%BB%E3%80%8A%E5%9B%B4%E5%9F%8E%E3%80%8B/">
-        读《围城》
-      </a>
-    </h1>
-
-    <span class="post-date">10 Apr 2012</span>
-    
-    
-    <p>/*</p>
-
-<ul>
-<li><p>断断续续终究还是读完了《围城》，一开始总说没时间看，常常带着这本书穿梭在各种</p></li>
-<li><p>不想听的课堂上，但是往往又禁不住手机上网的诱惑，所以读书便是一拖再拖，总算是找</p></li>
-<li><p>了两个安静的下午看完了，我不是一个好读者，读过的书撇开教科书不算，可算真是寥寥</p></li>
-<li><p>无几，当然更不会写什么书评，但是有些想法，还是可以记录下来的，这是第一遍读《</p></li>
-<li><p>城》，我相信我会读第二遍第三遍，好的书从来不会褪色，尤其是这般令人回味无穷的</p></li>
-</ul>
-
-
-<p>*/</p>
-
-<p><a href="http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg"><img src="http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg" alt="" /></a></p>
-
-
-    
-    <p><a href="/life/reading/2012/04/10/%E8%AF%BB%E3%80%8A%E5%9B%B4%E5%9F%8E%E3%80%8B/">Continue reading</a></p>
-    
-  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -213,6 +180,36 @@
 
     
     <p><a href="/artificial%20intelligence/study%20note/2011/12/06/a-%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98JAVA%E7%89%88%E6%9C%AC/">Continue reading</a></p>
+    
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2011/09/10/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E5%92%8C64%E4%BD%8D%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%97%AE%E9%A2%98/">
+        如何区别32位系统和64位系统的问题
+      </a>
+    </h1>
+
+    <span class="post-date">10 Sep 2011</span>
+    
+        <p>突然想到水哥在操作系统课上布置了一个题目，不要查看系统信息的情况下了解区别哪个是32位系统哪个是64位系统？
+这个问题出来的时候第一反应是看Int之类的取值范围，由于计算机知识比较缺乏，所以还是google了一下到底64位和32
+位系统在这个方面有什么区别，结果发现原来32位和64位的int都是4个字节，但是long就不一样了，32位系统上，32位；
+而在64位系统上，long类型是64位的。。
+：</p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &quot;stdafx.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">l</span><span class="p">);</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>打印出了4 说明Long是4个字节，属于32，但是没有64位系统的就没试过。</p>
+
     
   </div>
   

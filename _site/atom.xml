@@ -4,7 +4,7 @@
  <title>LeoPan</title>
  <link href="http://www.leopan.me/atom.xml" rel="self"/>
  <link href="http://www.leopan.me/"/>
- <updated>2014-07-09T20:41:47+08:00</updated>
+ <updated>2014-07-10T09:43:13+08:00</updated>
  <id>http://www.leopan.me</id>
  <author>
    <name>Leo Pan</name>
@@ -69,7 +69,7 @@
 
 &lt;p&gt;首先,什么是适配器?如下图,适配器就像一个中间件,能使调用者理解被适配者&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/Adapter2.png&quot; alt=&quot;Adapter2&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Adapter2.png&quot; alt=&quot;Adapter2&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -107,7 +107,7 @@
 
 &lt;p&gt;适配器模式类图:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/adapter.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/adapter.png&quot; alt=&quot;adapter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/adapter.png&quot; alt=&quot;adapter&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;该模式通过创建适配器进行接口转换,让不兼容的接口变成兼容,这可以让客户从实现的接口解耦.如果在一段时间后,我们想要改变接口,适配器可以将改变的部分封装起来,客户就不必为了应对不同的接口而每次跟着修改了.&lt;/p&gt;&lt;/li&gt;
@@ -129,7 +129,7 @@
 
 &lt;p&gt;外观层类图:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/facade.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/facade.png&quot; alt=&quot;facade&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/facade.png&quot; alt=&quot;facade&quot; /&gt;]&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;类图明显反应了调用者完全不需要知道各个子系统分担了什么功能&lt;/p&gt;&lt;/li&gt;
@@ -186,7 +186,7 @@
 
 &lt;p&gt;代理模式类图:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/proxy.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/proxy.png&quot; alt=&quot;proxy&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/proxy.png&quot; alt=&quot;proxy&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;代理模式中,代理类控制了客户对真实对象的访问,客户在调用时不需要关心真实对象本身&lt;/p&gt;&lt;/li&gt;
@@ -404,7 +404,7 @@
 
 &lt;p&gt;简单工厂的类图如下:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/simplefactory.png&quot; alt=&quot;simplefactory&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/simplefactory.png&quot; alt=&quot;simplefactory&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;简单工厂模式更像是一个编程的习惯,而不是一种设计模式&lt;/p&gt;&lt;/li&gt;
@@ -476,7 +476,7 @@
 
 
 &lt;p&gt;工厂方法的类图:
-&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/09/FactoryMethod.png&quot; alt=&quot;FactoryMethod&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/FactoryMethod.png&quot; alt=&quot;FactoryMethod&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;在工厂方法中我们定义一个创建对象的接口,但由子类决定要实例化的类是哪一个,工厂方法让类把实例化推迟到子类(非运行时)&lt;/p&gt;&lt;/li&gt;
@@ -571,7 +571,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot-1024x575.png&quot; alt=&quot;2013-07-07-201818_1366x768_scrot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2013-07-07-201818_1366x768_scrot-1024x575.png&quot; alt=&quot;2013-07-07-201818_1366x768_scrot&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;其他&lt;/p&gt;
@@ -627,109 +627,6 @@
  </entry>
  
  <entry>
-   <title>Monodevelop开发asp.net mvc2 json序列化出错的问题</title>
-   <link href="http://www.leopan.me/2013/05/10/monodevelop%E5%BC%80%E5%8F%91asp.net%20mvc2%20json%E5%BA%8F%E5%88%97%E5%8C%96%E5%87%BA%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-   <updated>2013-05-10T00:00:00+08:00</updated>
-   <id>http://www.leopan.me/2013/05/10/monodevelop开发asp.net mvc2 json序列化出错的问题</id>
-   <content type="html">&lt;hr /&gt;
-
-&lt;p&gt;author: LeoPan
-comments: true
-date: 2013-05-10 16:18:10+00:00
-layout: post
-slug: monodevelop开发asp.net-mvc2-json序列化出错的问题
-title: MonoDevelop开发ASP.NET MVC2 JSON序列化出错的问题
-wordpress_id: 590
-categories:
-- ASP.NET
-- MONO
-- Study Note
-tags:
-- ASP.NET&lt;/p&gt;
-
-&lt;h2&gt;- MONO&lt;/h2&gt;
-
-&lt;h3&gt;PS:我知道在Linux上写C# ASP.NET是很反人类的事&lt;/h3&gt;
-
-&lt;p&gt;Mono 版本 2.10.9-1&lt;/p&gt;
-
-&lt;p&gt;简单的ASP.NET MVC2的程序
-前台框架:Extjs&lt;/p&gt;
-
-&lt;p&gt;关键代码&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-
-&lt;p&gt;&lt;code&gt;
-//UserController简单代码
-public ActionResult getUser(){
-    User user = new User (a,b,c);
-    JavaScriptSerializer serializer = new JavaScriptSerializer();
-    String strJson = serializer.Serialize(user);
-    return Json(strJson,JsonRequestBehavior.AllowGet);
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//Extjs Model中简单代码&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Ext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;leo.model.User&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;extend&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Ext.data.Model&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-
-
-
-
-    
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ajax&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/User/getUser&amp;#39;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-        &lt;span class=&quot;nx&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;json&amp;#39;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/code&amp;gt;&lt;/span&gt;
-
-
-
-
-
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;当请求发送至后台,后台返回json数据的时候出现错误(###在vs2010下正常)
-&lt;code&gt;(Cannot cast from source type to destination type)
-at System.Web.Script.Serialization.JavaScriptSerializer..ctor (System.Web.Script.Serialization.JavaScriptTypeResolver resolver, Boolean registerConverters) [0x0000d] in /build/mono/src/mono-2.10.9/mcs/class/System.Web.Extensions/System.Web.Script.Serialization/JavaScriptSerializer.cs:66
-at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &amp;lt;filename unknown&amp;gt;:0&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;分析:
-在程序启动后,MonoDevelop应用程序输出中发现System.Web.Extensions 4.0.0.0已经加载了
-&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2013/05/2013-05-11-000530_1091x668_scrot.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2013/05/2013-05-11-000530_1091x668_scrot.png&quot; alt=&quot;2013-05-11-000530_1091x668_scrot&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;&lt;code&gt;Loaded assembly: ..../System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;可是当请求Controller时,程序又加载了一遍System.Web.Extensions,不过这次是3.5.0.0
-&lt;code&gt;Loaded assembly: ..../System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;于是就知道基本上是冲突了吧.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;解决方法
-在web.config中配置下绑定System.Web.Extensions不指向3.5.0.0即可&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h3&gt;PPS: 此处web.config 不是Views视图中的web.config 而是整个解决方案中的Web.config.&lt;/h3&gt;
-
-&lt;p&gt;最后,发现我根本就可以不需要用JavaScriptSerializer,不过解决问题总是好的.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>MapReduce 入门笔记</title>
    <link href="http://www.leopan.me/mapreduce/study%20note/2012/08/07/mapreduce-%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/"/>
    <updated>2012-08-07T08:49:29+08:00</updated>
@@ -749,7 +646,7 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 
 &lt;p&gt;按照网上所有认识MapReduce博文千篇一律的尿性，我要放上一张原理图：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/08/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-680x398.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/MapReduce%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B-680x398.jpg&quot; alt=&quot;mapreduce&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;简言之：在输入数据的记录上进行Map操作，得到中间集&amp;lt;key,value&gt;对集，再对具有相同key的&amp;lt;key,value&gt;对上进行Reduce操作，生成结果输出&lt;/p&gt;
 
@@ -865,11 +762,11 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 
 &lt;p&gt;书中的例子非常简单：有两个矩阵A(N_N)、B(N_N)，求矩阵C = A*B（A,B过大，一台服务器无法存下），这个时候用MapReduce的原理来解决就非常简单了（其实就是分而治之），首先将矩阵A拆分10个小矩阵，每一个小矩阵有N/10行&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083748.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/QQ%E6%88%AA%E5%9B%BE20120807083748.png&quot; alt=&quot;matrix1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;将矩阵B拆分为10个小矩阵，每一个小矩阵有N/10列&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/08/QQ%E6%88%AA%E5%9B%BE20120807083757.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/QQ%E6%88%AA%E5%9B%BE20120807083757.png&quot; alt=&quot;matrix2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;很明显这个时候如果一个服务器处理一个Ai*Bj则能计算出Cij，得到子问题的解，最后将Cij的结果合并起来便是所求矩阵C了，一台服务器搞不定的问题，多台服务器搞定了&lt;/p&gt;
 
@@ -890,7 +787,7 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
    <id>http://www.leopan.me/life/2012/07/08/流水账</id>
    <content type="html">&lt;p&gt;也许是因为我昨天的手贱升级了wordpress到最新版，今天起床发现blog崩溃了，具体的说应该是数据库崩掉了，好在一直有用插件自动备份数据库，虽然blog里面没有特别重要的东西，不过作为一种回忆的载体，承载的是一份美好，也可能是遗憾、收获等等。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/07/Hello_by_Jazzy_Blues.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Hello_by_Jazzy_Blues.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -936,7 +833,7 @@ at System.Web.Script.Serialization.JavaScriptSerializer..cctor () [0x00000] in &
 
 &lt;p&gt;*/&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg&quot;&gt;&lt;img src=&quot;http://www.leopan.me/wp-content/uploads/2012/04/IMAG1239867864481934.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/IMAG1239867864481934.jpg&quot; alt=&quot;钱钟书夫妇&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- more --&gt;
 

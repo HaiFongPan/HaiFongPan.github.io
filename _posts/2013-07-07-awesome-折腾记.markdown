@@ -126,7 +126,7 @@ leo ALL = (ALL) NOPASSWD: /usr/bin/pm-suspend
 
 
 
-[![2013-07-07-201818_1366x768_scrot](http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot-1024x575.png)](http://www.leopan.me/wp-content/uploads/2013/07/2013-07-07-201818_1366x768_scrot.png)
+![2013-07-07-201818_1366x768_scrot](/images/2013-07-07-201818_1366x768_scrot-1024x575.png)
 
 
 
