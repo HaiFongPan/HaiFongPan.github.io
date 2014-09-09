@@ -8,22 +8,6 @@ title: About me
 wordpress_id: 20
 ---
 
-## Just Another Archer
-
-
-
-
-
-<blockquote>
-  
-</blockquote>
-
-
-
-
-
-
-
   * [Weibo](http://weibo.com/346733695)  
 
 
