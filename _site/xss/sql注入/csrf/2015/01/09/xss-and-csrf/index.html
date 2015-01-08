@@ -171,15 +171,15 @@
 
 <p>存储型 XSS 攻击是攻击者将攻击脚本存入在服务端（如：blog、论坛帖子等内容），当浏览者在浏览内容的时候会自动执行脚本，如弹出一个伪造的登录，窃取用户信息。如下面代码：</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="lineno">1</span> <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-<span class="lineno">2</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;</span>
-<span class="lineno">3</span> <span class="s2">    &lt;h1&gt;用户登录&lt;/h1&gt;</span>
-<span class="lineno">4</span> <span class="s2">    &lt;form action=http://xxxx.xxx method=post&gt;</span>
-<span class="lineno">5</span> <span class="s2">        用户名:&lt;input type=text name=user&gt;</span>
-<span class="lineno">6</span> <span class="s2">        密码:&lt;input type=text name=password&gt;</span>
-<span class="lineno">7</span> <span class="s2">        &lt;input type=submit name=login&gt;</span>
-<span class="lineno">8</span> <span class="s2">    &lt;/form&gt;&quot;</span>
-<span class="lineno">9</span> <span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s2">&quot;</span>
+<span class="s2">    &lt;h1&gt;用户登录&lt;/h1&gt;</span>
+<span class="s2">    &lt;form action=http://xxxx.xxx method=post&gt;</span>
+<span class="s2">        用户名:&lt;input type=text name=user&gt;</span>
+<span class="s2">        密码:&lt;input type=text name=password&gt;</span>
+<span class="s2">        &lt;input type=submit name=login&gt;</span>
+<span class="s2">    &lt;/form&gt;&quot;</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span></code></pre></div>
 
 
 <p>用户在浏览的时候会执行这段注入的JS，攻击者可以窃取用户在站点的登录信息</p>
@@ -280,16 +280,16 @@
 </ol>
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="lineno"> 1</span> <span class="c">&lt;!-- web.xml --&gt;</span>
-<span class="lineno"> 2</span> <span class="nt">&lt;filter&gt;</span>
-<span class="lineno"> 3</span>     <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
-<span class="lineno"> 4</span>     <span class="nt">&lt;filter-class&gt;</span>org.springframework.web
-<span class="lineno"> 5</span>             .filter.DelegatingFilterProxy<span class="nt">&lt;/filter-class&gt;</span>
-<span class="lineno"> 6</span> <span class="nt">&lt;/filter&gt;</span>
-<span class="lineno"> 7</span> <span class="nt">&lt;filter-mapping&gt;</span>
-<span class="lineno"> 8</span>     <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
-<span class="lineno"> 9</span>     <span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
-<span class="lineno">10</span> <span class="nt">&lt;/filter-mapping&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- web.xml --&gt;</span>
+<span class="nt">&lt;filter&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;filter-class&gt;</span>org.springframework.web
+            .filter.DelegatingFilterProxy<span class="nt">&lt;/filter-class&gt;</span>
+<span class="nt">&lt;/filter&gt;</span>
+<span class="nt">&lt;filter-mapping&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/filter-mapping&gt;</span></code></pre></div>
 
 
 <ol>
@@ -297,20 +297,20 @@
 </ol>
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="lineno"> 1</span> <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;csrfFilter&quot;</span> <span class="na">class=</span><span class="s">&quot;org.springframework</span>
-<span class="lineno"> 2</span> <span class="s">                            .security.web.csrf.CsrfFilter&quot;</span><span class="nt">&gt;</span>
-<span class="lineno"> 3</span>     <span class="nt">&lt;constructor-arg&gt;</span>
-<span class="lineno"> 4</span>         <span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.springframework.security.web</span>
-<span class="lineno"> 5</span> <span class="s">                        .csrf.HttpSessionCsrfTokenRepository&quot;</span><span class="nt">/&gt;</span>
-<span class="lineno"> 6</span>     <span class="nt">&lt;/constructor-arg&gt;</span>
-<span class="lineno"> 7</span> <span class="nt">&lt;/bean&gt;</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span> <span class="c">&lt;!--</span>
-<span class="lineno">10</span> <span class="c">    如果用的是spring mvc 的form标签，则配置此项时自动将crsf的token</span>
-<span class="lineno">11</span> <span class="c">    放入到一个hidden的input中，而不需要开发人员显式的写入form</span>
-<span class="lineno">12</span> <span class="c">--&gt;</span>
-<span class="lineno">13</span> <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;crdvp&quot;</span> <span class="na">class=</span><span class="s">&quot;org.springframework.security</span>
-<span class="lineno">14</span> <span class="s">        .web.servlet.support.csrf.CsrfRequestDataValueProcessor&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;csrfFilter&quot;</span> <span class="na">class=</span><span class="s">&quot;org.springframework</span>
+<span class="s">                            .security.web.csrf.CsrfFilter&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;constructor-arg&gt;</span>
+        <span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.springframework.security.web</span>
+<span class="s">                        .csrf.HttpSessionCsrfTokenRepository&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/constructor-arg&gt;</span>
+<span class="nt">&lt;/bean&gt;</span>
+
+<span class="c">&lt;!--</span>
+<span class="c">    如果用的是spring mvc 的form标签，则配置此项时自动将crsf的token</span>
+<span class="c">    放入到一个hidden的input中，而不需要开发人员显式的写入form</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;crdvp&quot;</span> <span class="na">class=</span><span class="s">&quot;org.springframework.security</span>
+<span class="s">        .web.servlet.support.csrf.CsrfRequestDataValueProcessor&quot;</span><span class="nt">/&gt;</span></code></pre></div>
 
 
 <p>方法二</p>
@@ -320,20 +320,20 @@
 </ol>
 
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="lineno">1</span> <span class="c">&lt;!-- *-security.xml --&gt;</span>
-<span class="lineno">2</span> <span class="nt">&lt;http&gt;</span>
-<span class="lineno">3</span>     <span class="c">&lt;!-- ..Spring Security 4.x 的 xml namespace 中默认开启</span>
-<span class="lineno">4</span> <span class="c">            使用 JavaConfig 也是默认开启 --&gt;</span>
-<span class="lineno">5</span>     <span class="nt">&lt;csrf</span> <span class="nt">/&gt;</span>
-<span class="lineno">6</span> <span class="nt">&lt;/http&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- *-security.xml --&gt;</span>
+<span class="nt">&lt;http&gt;</span>
+    <span class="c">&lt;!-- ..Spring Security 4.x 的 xml namespace 中默认开启</span>
+<span class="c">            使用 JavaConfig 也是默认开启 --&gt;</span>
+    <span class="nt">&lt;csrf</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/http&gt;</span></code></pre></div>
 
 
 <p>Ajax 请求加入 _csrf 的 token</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="lineno">1</span> <span class="c1">// html 可以将 &lt;sec:csrfMetaTags&gt; 置于 header 中</span>
-<span class="lineno">2</span> <span class="c1">// JQuery 获取代码</span>
-<span class="lineno">3</span> <span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;meta[name=&#39;_csrf&#39;]&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">);</span>
-<span class="lineno">4</span> <span class="kd">var</span> <span class="nx">header</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;meta[name=&#39;_csrf_header&#39;]&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">);</span></code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// html 可以将 &lt;sec:csrfMetaTags&gt; 置于 header 中</span>
+<span class="c1">// JQuery 获取代码</span>
+<span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;meta[name=&#39;_csrf&#39;]&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">header</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;meta[name=&#39;_csrf_header&#39;]&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">);</span></code></pre></div>
 
 
 <p>form 提交加入 token</p>

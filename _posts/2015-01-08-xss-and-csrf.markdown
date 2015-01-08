@@ -70,7 +70,7 @@ categories:
 
 存储型 XSS 攻击是攻击者将攻击脚本存入在服务端（如：blog、论坛帖子等内容），当浏览者在浏览内容的时候会自动执行脚本，如弹出一个伪造的登录，窃取用户信息。如下面代码：
 
-{% highlight js linenos%}
+{% highlight js%}
 <script>
     document.body.innerHTML="
     <h1>用户登录</h1>
@@ -163,7 +163,7 @@ DOM Based XSS 是一种基于网页 DOM 结构的攻击，是客户端 XSS 的�
 
 1. 注册过滤器
 
-{% highlight xml linenos%}
+{% highlight xml %}
 <!-- web.xml -->
 <filter>
     <filter-name>springSecurityFilterChain</filter-name>
@@ -178,7 +178,7 @@ DOM Based XSS 是一种基于网页 DOM 结构的攻击，是客户端 XSS 的�
 
 2. Spring 配置文件中增加过滤器
 
-{% highlight xml linenos%}
+{% highlight xml %}
 <bean id="csrfFilter" class="org.springframework
                             .security.web.csrf.CsrfFilter">
     <constructor-arg>
@@ -200,7 +200,7 @@ DOM Based XSS 是一种基于网页 DOM 结构的攻击，是客户端 XSS 的�
 
 1. 配置 http 标签
 
-{% highlight xml linenos%}
+{% highlight xml %}
 <!-- *-security.xml -->
 <http>
     <!-- ..Spring Security 4.x 的 xml namespace 中默认开启
@@ -212,7 +212,7 @@ DOM Based XSS 是一种基于网页 DOM 结构的攻击，是客户端 XSS 的�
 
 Ajax 请求加入 _csrf 的 token
 
-{% highlight js linenos%}
+{% highlight js %}
 // html 可以将 <sec:csrfMetaTags> 置于 header 中
 // JQuery 获取代码
 var token = $("meta[name='_csrf']").attr("content");
