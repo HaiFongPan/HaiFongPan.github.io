@@ -24,5 +24,8 @@ layout: nil
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
-
+ <follow_challenge>
+    <feedId>83435590153666560</feedId>
+    <userId>75538582044891136</userId>
+ </follow_challenge>
 </feed>
